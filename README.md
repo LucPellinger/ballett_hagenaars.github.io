@@ -89,6 +89,17 @@ Full rules: **[CONTRIBUTING.md](CONTRIBUTING.md)** · Ticket board: **[BOARD.md]
 3. The *Deploy (prod)* workflow runs all checks, **refuses to publish while placeholder content remains**,
    builds with the correct base path (custom domain or `/<repo>/`) and publishes.
 
+### Preview for reviewers (sample content allowed)
+
+```bash
+gh workflow run deploy.yml --ref dev -f preview=true
+gh run watch
+```
+
+Deploys the chosen branch with a "Vorschau" banner, visible "Beispielinhalt" badges and `noindex`,
+skipping the placeholder check. GitHub Pages hosts one site per repo, so a preview replaces whatever is
+currently published – use it only until the real site goes live (then see ticket #15 for a separate staging URL).
+
 ## Design
 
 Poster-inspired typography (see the Flamenco-workshop poster): oversized, tightly tracked grotesk

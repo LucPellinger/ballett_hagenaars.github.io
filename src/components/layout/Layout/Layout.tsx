@@ -1,7 +1,9 @@
 import { Suspense, useEffect, useRef } from 'react';
 import { Outlet, useLocation } from 'react-router';
+import { isPreview } from '@/config/env';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
+import { PreviewBanner } from '../PreviewBanner';
 import { SkipLink } from '../SkipLink';
 import styles from './Layout.module.css';
 
@@ -27,6 +29,7 @@ export function Layout() {
   return (
     <>
       <SkipLink />
+      {isPreview && <PreviewBanner />}
       <Header />
       <main id="main" ref={mainRef} tabIndex={-1} className={styles.main}>
         <Suspense fallback={<div className={styles.loading} aria-hidden="true" />}>

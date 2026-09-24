@@ -13,6 +13,18 @@ import { VitePWA } from 'vite-plugin-pwa';
 const rawBase = process.env.BASE_PATH ?? '/';
 const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 
+/** Preview deployments (VITE_PREVIEW=true) must not be indexed by search engines. */
+const isPreview = process.env.VITE_PREVIEW === 'true';
+
+function noindexOnPreview(): Plugin {
+  return {
+    name: 'noindex-on-preview',
+    transformIndexHtml(html) {
+      return isPreview ? html.replace('<head>', '<head>\n    <meta name="robots" content="noindex, nofollow" />') : html;
+    },
+  };
+}
+
 /**
  * GitHub Pages has no SPA fallback. We emit a 404.html that redirects deep links
  * (e.g. /stundenplan) to index.html?redirect=/stundenplan; src/main.tsx restores the URL.
@@ -55,6 +67,7 @@ export default defineConfig({
   plugins: [
     react(),
     spaFallback404(),
+    noindexOnPreview(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'icons/apple-touch-icon.png', 'robots.txt'],
