@@ -1,0 +1,1 @@
+export { PlaceholderBadge } from './PlaceholderBadge';

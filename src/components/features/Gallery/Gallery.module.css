@@ -1,0 +1,27 @@
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 3 16rem;
+  column-gap: var(--space-4);
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: var(--space-4);
+}
+
+.figure {
+  margin: 0;
+}
+
+.figure img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
+
+.caption {
+  padding-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}

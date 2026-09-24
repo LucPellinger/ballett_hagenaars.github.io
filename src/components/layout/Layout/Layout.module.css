@@ -1,0 +1,8 @@
+.main {
+  display: block;
+  outline: none;
+}
+
+.loading {
+  min-height: 60vh;
+}

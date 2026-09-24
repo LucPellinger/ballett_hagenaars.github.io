@@ -1,0 +1,109 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.chip {
+  min-height: var(--tap-target);
+  padding: 0 var(--space-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.days {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+}
+
+.day {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.dayTitle {
+  margin-bottom: var(--space-3);
+  font-size: var(--fs-lg);
+  letter-spacing: -0.03em;
+  color: var(--color-accent);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-2);
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid var(--color-border);
+}
+
+.table thead th {
+  border-top: 0;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.table tbody th {
+  font-weight: 700;
+}
+
+.time {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.level {
+  font-weight: 400;
+}
+
+.age {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* Mobile: rows become stacked cards */
+@media (max-width: 36rem) {
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .table tr {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    border-top: 1px solid var(--color-border);
+    padding-block: var(--space-2);
+  }
+
+  .table th,
+  .table td {
+    border: 0;
+    padding: var(--space-1) 0;
+  }
+
+  .table td:last-child {
+    grid-column: 2;
+    color: var(--color-text-muted);
+  }
+}

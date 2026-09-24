@@ -1,0 +1,15 @@
+.toggle {
+  display: inline-grid;
+  place-items: center;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  border: 1.5px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background: var(--color-surface-2);
+}

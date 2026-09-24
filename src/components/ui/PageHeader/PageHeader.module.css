@@ -1,0 +1,43 @@
+.header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--poster-bg);
+  color: var(--poster-ink);
+  padding-block: var(--space-8) var(--space-7);
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--grain);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--fs-poster-sm);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-poster);
+  color: var(--poster-headline);
+  overflow-wrap: anywhere;
+}
+
+.lead {
+  max-width: var(--prose-max);
+  margin: var(--space-5) 0 0;
+  font-size: var(--fs-md);
+}

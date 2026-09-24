@@ -1,0 +1,54 @@
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+}
+
+.card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.photo,
+.monogram {
+  width: 100%;
+  aspect-ratio: 1;
+  margin-bottom: var(--space-4);
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1);
+}
+
+.monogram {
+  display: grid;
+  place-items: center;
+  background: var(--poster-bg);
+  background-image: var(--grain);
+  color: var(--poster-headline);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.name {
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-md);
+  letter-spacing: -0.02em;
+}
+
+.role {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--color-accent-2);
+}
+
+.teaches {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
