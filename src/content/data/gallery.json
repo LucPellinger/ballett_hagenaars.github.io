@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sample-1",
+    "image": {
+      "src": "samples/placeholder-1.svg",
+      "alt": {
+        "de": "Beispielbild 1",
+        "en": "Sample image 1"
+      },
+      "width": 800,
+      "height": 600
+    },
+    "caption": {
+      "de": "Aufführung (Beispiel)",
+      "en": "Performance (sample)"
+    },
+    "status": "placeholder"
+  },
+  {
+    "id": "sample-2",
+    "image": {
+      "src": "samples/placeholder-2.svg",
+      "alt": {
+        "de": "Beispielbild 2",
+        "en": "Sample image 2"
+      },
+      "width": 800,
+      "height": 1000
+    },
+    "caption": {
+      "de": "Ballettunterricht (Beispiel)",
+      "en": "Ballet class (sample)"
+    },
+    "status": "placeholder"
+  },
+  {
+    "id": "sample-3",
+    "image": {
+      "src": "samples/placeholder-3.svg",
+      "alt": {
+        "de": "Beispielbild 3",
+        "en": "Sample image 3"
+      },
+      "width": 800,
+      "height": 600
+    },
+    "status": "placeholder"
+  },
+  {
+    "id": "sample-4",
+    "image": {
+      "src": "samples/placeholder-4.svg",
+      "alt": {
+        "de": "Beispielbild 4",
+        "en": "Sample image 4"
+      },
+      "width": 800,
+      "height": 600
+    },
+    "status": "placeholder"
+  }
+]

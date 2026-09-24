@@ -1,0 +1,44 @@
+{
+  "status": "placeholder",
+  "sections": [
+    {
+      "heading": {
+        "de": "Verantwortliche Stelle",
+        "en": "Controller"
+      },
+      "paragraphs": {
+        "de": [
+          "Maricel Pellinger-Hagenaars, Ballettschule Hagenaars, Langgasse 115, 67454 Haßloch, E-Mail: info@hagenaars-ballett.de"
+        ]
+      }
+    },
+    {
+      "heading": {
+        "de": "Hosting",
+        "en": "Hosting"
+      },
+      "paragraphs": {
+        "de": [
+          "Diese Website wird bei GitHub Pages (GitHub Inc., USA) gehostet. Beim Aufruf der Seite werden technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt, Browser) in Server-Logfiles verarbeitet."
+        ],
+        "en": [
+          "This website is hosted on GitHub Pages (GitHub Inc., USA). When you visit the site, technically necessary data (e.g. IP address, time, browser) is processed in server log files."
+        ]
+      }
+    },
+    {
+      "heading": {
+        "de": "Keine Cookies, kein Tracking",
+        "en": "No cookies, no tracking"
+      },
+      "paragraphs": {
+        "de": [
+          "Wir verwenden keine Cookies und keine Analyse- oder Tracking-Dienste. Ihre Sprach- und Design-Auswahl wird ausschließlich lokal in Ihrem Browser (localStorage) gespeichert. Es werden keine externen Schriftarten oder Karten geladen."
+        ],
+        "en": [
+          "We use no cookies and no analytics or tracking services. Your language and theme choice is stored only locally in your browser (localStorage). No external fonts or maps are loaded."
+        ]
+      }
+    }
+  ]
+}

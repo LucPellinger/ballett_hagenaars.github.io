@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "headline": {
+      "de": [
+        "Tanzen",
+        "lernen in",
+        "Haßloch"
+      ],
+      "en": [
+        "Learn to",
+        "dance in",
+        "Haßloch"
+      ]
+    },
+    "meta": {
+      "de": [
+        "Ballett · Modern",
+        "Flamenco · Jazz"
+      ],
+      "en": [
+        "Ballet · Modern",
+        "Flamenco · Jazz"
+      ]
+    },
+    "lead": {
+      "de": "Kindertanz, Ballett für Kinder und Erwachsene, Modern, Flamenco und Jazz für Teens – mit Freude, Technik und qualifizierten Tanzpädagog:innen.",
+      "en": "Children's dance, ballet for children and adults, modern, flamenco and teen jazz – taught with joy, technique and qualified dance teachers."
+    },
+    "primaryCta": {
+      "label": {
+        "de": "Kostenlose Schnupperstunde",
+        "en": "Book a free trial class"
+      },
+      "href": "/kontakt"
+    },
+    "secondaryCta": {
+      "label": {
+        "de": "Stundenplan",
+        "en": "Timetable"
+      },
+      "href": "/stundenplan"
+    }
+  },
+  "highlights": [
+    {
+      "title": {
+        "de": "3 Schnupperstunden gratis",
+        "en": "3 free trial classes"
+      },
+      "text": {
+        "de": "Kostenlos und unverbindlich bis zu drei Schnupperstunden ausprobieren.",
+        "en": "Try up to three classes for free and without obligation."
+      }
+    },
+    {
+      "title": {
+        "de": "Qualifiziertes Team",
+        "en": "Qualified team"
+      },
+      "text": {
+        "de": "Diplomierte Tanzpädagog:innen und staatlich geprüfte Bühnentänzer:innen.",
+        "en": "Certified dance teachers and state-certified stage dancers."
+      }
+    },
+    {
+      "title": {
+        "de": "Für jedes Alter",
+        "en": "For every age"
+      },
+      "text": {
+        "de": "Vom Eltern-Kind-Kurs „Dance Together“ bis zum Ballett für Erwachsene.",
+        "en": "From the parent & child class “Dance Together” to ballet for adults."
+      }
+    }
+  ],
+  "sections": {
+    "highlights": {
+      "title": {
+        "de": "Warum die Ballettschule Hagenaars?",
+        "en": "Why Hagenaars Ballet School?"
+      }
+    },
+    "courses": {
+      "eyebrow": {
+        "de": "Unterricht",
+        "en": "Classes"
+      },
+      "title": {
+        "de": "Unsere Kurse",
+        "en": "Our classes"
+      }
+    },
+    "events": {
+      "eyebrow": {
+        "de": "Demnächst",
+        "en": "Coming up"
+      },
+      "title": {
+        "de": "Workshops & Events",
+        "en": "Workshops & events"
+      }
+    },
+    "cta": {
+      "title": {
+        "de": "Lust auf Tanz?",
+        "en": "Ready to dance?"
+      },
+      "text": {
+        "de": "Vereinbaren Sie eine kostenlose Schnupperstunde – wir beraten Sie gern, welcher Kurs passt.",
+        "en": "Book a free trial class – we are happy to help you find the right course."
+      },
+      "link": {
+        "label": {
+          "de": "Kontakt aufnehmen",
+          "en": "Get in touch"
+        },
+        "href": "/kontakt"
+      }
+    }
+  }
+}
