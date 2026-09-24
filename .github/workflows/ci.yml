@@ -1,0 +1,72 @@
+# Continuous integration – runs on every push and pull request.
+# Must be green before anything is merged into dev, main or prod.
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [dev, main, prod]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  conventions:
+    name: Branch & commit conventions
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check branch name and merge direction
+        env:
+          HEAD: ${{ github.head_ref }}
+          BASE: ${{ github.base_ref }}
+        run: |
+          echo "PR: $HEAD → $BASE"
+          if ! echo "$HEAD" | grep -Eq '^(main|dev|(feat|fix|hotfix|chore|docs|refactor|content|test|ci|perf|style|build)/[0-9]+-[a-z0-9-]+)$'; then
+            echo "::error::Branch '$HEAD' must be named <type>/<ticket-id>-<slug>, e.g. feat/12-gallery-lightbox"; exit 1
+          fi
+          case "$BASE" in
+            prod) echo "$HEAD" | grep -Eq '^(main|hotfix/.*)$' || { echo "::error::Only 'main' or 'hotfix/*' may be merged into prod"; exit 1; } ;;
+            main) echo "$HEAD" | grep -Eq '^(dev|hotfix/.*)$' || { echo "::error::Only 'dev' or 'hotfix/*' may be merged into main"; exit 1; } ;;
+          esac
+
+      - name: Check commit messages
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          pattern='^(feat|fix|hotfix|chore|docs|style|refactor|perf|test|build|ci|content|revert)(\(#[0-9]+\))?!?: .{3,}$'
+          bad=0
+          while IFS= read -r msg; do
+            case "$msg" in Merge*|Revert*) continue ;; esac
+            if ! echo "$msg" | grep -Eq "$pattern"; then echo "::error::Bad commit message: $msg"; bad=1; fi
+          done < <(git log --format=%s "$BASE_SHA..$HEAD_SHA")
+          exit $bad
+
+  checks:
+    name: Typecheck · Lint · Test · Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Corepack (pinned Yarn)
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - run: yarn install --immutable
+      - run: yarn typecheck
+      - run: yarn lint
+      - run: yarn test
+      - name: Placeholder content report
+        run: yarn content:check
+      - run: yarn build

@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+# Checks the branch name before pushing (see CONTRIBUTING.md#branches).
+branch=$(git rev-parse --abbrev-ref HEAD)
+case "$branch" in
+  main|dev|prod) exit 0 ;;
+esac
+if ! echo "$branch" | grep -Eq '^(feat|fix|hotfix|chore|docs|refactor|content|test|ci|perf|style|build)/[0-9]+-[a-z0-9-]+$'; then
+  echo "✗ Branch name '$branch' does not follow the convention."
+  echo "  Use: <type>/<ticket-id>-<short-slug>   e.g. feat/12-gallery-lightbox"
+  exit 1
+fi
