@@ -9,6 +9,7 @@ Rules for working on this repository – for humans and for Claude.
 | `dev` | Integration – all finished tickets land here first. **Default branch.** | PRs from ticket branches |
 | `main` | Stable release candidate – what we intend to ship next | `./scripts/promote.sh main` (dev → main) |
 | `prod` | **Live website.** Every push triggers the GitHub Pages deploy. | `./scripts/promote.sh prod` (main → prod) or a hotfix PR |
+| `content-management` | Content edits from the visual editor (`yarn cms`). Based on `prod`; a "live" publish merges it into `prod` and back into `main`/`dev` automatically. | The editor + GitHub Actions |
 | `<type>/<id>-<slug>` | Work on exactly one ticket | You |
 
 Ticket branch names: `<type>/<ticket-id>-<short-slug>` (lowercase, dashes)
@@ -100,7 +101,7 @@ Commit ticket changes with the work they belong to. Ticket IDs are never reused.
 - [ ] Light and dark mode checked
 - [ ] German and English checked (English may fall back to German)
 - [ ] Keyboard-only navigation works, focus is visible
-- [ ] New content types have tests in `src/content/content.test.ts`
+- [ ] New content fields/types are modelled in `src/content/schema.ts` (the editor and CI validation follow automatically)
 - [ ] Ticket moved to `done`
 
 ## Code conventions

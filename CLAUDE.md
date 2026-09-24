@@ -23,14 +23,23 @@ yarn check          # typecheck + lint + test + placeholder report – run after
 yarn build          # tsc -b && vite build
 yarn test           # vitest run
 yarn content:check  # list placeholder content
+yarn cms            # visual content editor (switches to content-management branch)
+yarn cms:here       # editor on current branch (publishing disabled) – use when developing the editor
 yarn ticket:new "Title" --type feat | yarn ticket:move <id> <status> | yarn board
 ```
 
 ## Architecture
 
-- `src/content/` – **single source of truth for all user-visible content** (typed by `types.ts`,
-  aggregated in `index.ts`, validated by `content.test.ts`). Components never contain copy.
-  UI strings (labels, aria texts) go to `content/ui.ts`.
+- `src/content/` – **single source of truth for all user-visible content**:
+  `data/*.json` (content) ← `schema.ts` (Zod models: types + validation + editor meta) ←
+  `collections.ts` (file ↔ model, editor config) · `validate.ts` (cross-checks) · `index.ts` (typed exports,
+  images resolved via `images.ts`). Components never contain copy; UI strings go to `content/ui.ts`.
+  Zod must not be imported (as a value) by website code – only types – so it stays out of the bundle.
+- `cms/` – local visual editor (`yarn cms`): `server/` = Vite plugin (mode `cms`) with a JSON API
+  (read/validate/write content, image upload, git status, publish job), `src/` = React UI that renders
+  forms from the Zod models (`z.toJSONSchema` + `.meta`). Publishing commits to `content-management`
+  (trailer `Publish: preview|live`) → `.github/workflows/content-publish.yml`. Files in the config
+  import chain (`cms/server`, `collections.ts`, `validate.ts`) use explicit `.ts` import extensions.
 - `Localized<T> = { de: T; en?: T }`; resolve with `const { t } = useLanguage(); t(value)`.
 - `src/components/{layout,ui,features}/<Name>/` – one folder per component:
   `Name.tsx`, `Name.module.css`, `index.ts`, optional `Name.test.tsx`. Re-export from the group `index.ts`.
@@ -54,12 +63,14 @@ yarn ticket:new "Title" --type feat | yarn ticket:move <id> <status> | yarn boar
 5. No new runtime dependencies without asking. No external fonts, trackers, embeds (GDPR).
 6. Keep the poster aesthetic: oversized tight grotesk headlines (`--fs-poster`, `--tracking-poster`),
    grainy red surfaces (`--poster-*`, `--grain`), black & white photos.
-7. Placeholder/sample data must carry `status: 'placeholder'` or a `PLACEHOLDER` comment.
-8. Add/extend tests for logic and content integrity; `yarn check` must pass before you finish.
+7. Placeholder/sample data must carry `"status": "placeholder"` (JSON) or a `PLACEHOLDER` comment (TS).
+8. New content fields: extend the model in `schema.ts` with editor `.meta()` – never edit types by hand.
+9. Add/extend tests for logic and content integrity; `yarn check` must pass before you finish.
 
 ## Git conventions (enforced by hooks + CI)
 
-- Branches: `main`, `dev` (default, integration), `prod` (live). Work branches:
+- Branches: `main`, `dev` (default, integration), `prod` (live), `content-management` (editor commits,
+  based on prod; don't develop there). Work branches:
   `<type>/<ticket-id>-<slug>`, e.g. `feat/13-gallery-lightbox`. PRs target `dev`; hotfixes target `prod`.
 - Commits: `feat(#13): add lightbox`, `fix: …`, `hotfix(#22): …`, `content(#3): …`, `chore: …`, `docs: …`.
 - Tickets: `tickets/NNN-slug.md` (front matter `status: backlog|todo|in-progress|review|done`);
