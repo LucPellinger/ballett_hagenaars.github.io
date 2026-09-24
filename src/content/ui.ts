@@ -34,6 +34,10 @@ export const ui = {
   openingHours: { de: 'Bürozeiten', en: 'Office hours' },
   openMap: { de: 'Karte öffnen (OpenStreetMap)', en: 'Open map (OpenStreetMap)' },
   opensInNewTab: { de: '(öffnet in neuem Tab)', en: '(opens in new tab)' },
+  previewBanner: {
+    de: 'Vorschau der neuen Website – Stundenplan, Preise und einige Texte sind noch Beispielinhalte.',
+    en: 'Preview of the new website – timetable, fees and some texts are still sample content.',
+  },
   placeholderBadge: { de: 'Beispielinhalt', en: 'Sample content' },
   notFoundTitle: { de: 'Seite nicht gefunden', en: 'Page not found' },
   notFoundText: {

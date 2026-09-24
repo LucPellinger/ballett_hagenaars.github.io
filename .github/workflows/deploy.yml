@@ -1,11 +1,23 @@
-# Continuous deployment – publishes the site to GitHub Pages whenever `prod` is updated.
-# One-time setup: repo Settings → Pages → Source: "GitHub Actions".
-name: Deploy (prod)
+# Continuous deployment to GitHub Pages.
+#
+# - Push to `prod`            → real release. Refuses to publish while placeholder content remains.
+# - Manual run, preview=true  → review build (any branch, e.g. dev): allows sample content,
+#                               shows a "Vorschau" banner + placeholder badges, noindex.
+#     gh workflow run deploy.yml --ref dev -f preview=true
+#
+# One-time setup: Settings → Pages → Source: "GitHub Actions";
+# Settings → Environments → github-pages → allow the branches you deploy from (prod, dev).
+name: Deploy
 
 on:
   push:
     branches: [prod]
   workflow_dispatch:
+    inputs:
+      preview:
+        description: 'Preview build (allows sample content, shows banner, noindex)'
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -19,8 +31,16 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PREVIEW: ${{ github.event_name == 'workflow_dispatch' && inputs.preview && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Only prod may publish a non-preview release
+        if: env.PREVIEW != 'true' && github.ref != 'refs/heads/prod'
+        run: |
+          echo "::error::Real releases are deployed from 'prod' only. Use preview=true for other branches."
+          exit 1
 
       - name: Enable Corepack (pinned Yarn)
         run: corepack enable
@@ -36,7 +56,12 @@ jobs:
       - run: yarn test
 
       - name: Refuse to publish sample/placeholder content
+        if: env.PREVIEW != 'true'
         run: yarn content:check:strict
+
+      - name: Placeholder report (preview)
+        if: env.PREVIEW == 'true'
+        run: yarn content:check
 
       - name: Configure Pages
         id: pages
@@ -44,8 +69,9 @@ jobs:
 
       - name: Build
         env:
-          # "" for a custom domain, "/<repo>" for a project page
+          # "" for a custom domain root, "/<repo>" for a project page
           BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          VITE_PREVIEW: ${{ env.PREVIEW }}
         run: yarn build
 
       - uses: actions/upload-pages-artifact@v3
