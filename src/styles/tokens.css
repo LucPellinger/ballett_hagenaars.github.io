@@ -1,0 +1,97 @@
+/*
+ * Design tokens – the single source of truth for colours, type and spacing.
+ * All colour pairs are checked for WCAG 2.2 AA contrast (see docs/ACCESSIBILITY.md).
+ * Components must use these variables instead of hard-coded values.
+ */
+:root {
+  /* Typography – system grotesk stack (no external font requests → GDPR-friendly, fast) */
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans', 'Liberation Sans', system-ui, sans-serif;
+  --font-display: var(--font-sans);
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1.0625rem;
+  --fs-md: 1.25rem;
+  --fs-lg: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --fs-xl: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --fs-poster: clamp(3.4rem, 1.2rem + 8.5vw, 9.5rem);
+  --fs-poster-sm: clamp(2.5rem, 1.2rem + 5.5vw, 6.5rem);
+
+  --lh-tight: 0.88;
+  --lh-snug: 1.2;
+  --lh-body: 1.6;
+  --tracking-poster: -0.045em;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+
+  --gutter: clamp(1rem, 0.5rem + 3vw, 3.5rem);
+  --content-max: 76rem;
+  --prose-max: 42rem;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --tap-target: 44px;
+  --header-h: 4.25rem;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 220ms;
+
+  /* Film-grain texture used on poster surfaces (inline SVG, no request) */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Light theme (default) ---------- */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-bg: #fbf6f2;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3ebe5;
+  --color-border: #e2d5cd;
+  --color-text: #1d1614;
+  --color-text-muted: #5d4d48;
+  --color-accent: #a3261a;
+  --color-accent-contrast: #ffffff;
+  --color-accent-2: #b4441a;
+  --color-focus: #1f5fbf;
+
+  --poster-bg: #8f1f16;
+  --poster-headline: #ffa47a;
+  --poster-ink: #fff4ec;
+
+  --shadow-sm: 0 1px 2px rgb(40 10 5 / 0.08);
+  --shadow-md: 0 8px 24px rgb(40 10 5 / 0.1);
+}
+
+/* ---------- Dark theme ---------- */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #161010;
+  --color-surface: #221a19;
+  --color-surface-2: #2c2220;
+  --color-border: #3d302d;
+  --color-text: #f6eeea;
+  --color-text-muted: #c3b3ad;
+  --color-accent: #ff8a66;
+  --color-accent-contrast: #1a0d0a;
+  --color-accent-2: #ff9a6a;
+  --color-focus: #8ab4ff;
+
+  --poster-bg: #5c140e;
+  --poster-headline: #ff9a6a;
+  --poster-ink: #fff4ec;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.45);
+}

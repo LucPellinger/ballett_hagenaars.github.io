@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ballettschule Hagenaars in Haßloch – Kindertanz, Ballett, Ballett für Erwachsene, Modern, Flamenco und Jazz für Teens." />
+    <meta name="theme-color" content="#8f1f16" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1110" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <title>Ballettschule Hagenaars · Haßloch</title>
+    <script>
+      // Apply the saved/system theme before first paint to avoid a light→dark flash.
+      (function () {
+        try {
+          var t = localStorage.getItem('bh-theme');
+          if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = t;
+          var l = localStorage.getItem('bh-locale');
+          if (l === 'en' || l === 'de') document.documentElement.lang = l;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>Bitte aktivieren Sie JavaScript, um diese Website zu nutzen. · Please enable JavaScript to use this website.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
