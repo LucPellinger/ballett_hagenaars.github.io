@@ -106,3 +106,8 @@ Poster-inspired typography (see the Flamenco-workshop poster): oversized, tightl
 headlines in orange on a grainy deep red, black-and-white photography. Colours and type scale are
 defined once in [`src/styles/tokens.css`](src/styles/tokens.css); all colour pairs meet WCAG AA contrast
 in both themes.
+
+## License
+
+**Proprietary – all rights reserved.** The source code, design and content of this repository may not
+be copied, modified, published or reused without prior written permission. See [LICENSE](LICENSE).
