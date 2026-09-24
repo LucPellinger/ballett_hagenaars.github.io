@@ -4,7 +4,8 @@ name: CI
 
 on:
   push:
-    branches: ['**']
+    # content-management has its own pipeline (content-publish.yml)
+    branches: ['**', '!content-management']
   pull_request:
     branches: [dev, main, prod]
 

@@ -1,0 +1,117 @@
+# Publishes changes made in the content editor (`yarn cms`).
+#
+# The editor commits to the `content-management` branch with a trailer
+#   Publish: preview   → build + deploy a preview (sample content allowed)
+#   Publish: live      → strict checks, merge into prod, deploy, sync back to main/dev
+#
+# If ANY check fails, nothing is merged or deployed – the website stays as it is.
+name: Content publish
+
+on:
+  push:
+    branches: [content-management]
+
+concurrency:
+  group: content-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Check content
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.mode.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read publish mode from commit
+        id: mode
+        env:
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          if printf '%s' "$MSG" | grep -qi '^Publish: *live'; then mode=live; else mode=preview; fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "### Publish mode: $mode" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Enable Corepack (pinned Yarn)
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - run: yarn install --immutable
+      - run: yarn typecheck
+      - run: yarn lint
+      - run: yarn test
+
+      - name: Refuse to publish sample/placeholder content (live only)
+        if: steps.mode.outputs.mode == 'live'
+        run: yarn content:check:strict
+
+      - run: yarn build
+
+  promote:
+    name: Merge into prod
+    needs: checks
+    if: needs.checks.outputs.mode == 'live'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: prod
+          fetch-depth: 0
+
+      - name: Merge content-management into prod
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git merge --no-edit "origin/content-management"
+          git push origin prod
+
+  deploy:
+    name: Deploy
+    needs: [checks, promote]
+    if: always() && needs.checks.result == 'success' && (needs.promote.result == 'success' || needs.promote.result == 'skipped')
+    uses: ./.github/workflows/deploy.yml
+    with:
+      preview: ${{ needs.checks.outputs.mode != 'live' }}
+      ref: ${{ needs.checks.outputs.mode == 'live' && 'prod' || 'content-management' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+  sync-back:
+    name: Bring content into main and dev
+    needs: [checks, deploy]
+    if: needs.checks.outputs.mode == 'live' && needs.deploy.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        branch: [main, dev]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }}
+          fetch-depth: 0
+
+      - name: Merge prod into ${{ matrix.branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git merge --no-edit origin/prod; then
+            git push origin "${{ matrix.branch }}"
+          else
+            git merge --abort
+            echo "::warning::Could not merge prod into ${{ matrix.branch }} automatically – please merge manually."
+          fi
