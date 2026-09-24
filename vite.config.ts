@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { cmsPlugin } from './cms/server/plugin.ts';
 
 /**
  * Base path the site is served from.
@@ -59,13 +60,15 @@ function spaFallback404(): Plugin {
   };
 }
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   base,
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
   plugins: [
     react(),
+    // Local content editor – only with `yarn cms` (see docs/CMS_GUIDE.md)
+    mode === 'cms' && cmsPlugin(),
     spaFallback404(),
     noindexOnPreview(),
     VitePWA({
@@ -99,4 +102,4 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.ts'],
     css: false,
   },
-});
+}));
