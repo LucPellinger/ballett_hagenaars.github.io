@@ -8,7 +8,7 @@
 | 🗂 Backlog | 7 |
 | 📋 To do | 8 |
 | 🚧 In progress | 0 |
-| 👀 Review | 4 |
+| 👀 Review | 5 |
 | ✅ Done | 1 |
 
 ## 🗂 Backlog
@@ -48,6 +48,7 @@ _empty_
 | [#18](tickets/018-add-proprietary-license.md) | chore | Add proprietary license | medium | `chore/18-add-proprietary-license` |
 | [#19](tickets/019-visual-content-editor.md) | feat | Visual content editor (CMS) with one-click publishing | high | `feat/19-visual-content-editor-cms-with-one-click` |
 | [#20](tickets/020-redesign-readymag-style.md) | feat | Redesign in Readymag style + new page structure | high | `feat/20-redesign-in-readymag-style-new-page-stru` |
+| [#21](tickets/021-fix-promote-sh-on-macos-bash-3-2.md) | fix | Fix promote.sh on macOS bash 3.2 | medium | `fix/21-fix-promote-sh-on-macos-bash-3-2` |
 
 ## ✅ Done
 

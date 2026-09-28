@@ -23,7 +23,7 @@ fi
 git fetch origin
 git switch "$source" && git pull --ff-only origin "$source"
 
-echo "→ Running checks on $source…"
+echo "→ Running checks on ${source}…"
 yarn install --immutable
 yarn check
 if [ "$target" = "prod" ] && ! yarn content:check:strict >/dev/null; then
