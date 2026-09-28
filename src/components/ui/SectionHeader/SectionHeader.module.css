@@ -12,7 +12,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent-2);
+  color: var(--color-link);
 }
 
 .title {

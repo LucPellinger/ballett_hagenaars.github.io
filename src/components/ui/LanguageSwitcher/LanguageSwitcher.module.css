@@ -1,24 +1,26 @@
+/* Used inside the orange nav bar: white on brand colour */
 .switcher {
   display: inline-flex;
-  border: 1.5px solid var(--color-border);
+  border: 1.5px solid currentColor;
   border-radius: 999px;
   padding: 2px;
 }
 
 .option {
-  min-width: var(--tap-target);
-  min-height: calc(var(--tap-target) - 4px);
-  padding: 0 var(--space-3);
+  min-width: 40px;
+  min-height: 34px;
+  padding: 0 var(--space-2);
   border: 0;
   border-radius: 999px;
   background: transparent;
-  color: var(--color-text);
-  font-size: var(--fs-sm);
+  color: inherit;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
   font-weight: 700;
   cursor: pointer;
 }
 
 .option[aria-pressed='true'] {
-  background: var(--color-accent);
-  color: var(--color-accent-contrast);
+  background: var(--brand-nav-ink);
+  color: var(--brand-nav);
 }

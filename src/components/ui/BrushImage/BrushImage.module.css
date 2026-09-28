@@ -1,0 +1,25 @@
+.wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 34rem;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.brush {
+  position: absolute;
+  inset: 0;
+}
+
+.defs {
+  position: absolute;
+}
+
+.img {
+  position: relative;
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
