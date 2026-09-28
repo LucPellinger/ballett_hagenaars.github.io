@@ -9,16 +9,18 @@ export interface SectionRailProps {
   id?: string;
   children: ReactNode;
   className?: string;
+  /** Sub-page top: less space above the content than between home-page sections. */
+  pageTop?: boolean;
 }
 
 /**
  * Section with the signature vertical orange label on the left edge.
  * The label is the real heading (h1/h2); on small screens it turns horizontal.
  */
-export function SectionRail({ label, as: Tag = 'h2', id, children, className }: SectionRailProps) {
+export function SectionRail({ label, as: Tag = 'h2', id, children, className, pageTop = false }: SectionRailProps) {
   const headingId = id ? `${id}-title` : undefined;
   return (
-    <section id={id} className={`${styles.section} ${className ?? ''}`} aria-labelledby={headingId}>
+    <section id={id} className={`${styles.section} ${pageTop ? styles.pageTop : ''} ${className ?? ''}`} aria-labelledby={headingId}>
       <div className={styles.rail}>
         <Tag id={headingId} className={styles.label}>
           {label}

@@ -8,7 +8,7 @@
 | 🗂 Backlog | 7 |
 | 📋 To do | 6 |
 | 🚧 In progress | 1 |
-| 👀 Review | 3 |
+| 👀 Review | 4 |
 | ✅ Done | 7 |
 
 ## 🗂 Backlog
@@ -47,6 +47,7 @@
 | [#19](tickets/019-visual-content-editor.md) | feat | Visual content editor (CMS) with one-click publishing | high | `feat/19-visual-content-editor-cms-with-one-click` |
 | [#22](tickets/022-one-click-editor-installer-for-mac-and-w.md) | feat | One-click editor installer for Mac and Windows | medium | `feat/22-one-click-editor-installer-for-mac-and-w` |
 | [#23](tickets/023-text-size-controls.md) | feat | Text size for visitors, smaller page intros, per-component text size in the editor | medium | `feat/23-text-size-for-visitors-smaller-page-intr` |
+| [#25](tickets/025-less-whitespace-above-page-intro.md) | fix | Less whitespace above the page intro | medium | `fix/25-less-whitespace-above-the-page-intro` |
 
 ## ✅ Done
 

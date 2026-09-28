@@ -11,7 +11,7 @@ export function PageShell({ page, children, wide = false }: { page: PageId; chil
   return (
     <>
       <PageMeta meta={meta} />
-      <SectionRail as="h1" label={t(header.title)} id={`page-${page}`}>
+      <SectionRail as="h1" label={t(header.title)} id={`page-${page}`} pageTop>
         <div className={wide ? styles.wide : styles.body}>
           {(header.eyebrow || header.lead) && (
             <div className={styles.intro} {...textSizeProps(header.textSize)}>

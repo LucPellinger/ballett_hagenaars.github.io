@@ -56,6 +56,8 @@
 
   /* Vertical rhythm: space around page sections and between content blocks inside them */
   --section-space: clamp(6rem, 4.25rem + 7.2vw, 10rem); /* full size from 1280px; 1.5× between stacked sections = 15rem */
+  /* Top of sub-pages (title rail + intro): compact, the content should start soon */
+  --page-top-space: clamp(2.5rem, 1.5rem + 2vw, 4rem);
   --block-space: clamp(3.5rem, 2rem + 4.5vw, 7.5rem);
 
   --gutter: clamp(1rem, 0.4rem + 3vw, 3.5rem);

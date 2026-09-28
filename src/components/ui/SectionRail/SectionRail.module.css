@@ -53,3 +53,8 @@
     white-space: normal;
   }
 }
+
+/* Sub-pages: the title rail + intro start close to the menu bar (after the mobile rule above) */
+.section.pageTop {
+  padding-top: var(--page-top-space);
+}
