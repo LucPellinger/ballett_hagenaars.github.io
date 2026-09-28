@@ -111,7 +111,7 @@ export const collections: CollectionDef[] = [
   {
     id: 'home',
     label: 'Startseite',
-    description: 'Das rote Plakat oben, die drei Highlights und die Überschriften der Startseite.',
+    description: 'Der orange Kopfbereich (Willkommen, Schnellzugriff), das Stichwort-Band, die drei Highlights, Philosophie und die Überschriften der Startseite.',
     file: 'home.json',
     kind: 'single',
     schema: homeSchema,
