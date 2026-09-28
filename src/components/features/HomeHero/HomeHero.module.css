@@ -1,6 +1,6 @@
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   min-height: clamp(26rem, calc(100svh - var(--nav-h) - 9rem), 60rem);
 }
 
@@ -114,6 +114,8 @@
 .title {
   margin: var(--space-5) 0 0;
   font-size: var(--fs-xl);
+  overflow-wrap: break-word;
+  hyphens: auto;
   text-align: center;
   color: var(--hero-logo);
 }
