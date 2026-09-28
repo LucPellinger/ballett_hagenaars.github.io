@@ -2,7 +2,7 @@
 id: 23
 title: "Text size for visitors, smaller page intros, per-component text size in the editor"
 type: feat
-status: review
+status: done
 priority: medium
 created: 2026-09-28
 ---
