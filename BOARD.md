@@ -5,11 +5,11 @@
 
 | Status | Count |
 |---|---|
-| 🗂 Backlog | 7 |
+| 🗂 Backlog | 8 |
 | 📋 To do | 6 |
 | 🚧 In progress | 1 |
-| 👀 Review | 5 |
-| ✅ Done | 7 |
+| 👀 Review | 2 |
+| ✅ Done | 10 |
 
 ## 🗂 Backlog
 
@@ -22,6 +22,7 @@
 | [#14](tickets/014-accessibility-audit-axe-lighthouse-scree.md) | test | Accessibility audit (axe + Lighthouse + screen reader) | medium | `test/14-accessibility-audit-axe-lighthouse-scree` |
 | [#15](tickets/015-staging-preview-for-the-dev-branch.md) | ci | Staging preview for the dev branch | low | `ci/15-staging-preview-for-the-dev-branch` |
 | [#16](tickets/016-contact-form-privacy-friendly.md) | feat | Contact form (privacy-friendly) | low | `feat/16-contact-form-privacy-friendly` |
+| [#27](tickets/027-cookie-consent-and-optional-cookies.md) | feat | Cookies: consent banner and privacy-friendly optional features | low | `feat/27-cookies-consent-banner-and-privacy-frien` |
 
 ## 📋 To do
 
@@ -46,9 +47,6 @@
 |---|---|---|---|---|
 | [#19](tickets/019-visual-content-editor.md) | feat | Visual content editor (CMS) with one-click publishing | high | `feat/19-visual-content-editor-cms-with-one-click` |
 | [#22](tickets/022-one-click-editor-installer-for-mac-and-w.md) | feat | One-click editor installer for Mac and Windows | medium | `feat/22-one-click-editor-installer-for-mac-and-w` |
-| [#23](tickets/023-text-size-controls.md) | feat | Text size for visitors, smaller page intros, per-component text size in the editor | medium | `feat/23-text-size-for-visitors-smaller-page-intr` |
-| [#25](tickets/025-less-whitespace-above-page-intro.md) | fix | Less whitespace above the page intro | medium | `fix/25-less-whitespace-above-the-page-intro` |
-| [#26](tickets/026-header-fits-large-text.md) | fix | Header overlaps at large text sizes – switch to the mobile menu instead | high | `fix/26-header-overlaps-at-large-text-sizes-swit` |
 
 ## ✅ Done
 
@@ -60,5 +58,8 @@
 | [#18](tickets/018-add-proprietary-license.md) | chore | Add proprietary license | medium | `chore/18-add-proprietary-license` |
 | [#20](tickets/020-redesign-readymag-style.md) | feat | Redesign in Readymag style + new page structure | high | `feat/20-redesign-in-readymag-style-new-page-stru` |
 | [#21](tickets/021-fix-promote-sh-on-macos-bash-3-2.md) | fix | Fix promote.sh on macOS bash 3.2 | medium | `fix/21-fix-promote-sh-on-macos-bash-3-2` |
+| [#23](tickets/023-text-size-controls.md) | feat | Text size for visitors, smaller page intros, per-component text size in the editor | medium | `feat/23-text-size-for-visitors-smaller-page-intr` |
 | [#24](tickets/024-ticket-board-cleanup.md) | chore | Ticket board cleanup after the first release | low | `chore/24-ticket-board-cleanup-after-the-first-rel` |
+| [#25](tickets/025-less-whitespace-above-page-intro.md) | fix | Less whitespace above the page intro | medium | `fix/25-less-whitespace-above-the-page-intro` |
+| [#26](tickets/026-header-fits-large-text.md) | fix | Header overlaps at large text sizes – switch to the mobile menu instead | high | `fix/26-header-overlaps-at-large-text-sizes-swit` |
 

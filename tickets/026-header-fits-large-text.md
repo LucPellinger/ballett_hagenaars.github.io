@@ -2,7 +2,7 @@
 id: 26
 title: "Header overlaps at large text sizes – switch to the mobile menu instead"
 type: fix
-status: review
+status: done
 priority: high
 created: 2026-09-28
 ---

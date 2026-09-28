@@ -2,7 +2,7 @@
 id: 25
 title: "Less whitespace above the page intro"
 type: fix
-status: review
+status: done
 priority: medium
 created: 2026-09-28
 ---
