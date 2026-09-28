@@ -6,6 +6,9 @@
   width: 100%;
   background: var(--brand-nav);
   color: var(--brand-nav-ink);
+  /* The bar is a size container: the switch to the mobile menu uses container queries, whose rem
+     follows the root font size – so it moves with the visitor's text size (media queries don't). */
+  container: header / inline-size;
 }
 
 .bar {
@@ -104,9 +107,11 @@
 }
 
 /* Desktop: open on hover, keyboard focus or caret click */
-@media (hover: hover) and (min-width: 64.01rem) {
-  .hasMenu:hover .submenu {
-    display: block;
+@media (hover: hover) {
+  @container header (min-width: 66.01rem) {
+    .hasMenu:hover .submenu {
+      display: block;
+    }
   }
 }
 
@@ -159,8 +164,10 @@
   cursor: pointer;
 }
 
-/* ---------- Mobile / tablet ---------- */
-@media (max-width: 64rem) {
+/* ---------- Mobile / tablet ----------
+   66rem ≈ widest desktop menu (DE, measured ≈ 64rem at every text size) + a little margin.
+   = 1056 px at normal text, 1188 px at „large“, 1320 px at „extra large“. */
+@container header (max-width: 66rem) {
   .menuButton {
     display: inline-grid;
   }

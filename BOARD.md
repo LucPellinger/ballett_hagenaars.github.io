@@ -8,7 +8,7 @@
 | 🗂 Backlog | 7 |
 | 📋 To do | 6 |
 | 🚧 In progress | 1 |
-| 👀 Review | 4 |
+| 👀 Review | 5 |
 | ✅ Done | 7 |
 
 ## 🗂 Backlog
@@ -48,6 +48,7 @@
 | [#22](tickets/022-one-click-editor-installer-for-mac-and-w.md) | feat | One-click editor installer for Mac and Windows | medium | `feat/22-one-click-editor-installer-for-mac-and-w` |
 | [#23](tickets/023-text-size-controls.md) | feat | Text size for visitors, smaller page intros, per-component text size in the editor | medium | `feat/23-text-size-for-visitors-smaller-page-intr` |
 | [#25](tickets/025-less-whitespace-above-page-intro.md) | fix | Less whitespace above the page intro | medium | `fix/25-less-whitespace-above-the-page-intro` |
+| [#26](tickets/026-header-fits-large-text.md) | fix | Header overlaps at large text sizes – switch to the mobile menu instead | high | `fix/26-header-overlaps-at-large-text-sizes-swit` |
 
 ## ✅ Done
 

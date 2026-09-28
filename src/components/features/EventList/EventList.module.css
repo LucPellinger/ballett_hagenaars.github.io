@@ -9,7 +9,7 @@
 
 .card {
   display: grid;
-  grid-template-columns: 7.5rem 1fr;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
   height: 100%;
   background: var(--color-surface);
   border: 2px solid var(--tile-bg);
@@ -56,6 +56,9 @@
 .title {
   margin: 0 0 var(--space-2);
   font-size: var(--fs-lg);
+  /* long German words ("Ballettaufführung") at large text sizes on phones */
+  overflow-wrap: break-word;
+  hyphens: auto;
   color: var(--color-accent);
 }
 

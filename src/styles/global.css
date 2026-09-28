@@ -11,6 +11,9 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: calc(var(--nav-h) + var(--space-4));
+  /* Safety net against sideways wobble on phones from sub-pixel rounding at large text sizes.
+     `clip` (not `hidden`) keeps the sticky header working. */
+  overflow-x: clip;
 }
 
 /* Visitor text size (TextSizeSwitcher, applied pre-paint in index.html). Everything is sized in rem,
