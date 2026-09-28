@@ -15,33 +15,30 @@
 .left {
   align-items: center;
   text-align: center;
-  background: var(--hero-left-deep);
+  background: var(--hero-right);
   color: var(--hero-lead-ink);
-  animation: panel 12s ease-in-out infinite;
+  animation: panel 7s ease-in-out infinite alternate;
   transition: background-color 400ms var(--ease);
 }
 
-/* Animated background: deep brown (the brand-orange "Willkommen!" stands out) ↔ the right panel's
-   red-orange (both halves merge into one block and the eye moves to the logo). Holds the dark
-   state most of the time. */
+/* Background morphs smoothly between the right panel's red-orange and the brand orange and back
+   (`alternate` = no jump). At the orange end the brand-orange "Willkommen!" melts into the panel
+   and the eye moves to the logo; at the red-orange end it reappears. */
 @keyframes panel {
-  0%,
-  35%,
-  100% {
-    background-color: var(--hero-left-deep);
+  from {
+    background-color: var(--hero-right);
   }
 
-  55%,
-  75% {
-    background-color: var(--hero-right);
+  to {
+    background-color: var(--hero-logo);
   }
 }
 
-/* While the visitor interacts, keep it dark and readable */
+/* While the visitor interacts, settle on red-orange so the welcome and the links are readable */
 .left:has(.intro:hover),
 .left:has(.intro:focus-within) {
   animation: none;
-  background-color: var(--hero-left-deep);
+  background-color: var(--hero-right);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -4,8 +4,8 @@ import { ButtonLink, Logo } from '@/components/ui';
 import styles from './HomeHero.module.css';
 
 /**
- * Split colour-block hero. Left: "Willkommen!" + quick links on a panel whose background slowly
- * shifts from deep brown to the right panel's red-orange and back (pauses while the visitor
+ * Split colour-block hero. Left: "Willkommen!" + quick links on a panel whose background smoothly
+ * morphs between the right panel's red-orange and the brand orange and back (pauses while the visitor
  * interacts, off for reduced motion). Right: the big logo and the school name (page <h1>),
  * both in the brand orange.
  */

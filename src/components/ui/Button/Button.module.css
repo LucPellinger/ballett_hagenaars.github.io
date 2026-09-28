@@ -32,10 +32,10 @@
   border-color: currentColor;
 }
 
-/* Quick links on the animated hero panel: brand orange with dark ink */
+/* Quick links on the animated hero panel: black, visible on both ends of the colour morph */
 .hero {
-  background: var(--palette-orange);
-  color: var(--on-orange);
+  background: var(--palette-black);
+  color: var(--on-black);
 }
 
 .hero:hover {
