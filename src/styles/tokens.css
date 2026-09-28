@@ -39,6 +39,10 @@
   --space-8: 4.5rem;
   --space-9: 7rem;
 
+  /* Vertical rhythm: space around page sections and between content blocks inside them */
+  --section-space: clamp(4.5rem, 3rem + 4vw, 7.5rem);
+  --block-space: clamp(3.5rem, 2rem + 4.5vw, 7.5rem);
+
   --gutter: clamp(1rem, 0.4rem + 3vw, 3.5rem);
   --rail-w: clamp(3.5rem, 2rem + 4vw, 7.5rem);
   --content-max: 96rem;

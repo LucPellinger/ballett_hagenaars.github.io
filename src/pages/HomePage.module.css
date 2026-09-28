@@ -1,5 +1,5 @@
 .highlights {
-  padding: var(--space-8) var(--gutter) var(--space-7) calc(var(--rail-w) + var(--space-5));
+  padding: var(--section-space) var(--gutter) calc(var(--section-space) * 0.5) calc(var(--rail-w) + var(--space-5));
   scroll-margin-top: var(--nav-h);
 }
 
@@ -31,14 +31,14 @@
 }
 
 .more {
-  margin-top: var(--space-6);
+  margin-top: var(--space-7);
 }
 
 .cta {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--space-8) var(--gutter);
+  padding: var(--section-space) var(--gutter);
   background: var(--hero-left);
   color: var(--hero-left-ink);
   text-align: center;

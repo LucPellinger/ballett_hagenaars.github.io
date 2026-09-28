@@ -116,7 +116,7 @@ table {
 
 .prose h2 {
   font-size: var(--fs-lg);
-  margin-top: var(--space-6);
+  margin-top: var(--space-7);
 }
 
 .prose h3 {
@@ -125,7 +125,7 @@ table {
 }
 
 .section {
-  padding-block: var(--space-8);
+  padding-block: var(--section-space);
 }
 
 .section + .section {

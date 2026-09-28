@@ -1,6 +1,6 @@
 .plans {
   list-style: none;
-  margin: 0 0 var(--space-6);
+  margin: 0 0 var(--space-8);
   padding: 0;
   display: grid;
   gap: var(--space-5);
