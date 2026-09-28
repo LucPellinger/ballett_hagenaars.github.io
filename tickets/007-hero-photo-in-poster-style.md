@@ -2,7 +2,7 @@
 id: 7
 title: "Hero photo in poster style"
 type: feat
-status: todo
+status: done
 priority: medium
 created: 2026-09-24
 ---
@@ -19,5 +19,7 @@ Add a black & white cut-out dance photo (transparent PNG/WebP) to the home hero,
 - [ ] Meaningful alt text in DE + EN
 
 ## Notes
+
+**Closed as obsolete (2026-09-28):** the redesign (#20) uses the logo in the hero instead of a photo.
 
 Branch: `feat/7-hero-photo-in-poster-style` · Commits: `feat(#7): …`

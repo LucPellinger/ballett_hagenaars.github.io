@@ -13,6 +13,9 @@ Team list was taken from the old website – confirm who still teaches and add p
 
 ## Acceptance criteria
 
+- [ ] Replace the X/XXXX placeholders in the team texts (from #20)
+- [ ] Portraits + action photos for „Wer ist …?“ (from #20)
+
 - [ ] Team list up to date
 - [ ] Photos ≤ 800px, .webp/.jpg, with alt text
 - [ ] placeholder markers removed

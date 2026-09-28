@@ -2,7 +2,7 @@
 id: 21
 title: "Fix promote.sh on macOS bash 3.2"
 type: fix
-status: review
+status: done
 priority: medium
 created: 2026-09-28
 ---
