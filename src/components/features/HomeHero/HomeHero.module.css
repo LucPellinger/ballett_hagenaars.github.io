@@ -15,8 +15,39 @@
 .left {
   align-items: center;
   text-align: center;
-  background: var(--hero-left);
-  color: var(--hero-left-ink);
+  background: var(--hero-left-deep);
+  color: var(--hero-lead-ink);
+  animation: panel 12s ease-in-out infinite;
+  transition: background-color 400ms var(--ease);
+}
+
+/* Animated background: deep brown (the brand-orange "Willkommen!" stands out) ↔ the right panel's
+   red-orange (both halves merge into one block and the eye moves to the logo). Holds the dark
+   state most of the time. */
+@keyframes panel {
+  0%,
+  35%,
+  100% {
+    background-color: var(--hero-left-deep);
+  }
+
+  55%,
+  75% {
+    background-color: var(--hero-right);
+  }
+}
+
+/* While the visitor interacts, keep it dark and readable */
+.left:has(.intro:hover),
+.left:has(.intro:focus-within) {
+  animation: none;
+  background-color: var(--hero-left-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .left {
+    animation: none;
+  }
 }
 
 .intro {
@@ -25,39 +56,10 @@
   align-items: center;
 }
 
-/* Breathing colour: dark brown (readable) ↔ the right panel's red-orange (blends in and hands the
-   focus over to the logo). Holds the dark state most of the time. */
 .welcome {
   margin: 0 0 var(--space-4);
   font-size: var(--fs-display);
-  color: var(--hero-left-ink);
-  animation: breathe 9s ease-in-out infinite;
-}
-
-@keyframes breathe {
-  0%,
-  30%,
-  100% {
-    color: var(--hero-left-ink);
-  }
-
-  55%,
-  70% {
-    color: var(--hero-right);
-  }
-}
-
-/* While the visitor interacts, keep it dark and readable */
-.intro:hover .welcome,
-.intro:focus-within .welcome {
-  animation: none;
-  color: var(--hero-left-ink);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .welcome {
-    animation: none;
-  }
+  color: var(--hero-logo);
 }
 
 .lead {
@@ -116,7 +118,7 @@
   margin: var(--space-5) 0 0;
   font-size: var(--fs-xl);
   text-align: center;
-  color: var(--hero-right-ink);
+  color: var(--hero-logo);
 }
 
 @media (max-width: 48rem) {

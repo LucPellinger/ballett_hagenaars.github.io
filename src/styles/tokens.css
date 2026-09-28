@@ -85,7 +85,9 @@
   --hero-left-ink: #7a2400;
   --hero-right: #d93a00;
   --hero-right-ink: #ffd27a;
-  --hero-logo: #ffa600;
+  --hero-logo: #ffa600; /* brand orange: logo, "Willkommen!" and the school name */
+  --hero-left-deep: #7a2400; /* dark end of the animated welcome panel (brand orange on it: 5.2:1) */
+  --hero-lead-ink: #ffffff; /* lead text on the animated panel (≥ 4.6:1 at both ends) */
   --marquee-bg: #ffa600;
   --team-name: #ff5a1f; /* on dark photo overlay (4.6:1) */
   --team-subjects: #ffb300;

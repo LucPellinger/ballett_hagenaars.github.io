@@ -32,12 +32,13 @@
   border-color: currentColor;
 }
 
-/* Quick links on the orange hero panel */
+/* Quick links on the animated hero panel: brand orange with dark ink */
 .hero {
-  background: var(--hero-left-ink);
-  color: #ffffff;
+  background: var(--palette-orange);
+  color: var(--on-orange);
 }
 
 .hero:hover {
-  background: var(--color-text);
+  background: var(--palette-white);
+  color: var(--on-white);
 }

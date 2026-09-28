@@ -4,9 +4,10 @@ import { ButtonLink, Logo } from '@/components/ui';
 import styles from './HomeHero.module.css';
 
 /**
- * Split colour-block hero. "Willkommen!" slowly pulses between dark brown and the red-orange of the
- * right panel (stops while the visitor interacts, off for reduced motion).: warm orange panel with the welcome + quick links,
- * red-orange panel with the big logo and the school name (page <h1>).
+ * Split colour-block hero. Left: "Willkommen!" + quick links on a panel whose background slowly
+ * shifts from deep brown to the right panel's red-orange and back (pauses while the visitor
+ * interacts, off for reduced motion). Right: the big logo and the school name (page <h1>),
+ * both in the brand orange.
  */
 export function HomeHero({ content }: { content: HeroContent }) {
   const { t } = useLanguage();
