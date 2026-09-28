@@ -32,7 +32,8 @@ One model feeds four things: **TypeScript types**, **CI validation**, **editor f
 | `schedule.json` | timetable (`courseId` → courses, `teacherId` → team) | Stundenplan |
 | `prices.json` | fee plans + notes | Preise |
 | `team.json` | teachers | Team |
-| `quality.json` | "Qualität" text | Qualität |
+| `about.json`, `quality.json`, `pointe.json`, `performance.json` | story pages (text + brush image blocks) | Über uns, Qualität, Spitzentanz, Aufführung |
+| `faq.json` | questions & answers | FAQ |
 | `events.json` | workshops / performances | Events |
 | `gallery.json` | photos | Galerie |
 | `imprint.json`, `privacy.json` | legal sections | Impressum, Datenschutz |
@@ -45,6 +46,8 @@ One model feeds four things: **TypeScript types**, **CI validation**, **editor f
   – `src` is relative to `src/assets/content/`; the file must exist (tested).
 - IDs: kebab-case, unique per collection (tested); the editor generates them.
 - Sample content: `"status": "placeholder"` → dev badge, `yarn content:check`, blocks live deploys.
+- Running text supports `[Linktext](https://…)` (links) and `**Wort**` (orange highlight) – nothing else, no HTML.
+- Colours (`color`, `brush`, `tint`) use the palette names from `PALETTE` in schema.ts.
 
 ## Adding a field or content type
 

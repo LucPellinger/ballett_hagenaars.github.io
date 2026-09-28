@@ -116,10 +116,13 @@ currently published – use it only until the real site goes live (then see tick
 
 ## Design
 
-Poster-inspired typography (see the Flamenco-workshop poster): oversized, tightly tracked grotesk
-headlines in orange on a grainy deep red, black-and-white photography. Colours and type scale are
-defined once in [`src/styles/tokens.css`](src/styles/tokens.css); all colour pairs meet WCAG AA contrast
-in both themes.
+Colour-block collage (based on the Readymag draft): full-width red-orange menu bar with dropdowns,
+language/theme switch and the logo top-right; split orange hero with quick links; a scrolling keyword
+band; big vertical orange section labels; painted brush strokes with duotone photos; colour tiles for
+classes; a portrait wall for the team with "Wer ist …?" profiles. Tokens live in
+[`src/styles/tokens.css`](src/styles/tokens.css) (`--palette-*` + matching `--on-*` ink colours);
+all text colour pairs are checked for WCAG AA in light and dark mode. Fonts (DM Sans, Inter Tight) are
+self-hosted – no requests to Google.
 
 ## License
 

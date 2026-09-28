@@ -50,6 +50,16 @@ Beim Start holt der Editor automatisch die neueste Version von GitHub.
 - Danach bei jedem Bild eine kurze **Bildbeschreibung** eintragen (für blinde Menschen und Google).
 - Nur Fotos verwenden, bei denen die abgebildeten Personen (bei Kindern: die Eltern) zugestimmt haben.
 
+### Links, Farben und Bilder mit Pinselstrich
+
+- **Links im Text:** `[Linktext](https://adresse.de)` – z. B. `[DBfT](https://www.dbft.de)`. Interne Seiten: `[Kontakt](/kontakt)`.
+- **Hervorheben (orange):** `**Wort**`.
+- **Farben** (Kurs-Kacheln, Pinselstriche, Einfärbung der Fotos) wählen Sie aus der Liste – immer Farben der Website.
+- **Fotos auf Pinselstrich** (Über uns, Qualität, Spitzentanz, Aufführung, Philosophie): am schönsten freigestellte Fotos
+  (PNG/WebP mit transparentem Hintergrund). Das Foto wird automatisch in der gewählten Farbe eingefärbt.
+- **Team:** Portrait (Farbe, Hochformat) + optional ein Tanzfoto für die Vorstellung „Wer ist …?“.
+- **Logo:** unter „Schuldaten“ → Logo. Erscheint oben rechts im Menü und groß auf der Startseite.
+
 ### „Beispielinhalt“
 
 Einträge, die noch nicht endgültig sind, haben oben den Haken **Beispielinhalt**. Die Zahl

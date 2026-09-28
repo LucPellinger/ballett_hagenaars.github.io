@@ -44,9 +44,11 @@ yarn ticket:new "Title" --type feat | yarn ticket:move <id> <status> | yarn boar
 - `src/components/{layout,ui,features}/<Name>/` – one folder per component:
   `Name.tsx`, `Name.module.css`, `index.ts`, optional `Name.test.tsx`. Re-export from the group `index.ts`.
   - `layout/` app shell, `ui/` generic building blocks, `features/` domain components.
-- `src/pages/` – one page per route; composes content + components; renders `<PageMeta>` and exactly one `<h1>`
-  (via `<Hero>` or `<PageHeader>`).
-- Routes: URLs in `content/navigation.ts`, component mapping in `src/routes.tsx` (lazy-loaded).
+- `src/pages/` – one page per route; sub-pages use `PageShell` (meta + vertical `h1` rail + lead);
+  the home page's `h1` is the school name in `HomeHero`. Story pages (Über uns, Qualität, Spitzentanz,
+  Aufführung) share `StoryPage`. Modals (team profile, class details) are URL-driven (`?person=`, `?kurs=`).
+- Routes: URLs + dropdown structure in `content/navigation.ts` (`mainNav`, `legalNav`, `redirects` for old URLs),
+  component mapping in `src/routes.tsx` (lazy-loaded).
 - Theme: `data-theme` on `<html>`, tokens in `src/styles/tokens.css`. Set pre-paint in `index.html`.
 - Base path is configurable (`BASE_PATH` env) – always use router `<Link>`/`SmartLink` and imported assets,
   never hard-coded absolute URLs to `/assets/...`.
@@ -61,8 +63,10 @@ yarn ticket:new "Title" --type feat | yarn ticket:move <id> <status> | yarn boar
 3. Every new user-visible string needs `de` (and ideally `en`).
 4. Use tokens (`var(--…)`), no raw hex values in component CSS.
 5. No new runtime dependencies without asking. No external fonts, trackers, embeds (GDPR).
-6. Keep the poster aesthetic: oversized tight grotesk headlines (`--fs-poster`, `--tracking-poster`),
-   grainy red surfaces (`--poster-*`, `--grain`), black & white photos.
+6. Keep the colour-block aesthetic (Readymag draft): full-width red-orange nav, split orange hero,
+   keyword marquee, big vertical section labels (`SectionRail`), brush strokes + duotone photos
+   (`BrushImage`), colour tiles (`--palette-*` with matching `--on-*` ink), tight display type
+   (`.display`, Inter Tight) and DM Sans body. Fonts are self-hosted via @fontsource (no CDN).
 7. Placeholder/sample data must carry `"status": "placeholder"` (JSON) or a `PLACEHOLDER` comment (TS).
 8. New content fields: extend the model in `schema.ts` with editor `.meta()` – never edit types by hand.
 9. Add/extend tests for logic and content integrity; `yarn check` must pass before you finish.
