@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
 import { mainNav, ui, type NavItem } from '@/content';
 import { useLanguage } from '@/i18n';
-import { LanguageSwitcher, Logo, ThemeToggle } from '@/components/ui';
+import { LanguageSwitcher, Logo, TextSizeSwitcher, ThemeToggle } from '@/components/ui';
 import styles from './Header.module.css';
 
 /** True when the current URL belongs to this item or one of its children. */
@@ -137,9 +137,15 @@ export function Header() {
               ),
             )}
           </ul>
+          {/* Small screens: the text size lives in the menu (no room in the bar) */}
+          <div className={styles.menuExtras}>
+            <span>{t(ui.textSize)}</span>
+            <TextSizeSwitcher />
+          </div>
         </nav>
 
         <div className={styles.tools}>
+          <TextSizeSwitcher className={styles.barTextSize} />
           <LanguageSwitcher />
           <ThemeToggle />
         </div>

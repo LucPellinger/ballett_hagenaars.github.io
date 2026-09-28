@@ -435,7 +435,8 @@ function ObjectField({ schema, value, onChange, path, label, extra, depth = 0 }:
   const entries = Object.entries(schema.properties ?? {});
   const statusEntry = entries.find(([, s]) => s.widget === 'status');
   const idEntry = entries.find(([, s]) => s.widget === 'id');
-  const rest = entries.filter(([, s]) => s.widget !== 'status' && s.widget !== 'id');
+  const advanced = entries.filter(([, s]) => s.advanced);
+  const rest = entries.filter(([, s]) => s.widget !== 'status' && s.widget !== 'id' && !s.advanced);
   const body = (
     <>
       {statusEntry && (
@@ -456,6 +457,18 @@ function ObjectField({ schema, value, onChange, path, label, extra, depth = 0 }:
           depth={depth + 1}
         />
       ))}
+      {advanced.length > 0 && (
+        <AdvancedSettings
+          fields={advanced}
+          value={v}
+          path={path}
+          onChange={(key, x) => {
+            const next = { ...v, [key]: x };
+            if (x === undefined) delete next[key];
+            onChange(next);
+          }}
+        />
+      )}
       {idEntry && <Field schema={idEntry[1]} value={v[idEntry[0]]} onChange={(x) => onChange({ ...v, [idEntry[0]]: x })} path={[...path, idEntry[0]]} />}
       <Errors path={path} />
     </>
@@ -469,6 +482,60 @@ function ObjectField({ schema, value, onChange, path, label, extra, depth = 0 }:
       </summary>
       <div className="group-body">{body}</div>
     </details>
+  );
+}
+
+/**
+ * "Erweiterte Texteinstellungen": optional overrides that should rarely be used (e.g. text size of
+ * one component). Collapsed by default, opens by itself when something is set, and always offers
+ * "Standard (empfohlen)" to go back to the design default.
+ */
+function AdvancedSettings({
+  fields,
+  value,
+  path,
+  onChange,
+}: {
+  fields: [string, JS][];
+  value: Record<string, unknown>;
+  path: Path;
+  onChange: (key: string, v: unknown) => void;
+}) {
+  const changed = fields.filter(([k]) => value[k] !== undefined).length;
+  return (
+    <details className="field field--advanced advanced-settings" open={changed > 0 || undefined}>
+      <summary>
+        Erweiterte Texteinstellungen
+        {changed > 0 && <span className="badge badge--warn">angepasst</span>}
+      </summary>
+      <p className="help advanced-warning">
+        ⚠️ Nur verwenden, wenn es unbedingt nötig ist. Die Standardwerte sind auf Handy und Computer abgestimmt.
+      </p>
+      {fields.map(([key, s]) => (
+        <AdvancedSelect key={key} schema={s} value={value[key]} onChange={(x) => onChange(key, x)} path={[...path, key]} />
+      ))}
+    </details>
+  );
+}
+
+function AdvancedSelect({ schema, value, onChange, path }: { schema: JS; value: unknown; onChange: (v: unknown) => void; path: Path }) {
+  const id = useId();
+  const { schema: s } = unwrapNullable(schema);
+  const options = s.enum ?? s.anyOf?.flatMap((x) => x.enum ?? []) ?? [];
+  return (
+    <div className="field">
+      <Label htmlFor={id}>{s.title ?? schema.title}</Label>
+      <select id={id} value={value === undefined ? '' : String(value)} onChange={(e) => onChange(e.target.value === '' ? undefined : e.target.value)}>
+        <option value="">Standard (empfohlen)</option>
+        {options.map((opt) => (
+          <option key={String(opt)} value={String(opt)}>
+            {(s.labels ?? schema.labels)?.[String(opt)] ?? String(opt)}
+          </option>
+        ))}
+      </select>
+      {(s.description ?? schema.description) && <p className="help">{s.description ?? schema.description}</p>}
+      <Errors path={path} />
+    </div>
   );
 }
 

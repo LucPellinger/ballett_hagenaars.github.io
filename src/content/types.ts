@@ -34,6 +34,7 @@ export type {
   ScheduleEntry,
   SiteInfo,
   TeamMember,
+  TextSize,
   Weekday,
 } from './schema';
 

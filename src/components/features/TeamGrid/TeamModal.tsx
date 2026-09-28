@@ -1,5 +1,5 @@
 import type { TeamMember } from '@/content';
-import { ui } from '@/content';
+import { textSizeProps, ui } from '@/content';
 import { useLanguage } from '@/i18n';
 import { Modal, RichParagraphs } from '@/components/ui';
 import styles from './TeamGrid.module.css';
@@ -12,7 +12,7 @@ export function TeamModal({ member, index, onClose }: { member: TeamMember; inde
   const story = member.story ? t(member.story) : [];
   return (
     <Modal open onClose={onClose} labelledBy={headingId} accent={`var(--palette-${member.color})`}>
-      <article className={`${styles.profile} ${index % 2 ? styles.profileReverse : ''}`}>
+      <article className={`${styles.profile} ${index % 2 ? styles.profileReverse : ''}`} {...textSizeProps(member.textSize)}>
         <h2 id={headingId} className={`display ${styles.whoIs}`}>
           <span className={styles.whoIsLine}>{t(ui.whoIs)}</span>
           <span className={styles.whoIsName}>{member.name}?</span>

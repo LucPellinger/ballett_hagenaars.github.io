@@ -18,6 +18,8 @@
           document.documentElement.dataset.theme = t;
           var l = localStorage.getItem('bh-locale');
           if (l === 'en' || l === 'de') document.documentElement.lang = l;
+          var s = localStorage.getItem('bh-text-size');
+          if (s === 'lg' || s === 'xl') document.documentElement.dataset.textSize = s;
         } catch (e) {}
       })();
     </script>

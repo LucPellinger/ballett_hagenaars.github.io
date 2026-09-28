@@ -48,6 +48,11 @@ One model feeds four things: **TypeScript types**, **CI validation**, **editor f
 - Sample content: `"status": "placeholder"` → dev badge, `yarn content:check`, blocks live deploys.
 - Running text supports `[Linktext](https://…)` (links) and `**Wort**` (orange highlight) – nothing else, no HTML.
 - Colours (`color`, `brush`, `tint`) use the palette names from `PALETTE` in schema.ts.
+- `textSize` (optional, `xs|sm|lg|xl`) = per-component text size override („Erweiterte Texteinstellungen“).
+  Fields with `.meta({ advanced: true })` are grouped in a collapsed editor section. Components apply it with
+  `{...textSizeProps(item.textSize)}` on their root → `data-size` → global.css re-derives the `--fs-*` tokens
+  from the `--fs-*-0` design values × `--ts`. Only token-based font sizes scale, so use tokens in component CSS.
+- Visitors can scale all text (`TextSizeSwitcher`, `html[data-text-size]`, 112.5 % / 125 %) – everything is rem.
 
 ## Adding a field or content type
 

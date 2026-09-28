@@ -1,4 +1,4 @@
-import type { StoryBlock } from '@/content';
+import { textSizeProps, type StoryBlock } from '@/content';
 import { useLanguage } from '@/i18n';
 import { BrushImage, RichParagraphs } from '@/components/ui';
 import styles from './StoryBlocks.module.css';
@@ -12,7 +12,7 @@ export function StoryBlocks({ blocks, headingLevel: H = 'h2' }: { blocks: StoryB
   return (
     <div className={styles.blocks}>
       {blocks.map((b, i) => (
-        <div key={i} className={`${styles.row} ${i % 2 ? styles.reverse : ''}`}>
+        <div key={i} className={`${styles.row} ${i % 2 ? styles.reverse : ''}`} {...textSizeProps(b.textSize)}>
           <div className={styles.visual}>
             <BrushImage visual={b.visual} variant={i} />
           </div>

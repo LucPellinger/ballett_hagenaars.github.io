@@ -1,4 +1,4 @@
-import type { Localized, PricePlan } from '@/content';
+import { textSizeProps, type Localized, type PricePlan } from '@/content';
 import { formatPrice, useLanguage } from '@/i18n';
 import { PlaceholderBadge } from '@/components/ui';
 import styles from './PriceTable.module.css';
@@ -16,7 +16,7 @@ export function PriceTable({ plans, notes = [] }: PriceTableProps) {
     <div>
       <ul className={styles.plans}>
         {plans.map((plan) => (
-          <li key={plan.id} className={`${styles.plan} ${plan.highlight ? styles.highlight : ''}`}>
+          <li key={plan.id} className={`${styles.plan} ${plan.highlight ? styles.highlight : ''}`} {...textSizeProps(plan.textSize)}>
             <h2 className={styles.title}>
               {t(plan.title)}
               <PlaceholderBadge status={plan.status} />

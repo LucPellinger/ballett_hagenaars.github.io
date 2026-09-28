@@ -718,6 +718,41 @@ fieldset {
   margin-top: 0.5rem;
 }
 
+.advanced-settings {
+  margin-bottom: 1rem;
+}
+
+.advanced-settings > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.advanced-settings[open] > summary {
+  margin-bottom: 0.5rem;
+}
+
+.advanced-settings select {
+  margin-top: 0.25rem;
+}
+
+.badge {
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.badge--warn {
+  background: #fff3cd;
+  color: #6b4a00;
+}
+
+.advanced-warning {
+  margin: 0 0 0.75rem;
+}
+
 /* ───────── drop zones ───────── */
 .dropzone {
   display: flex;

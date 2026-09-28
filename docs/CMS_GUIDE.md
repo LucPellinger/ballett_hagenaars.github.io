@@ -60,6 +60,18 @@ Beim Start holt der Editor automatisch die neueste Version von GitHub.
 - **Team:** Portrait (Farbe, Hochformat) + optional ein Tanzfoto für die Vorstellung „Wer ist …?“.
 - **Logo:** unter „Schuldaten“ → Logo. Erscheint oben links im Menü (neben „home“) und groß auf der Startseite.
 
+### Erweiterte Texteinstellungen (nur im Notfall)
+
+Bei vielen Bereichen (Seiten-Kopfbereich, Abschnitte, Kurse, Team, Events, FAQ, Preise …) gibt es unten
+eingeklappt **„Erweiterte Texteinstellungen“** mit der **Schriftgröße** nur für diesen Bereich
+(Sehr klein 80 % bis Sehr groß 130 %).
+
+- Bitte **nur verwenden, wenn es unbedingt nötig ist** – z. B. wenn ein sehr langer Text nicht gut passt.
+  Die normale Größe ist auf Handy und Computer abgestimmt.
+- Zurück zum Normalzustand: **„Standard (empfohlen)“** wählen.
+- Geänderte Bereiche erkennt man am gelben Hinweis **„angepasst“**.
+- Besucher können die Schrift der ganzen Website zusätzlich selbst vergrößern (Knöpfe **A A A** oben im Menü).
+
 ### „Beispielinhalt“
 
 Einträge, die noch nicht endgültig sind, haben oben den Haken **Beispielinhalt**. Die Zahl

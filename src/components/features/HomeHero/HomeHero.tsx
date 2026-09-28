@@ -1,4 +1,4 @@
-import type { HeroContent } from '@/content';
+import { textSizeProps, type HeroContent } from '@/content';
 import { useLanguage } from '@/i18n';
 import { ButtonLink, Logo } from '@/components/ui';
 import styles from './HomeHero.module.css';
@@ -12,7 +12,7 @@ import styles from './HomeHero.module.css';
 export function HomeHero({ content }: { content: HeroContent }) {
   const { t } = useLanguage();
   return (
-    <div className={styles.hero}>
+    <div className={styles.hero} {...textSizeProps(content.textSize)}>
       <div className={styles.left}>
         {/* Hovering (or keyboard-focusing) this block reveals the quick links on desktop;
             on touch devices and small screens they are always visible. */}

@@ -12,4 +12,5 @@ export * from './ScrollCue';
 export * from './SectionHeader';
 export * from './SectionRail';
 export * from './SmartLink';
+export * from './TextSizeSwitcher';
 export * from './ThemeToggle';

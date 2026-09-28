@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { pages, type PageId } from '@/content';
+import { pages, textSizeProps, type PageId } from '@/content';
 import { useLanguage } from '@/i18n';
 import { PageMeta, RichText, SectionRail } from '@/components/ui';
 import styles from './PageShell.module.css';
@@ -14,7 +14,7 @@ export function PageShell({ page, children, wide = false }: { page: PageId; chil
       <SectionRail as="h1" label={t(header.title)} id={`page-${page}`}>
         <div className={wide ? styles.wide : styles.body}>
           {(header.eyebrow || header.lead) && (
-            <div className={styles.intro}>
+            <div className={styles.intro} {...textSizeProps(header.textSize)}>
               {header.eyebrow && <p className={styles.eyebrow}>{t(header.eyebrow)}</p>}
               {header.lead && (
                 <p className={styles.lead}>

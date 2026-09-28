@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import type { Course } from '@/content';
-import { ui } from '@/content';
+import { textSizeProps, ui } from '@/content';
 import { useLanguage } from '@/i18n';
 import { ButtonLink, Modal, PlaceholderBadge, RichParagraphs } from '@/components/ui';
 import { paletteVars } from '@/styles/palette';
@@ -41,7 +41,7 @@ export function CourseTiles({ courses, preview = false }: CourseTilesProps) {
     <>
       <ul className={styles.grid}>
         {courses.map((c) => (
-          <li key={c.id} style={paletteVars(c.color) as CSSProperties} className={styles.cell}>
+          <li key={c.id} style={paletteVars(c.color) as CSSProperties} className={styles.cell} {...textSizeProps(c.textSize)}>
             {preview ? (
               <Link to={`/kurse?kurs=${c.id}`} className={styles.tile}>
                 {inner(c)}
@@ -57,7 +57,7 @@ export function CourseTiles({ courses, preview = false }: CourseTilesProps) {
       </ul>
       {current && (
         <Modal open onClose={() => open(null)} labelledBy={`course-${current.id}`} accent={`var(--palette-${current.color})`}>
-          <article className={styles.detail}>
+          <article className={styles.detail} {...textSizeProps(current.textSize)}>
             <p className={styles.detailAge}>{t(current.ageGroup)}</p>
             <h2 id={`course-${current.id}`} className={`display ${styles.detailTitle}`}>
               {t(current.title)}
