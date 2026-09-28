@@ -6,10 +6,10 @@
 | Status | Count |
 |---|---|
 | 🗂 Backlog | 7 |
-| 📋 To do | 8 |
-| 🚧 In progress | 0 |
-| 👀 Review | 6 |
-| ✅ Done | 1 |
+| 📋 To do | 6 |
+| 🚧 In progress | 1 |
+| 👀 Review | 2 |
+| ✅ Done | 7 |
 
 ## 🗂 Backlog
 
@@ -27,28 +27,24 @@
 
 | # | Type | Title | Priority | Branch |
 |---|---|---|---|---|
-| [#2](tickets/002-create-github-repo-enable-pages-and-bran.md) | chore | Create GitHub repo, enable Pages and branch protection | high | `chore/2-create-github-repo-enable-pages-and-bran` |
 | [#3](tickets/003-replace-sample-timetable-with-the-real-s.md) | content | Replace sample timetable with the real Stundenplan | high | `content/3-replace-sample-timetable-with-the-real-s` |
 | [#4](tickets/004-enter-real-fees.md) | content | Enter real fees | high | `content/4-enter-real-fees` |
 | [#5](tickets/005-review-course-descriptions-and-english-t.md) | content | Review course descriptions and English translations | medium | `content/5-review-course-descriptions-and-english-t` |
 | [#6](tickets/006-confirm-team-members-and-add-portrait-ph.md) | content | Confirm team members and add portrait photos | medium | `content/6-confirm-team-members-and-add-portrait-ph` |
-| [#7](tickets/007-hero-photo-in-poster-style.md) | feat | Hero photo in poster style | medium | `feat/7-hero-photo-in-poster-style` |
 | [#8](tickets/008-legal-review-datenschutzerklaerung-and-i.md) | content | Legal review: Datenschutzerklärung and Impressum | high | `content/8-legal-review-datenschutzerklaerung-and-i` |
 | [#10](tickets/010-events-2026-27-incl-flamenco-workshop-wi.md) | content | Events 2026/27 incl. Flamenco workshop with Joaquín Ruiz | medium | `content/10-events-2026-27-incl-flamenco-workshop-wi` |
 
 ## 🚧 In progress
 
-_empty_
+| # | Type | Title | Priority | Branch |
+|---|---|---|---|---|
+| [#2](tickets/002-create-github-repo-enable-pages-and-bran.md) | chore | Create GitHub repo, enable Pages and branch protection | high | `chore/2-create-github-repo-enable-pages-and-bran` |
 
 ## 👀 Review
 
 | # | Type | Title | Priority | Branch |
 |---|---|---|---|---|
-| [#17](tickets/017-preview-deployment-for-review.md) | ci | Preview deployment for review | high | `ci/17-preview-deployment-for-review` |
-| [#18](tickets/018-add-proprietary-license.md) | chore | Add proprietary license | medium | `chore/18-add-proprietary-license` |
 | [#19](tickets/019-visual-content-editor.md) | feat | Visual content editor (CMS) with one-click publishing | high | `feat/19-visual-content-editor-cms-with-one-click` |
-| [#20](tickets/020-redesign-readymag-style.md) | feat | Redesign in Readymag style + new page structure | high | `feat/20-redesign-in-readymag-style-new-page-stru` |
-| [#21](tickets/021-fix-promote-sh-on-macos-bash-3-2.md) | fix | Fix promote.sh on macOS bash 3.2 | medium | `fix/21-fix-promote-sh-on-macos-bash-3-2` |
 | [#23](tickets/023-text-size-controls.md) | feat | Text size for visitors, smaller page intros, per-component text size in the editor | medium | `feat/23-text-size-for-visitors-smaller-page-intr` |
 
 ## ✅ Done
@@ -56,4 +52,10 @@ _empty_
 | # | Type | Title | Priority | Branch |
 |---|---|---|---|---|
 | [#1](tickets/001-project-setup-vite-react-typescript-ci-c.md) | chore | Project setup: Vite, React, TypeScript, CI/CD, docs | high | `chore/1-project-setup-vite-react-typescript-ci-c` |
+| [#7](tickets/007-hero-photo-in-poster-style.md) | feat | Hero photo in poster style | medium | `feat/7-hero-photo-in-poster-style` |
+| [#17](tickets/017-preview-deployment-for-review.md) | ci | Preview deployment for review | high | `ci/17-preview-deployment-for-review` |
+| [#18](tickets/018-add-proprietary-license.md) | chore | Add proprietary license | medium | `chore/18-add-proprietary-license` |
+| [#20](tickets/020-redesign-readymag-style.md) | feat | Redesign in Readymag style + new page structure | high | `feat/20-redesign-in-readymag-style-new-page-stru` |
+| [#21](tickets/021-fix-promote-sh-on-macos-bash-3-2.md) | fix | Fix promote.sh on macOS bash 3.2 | medium | `fix/21-fix-promote-sh-on-macos-bash-3-2` |
+| [#24](tickets/024-ticket-board-cleanup.md) | chore | Ticket board cleanup after the first release | low | `chore/24-ticket-board-cleanup-after-the-first-rel` |
 
