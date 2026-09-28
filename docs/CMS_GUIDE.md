@@ -120,8 +120,8 @@ Adresse der Website: <https://lucpellinger.eu/ballett_hagenaars.github.io/>
 Der Kurs wird noch im Stundenplan verwendet. Erst die Termine im Stundenplan löschen oder einem
 anderen Kurs zuordnen.
 
-**Die Lehrkraft / der Kurs erscheint nicht in der Auswahl im Stundenplan.**
-Neue Kurse und Personen zuerst anlegen und **speichern**, dann erscheinen sie in der Auswahl.
+**Der Kurs erscheint nicht in der Auswahl im Stundenplan.**
+Neue Kurse zuerst anlegen und **speichern**, dann erscheinen sie in der Auswahl.
 
 **„Hochladen fehlgeschlagen“.**
 Internetverbindung prüfen. Wenn es bleibt: Luc fragen (Zugang zu GitHub).

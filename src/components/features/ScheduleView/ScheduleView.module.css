@@ -83,6 +83,10 @@
   border-top: 1px solid var(--color-border);
 }
 
+.table thead th:first-child {
+  width: 9rem; /* same time column in every day table */
+}
+
 .table thead th {
   border-top: 0;
   font-family: var(--font-sans);
@@ -145,11 +149,6 @@
   .table td {
     border: 0;
     padding: var(--space-1) 0;
-  }
-
-  .table td:last-child {
-    grid-column: 2;
-    color: var(--color-text-muted);
   }
 
   .views {

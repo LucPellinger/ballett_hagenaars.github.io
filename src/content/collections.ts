@@ -203,7 +203,7 @@ export const collections: CollectionDef[] = [
   {
     id: 'team',
     label: 'Team',
-    description: 'Lehrkräfte. Werden im Stundenplan als „Lehrkraft“ ausgewählt.',
+    description: 'Lehrkräfte – erscheinen auf der Team-Seite.',
     file: 'team.json',
     kind: 'list',
     schema: z.array(teamMemberSchema),

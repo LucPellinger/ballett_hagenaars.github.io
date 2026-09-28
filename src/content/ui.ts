@@ -26,7 +26,6 @@ export const ui = {
   time: { de: 'Zeit', en: 'Time' },
   course: { de: 'Kurs', en: 'Class' },
   level: { de: 'Stufe', en: 'Level' },
-  teacher: { de: 'Lehrkraft', en: 'Teacher' },
   noEntries: { de: 'Keine Kurse für diese Auswahl.', en: 'No classes for this selection.' },
   view: { de: 'Ansicht', en: 'View' },
   listView: { de: 'Liste', en: 'List' },

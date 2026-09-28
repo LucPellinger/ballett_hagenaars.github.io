@@ -367,7 +367,6 @@ export const scheduleEntrySchema = z
     end: time('Ende'),
     courseId: z.string().min(1, 'Bitte einen Kurs wählen.').meta({ title: 'Kurs', widget: 'ref', ref: 'courses' }),
     level: localized('Stufe', { help: 'Optional, z. B. „Stufe 1“' }).optional(),
-    teacherId: z.string().optional().meta({ title: 'Lehrkraft', widget: 'ref', ref: 'team' }),
     status,
   })
   .refine((e) => e.start < e.end, { message: 'Das Ende muss nach dem Beginn liegen.', path: ['end'] })

@@ -29,7 +29,7 @@ One model feeds four things: **TypeScript types**, **CI validation**, **editor f
 | `home.json` | hero, highlights, section headings | Startseite |
 | `pages.json` | `<title>`, SEO description, red page header per page | Seitentitel |
 | `courses.json` | classes | Kurse |
-| `schedule.json` | timetable (`courseId` → courses, `teacherId` → team) | Stundenplan |
+| `schedule.json` | timetable (`courseId` → courses) | Stundenplan |
 | `prices.json` | fee plans + notes | Preise |
 | `team.json` | teachers | Team |
 | `about.json`, `quality.json`, `pointe.json`, `performance.json` | story pages (text + brush image blocks) | Über uns, Qualität, Spitzentanz, Aufführung |
