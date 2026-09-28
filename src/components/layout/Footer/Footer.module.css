@@ -22,7 +22,7 @@
 .logo {
   height: 4.5rem;
   margin-bottom: var(--space-4);
-  color: var(--hero-right-ink);
+  color: var(--palette-orange);
 }
 
 .name {

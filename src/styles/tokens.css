@@ -54,7 +54,7 @@
 
   /* Decorative palette (tiles, brush strokes, duotone, marquee) */
   --palette-redorange: #ff4f00;
-  --palette-orange: #ffa400;
+  --palette-orange: #ffa600; /* brand orange (logo) */
   --palette-tangerine: #ff8a00;
   --palette-yellow: #ffc400;
   --palette-pink: #ffd1e6;
@@ -85,8 +85,8 @@
   --hero-left-ink: #7a2400;
   --hero-right: #d93a00;
   --hero-right-ink: #ffd27a;
-  --hero-logo: #ffa83a;
-  --marquee-bg: #ffa400;
+  --hero-logo: #ffa600;
+  --marquee-bg: #ffa600;
   --team-name: #ff5a1f; /* on dark photo overlay (4.6:1) */
   --team-subjects: #ffb300;
 }
@@ -103,7 +103,9 @@
   --color-text-muted: #5a4f4a;
   --color-accent: #d93a00; /* red-orange: names, emphasis, buttons (4.6:1) */
   --color-accent-contrast: #ffffff;
-  --color-display: #c96400; /* orange for rails / "Wer ist" – large text only (3.9:1) */
+  /* orange for rails / "Wer ist": the brand orange #ffa600 is too light on white (1.9:1),
+     so light mode uses a deeper shade (3.9:1, large text); dark mode uses #ffa600 itself. */
+  --color-display: #c96400;
   --color-link: #a84e00; /* orange links in running text (5.6:1) */
   --color-focus: #1f5fbf;
   --shadow-md: 0 10px 30px rgb(40 10 5 / 0.14);
@@ -121,7 +123,7 @@
   --color-text-muted: #bdafa8;
   --color-accent: #ff6a2e;
   --color-accent-contrast: #1a0d0a;
-  --color-display: #ffa400;
+  --color-display: #ffa600;
   --color-link: #ffb255;
   --color-focus: #8ab4ff;
   --shadow-md: 0 10px 30px rgb(0 0 0 / 0.5);

@@ -43,7 +43,7 @@ export function CourseTiles({ courses, preview = false }: CourseTilesProps) {
         {courses.map((c) => (
           <li key={c.id} style={paletteVars(c.color) as CSSProperties} className={styles.cell}>
             {preview ? (
-              <Link to={`/angebot/kurse?kurs=${c.id}`} className={styles.tile}>
+              <Link to={`/kurse?kurs=${c.id}`} className={styles.tile}>
                 {inner(c)}
               </Link>
             ) : (
@@ -66,7 +66,7 @@ export function CourseTiles({ courses, preview = false }: CourseTilesProps) {
             <div className={styles.description}>
               <RichParagraphs items={t(current.description)} />
             </div>
-            <ButtonLink href={`/angebot/stundenplan?kurs=${current.id}`}>{t(ui.toSchedule)}</ButtonLink>
+            <ButtonLink href={`/stundenplan?kurs=${current.id}`}>{t(ui.toSchedule)}</ButtonLink>
           </article>
         </Modal>
       )}

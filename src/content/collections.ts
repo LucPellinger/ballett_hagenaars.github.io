@@ -137,7 +137,7 @@ export const collections: CollectionDef[] = [
     schema: z.array(courseSchema),
     itemSchema: courseSchema,
     group: 'Angebot',
-    previewPath: '/angebot/kurse',
+    previewPath: '/kurse',
     itemNoun: 'Kurs',
     itemLabel: (c) => de(c.title) || 'Neuer Kurs',
     itemSubLabel: (c) => de(c.ageGroup),
@@ -162,7 +162,7 @@ export const collections: CollectionDef[] = [
     schema: z.array(scheduleEntrySchema),
     itemSchema: scheduleEntrySchema,
     group: 'Angebot',
-    previewPath: '/angebot/stundenplan',
+    previewPath: '/stundenplan',
     itemNoun: 'Termin',
     itemLabel: (e, all) => findTitle(all, 'courses', e.courseId) || 'Neuer Termin',
     itemSubLabel: (e) =>
@@ -178,7 +178,7 @@ export const collections: CollectionDef[] = [
     kind: 'single',
     schema: pricesSchema,
     group: 'Angebot',
-    previewPath: '/angebot/preise',
+    previewPath: '/preise',
   },
   {
     id: 'about',

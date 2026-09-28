@@ -49,8 +49,8 @@
 }
 
 .logo {
-  width: min(80%, 34rem);
-  aspect-ratio: 120 / 100;
+  width: min(85%, 38rem);
+  aspect-ratio: 1119 / 697;
   color: var(--hero-logo);
 }
 

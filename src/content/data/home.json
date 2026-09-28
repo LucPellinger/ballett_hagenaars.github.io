@@ -18,21 +18,21 @@
           "de": "Stundenplan",
           "en": "Timetable"
         },
-        "href": "/angebot/stundenplan"
+        "href": "/stundenplan"
       },
       {
         "label": {
           "de": "Kurse",
           "en": "Classes"
         },
-        "href": "/angebot/kurse"
+        "href": "/kurse"
       },
       {
         "label": {
           "de": "Preise",
           "en": "Fees"
         },
-        "href": "/angebot/preise"
+        "href": "/preise"
       },
       {
         "label": {

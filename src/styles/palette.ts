@@ -6,7 +6,7 @@ import type { PaletteColor } from '@/content';
  */
 export const PALETTE_HEX: Record<PaletteColor, string> = {
   redorange: '#ff4f00',
-  orange: '#ffa400',
+  orange: '#ffa600',
   tangerine: '#ff8a00',
   yellow: '#ffc400',
   pink: '#ffd1e6',

@@ -124,9 +124,9 @@
 
 .logo {
   display: block;
-  height: calc(var(--nav-h) - 8px);
-  padding: 2px var(--space-1);
-  color: var(--hero-right-ink);
+  height: calc(var(--nav-h) - 10px);
+  padding: 0 var(--space-1);
+  color: var(--palette-orange);
 }
 
 .menuButton {

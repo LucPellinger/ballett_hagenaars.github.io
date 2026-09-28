@@ -21,16 +21,9 @@ export const mainNav: NavItem[] = [
     ],
   },
   { page: 'news', path: '/aktuelles', label: { de: 'aktuelles', en: 'news' } },
-  {
-    page: 'courses',
-    path: '/angebot/kurse',
-    label: { de: 'angebot', en: 'classes' },
-    children: [
-      { page: 'courses', path: '/angebot/kurse', label: { de: 'Kurse', en: 'Classes' } },
-      { page: 'schedule', path: '/angebot/stundenplan', label: { de: 'Stundenplan', en: 'Timetable' } },
-      { page: 'prices', path: '/angebot/preise', label: { de: 'Preise', en: 'Fees' } },
-    ],
-  },
+  { page: 'courses', path: '/kurse', label: { de: 'kurse', en: 'classes' } },
+  { page: 'schedule', path: '/stundenplan', label: { de: 'stundenplan', en: 'timetable' } },
+  { page: 'prices', path: '/preise', label: { de: 'preise', en: 'fees' } },
   { page: 'gallery', path: '/galerie', label: { de: 'galerie', en: 'gallery' } },
   { page: 'contact', path: '/kontakt', label: { de: 'kontakt', en: 'contact' } },
 ];
@@ -57,12 +50,13 @@ export const navigation: NavItem[] = (() => {
 
 /** Old URLs (previous site version) → new URLs. */
 export const redirects: Record<string, string> = {
-  '/unterricht': '/angebot/kurse',
-  '/stundenplan': '/angebot/stundenplan',
-  '/preise': '/angebot/preise',
+  '/unterricht': '/kurse',
+  '/angebot': '/kurse',
+  '/angebot/kurse': '/kurse',
+  '/angebot/stundenplan': '/stundenplan',
+  '/angebot/preise': '/preise',
   '/ballettschule': '/ueber-uns',
   '/events': '/aktuelles',
-  '/angebot': '/angebot/kurse',
 };
 
 export function pathFor(page: PageId): string {
