@@ -1,15 +1,11 @@
-import { courses, pages, schedule, team } from '@/content';
-import { PageHeader, PageMeta } from '@/components/ui';
+import { courses, schedule } from '@/content';
 import { ScheduleView } from '@/components/features';
+import { PageShell } from './PageShell';
 
 export function SchedulePage() {
   return (
-    <>
-      <PageMeta meta={pages.schedule.meta} />
-      <PageHeader content={pages.schedule.header} />
-      <div className="container section">
-        <ScheduleView entries={schedule} courses={courses} team={team} />
-      </div>
-    </>
+    <PageShell page="schedule">
+      <ScheduleView entries={schedule} courses={courses} />
+    </PageShell>
   );
 }

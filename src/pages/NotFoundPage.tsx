@@ -1,6 +1,6 @@
 import { ui } from '@/content';
 import { useLanguage } from '@/i18n';
-import { ButtonLink, PageHeader } from '@/components/ui';
+import { ButtonLink, SectionRail } from '@/components/ui';
 
 export function NotFoundPage() {
   const { t } = useLanguage();
@@ -8,10 +8,11 @@ export function NotFoundPage() {
     <>
       <title>{`404 · ${t(ui.notFoundTitle)}`}</title>
       <meta name="robots" content="noindex" />
-      <PageHeader content={{ eyebrow: { de: '404' }, title: ui.notFoundTitle, lead: ui.notFoundText }} />
-      <div className="container section">
+      <SectionRail as="h1" label="404">
+        <p style={{ fontSize: 'var(--fs-lg)', fontWeight: 600 }}>{t(ui.notFoundTitle)}</p>
+        <p>{t(ui.notFoundText)}</p>
         <ButtonLink href="/">{t(ui.backHome)}</ButtonLink>
-      </div>
+      </SectionRail>
     </>
   );
 }

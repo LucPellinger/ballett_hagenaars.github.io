@@ -1,3 +1,3 @@
 export { ScheduleView } from './ScheduleView';
 export type { ScheduleViewProps } from './ScheduleView';
-export { groupByDay, filterByAudience, WEEKDAYS } from './scheduleUtils';
+export { calendarFrame, filterByAudience, filterByCourse, groupByDay, WEEKDAYS } from './scheduleUtils';

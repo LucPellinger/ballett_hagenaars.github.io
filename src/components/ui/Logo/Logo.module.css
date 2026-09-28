@@ -1,0 +1,20 @@
+.logo {
+  display: block;
+  height: 100%;
+  aspect-ratio: 1119 / 697;
+  object-fit: contain;
+}
+
+.mask {
+  background-color: currentColor;
+  -webkit-mask: var(--logo-url) center / contain no-repeat;
+  mask: var(--logo-url) center / contain no-repeat;
+}
+
+/* Windows high-contrast mode ignores background colours – keep the logo visible */
+@media (forced-colors: active) {
+  .mask {
+    background-color: CanvasText;
+    forced-color-adjust: none;
+  }
+}

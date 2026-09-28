@@ -20,11 +20,11 @@ describe('<Header>', () => {
     const user = userEvent.setup();
     renderWithProviders(<Header />);
     const nav = await screen.findByRole('navigation', { name: 'Hauptnavigation' });
-    expect(within(nav).getByRole('link', { name: 'Stundenplan' })).toBeInTheDocument();
+    expect(within(nav).getByRole('link', { name: /^stundenplan$/i })).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'English' }));
     expect(document.documentElement.lang).toBe('en');
-    expect(screen.getByRole('link', { name: 'Timetable' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /^timetable$/i })).toBeInTheDocument();
   });
 
   it('toggles dark mode', async () => {

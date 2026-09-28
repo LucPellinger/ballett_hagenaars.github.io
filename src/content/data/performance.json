@@ -1,0 +1,35 @@
+{
+  "status": "placeholder",
+  "blocks": [
+    {
+      "paragraphs": {
+        "de": [
+          "Ein besonderes Highlight: Alle zwei Jahre gibt es die Möglichkeit, Bühnenerfahrung bei einer eindrucksvollen Ballettaufführung im Saalbau Neustadt vor großem Publikum zu sammeln.",
+          "Alle Kurse – von den Kleinsten bis zu den Erwachsenen – wirken mit. Monatelang wird geprobt, genäht und gefiebert."
+        ],
+        "en": [
+          "A special highlight: every two years our students gain stage experience in an impressive ballet performance at Saalbau Neustadt in front of a large audience.",
+          "All classes take part – from the youngest to the adults. Months of rehearsals, costume sewing and excitement."
+        ]
+      },
+      "visual": {
+        "brush": "orange",
+        "tint": "purple"
+      }
+    },
+    {
+      "paragraphs": {
+        "de": [
+          "Termine und Karten für die nächste Aufführung findest du unter [Aktuelles](/aktuelles)."
+        ],
+        "en": [
+          "Dates and tickets for the next performance are listed under [News](/aktuelles)."
+        ]
+      },
+      "visual": {
+        "brush": "lightblue",
+        "tint": "blue"
+      }
+    }
+  ]
+}

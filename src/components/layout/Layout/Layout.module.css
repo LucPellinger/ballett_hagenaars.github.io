@@ -3,6 +3,12 @@
   outline: none;
 }
 
+/* Focus is moved here programmatically after navigation – no ring needed */
+.main:focus,
+.main:focus-visible {
+  outline: none;
+}
+
 .loading {
   min-height: 60vh;
 }

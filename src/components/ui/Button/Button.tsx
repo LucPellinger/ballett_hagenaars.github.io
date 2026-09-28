@@ -5,7 +5,7 @@ import styles from './Button.module.css';
 export interface ButtonLinkProps {
   href: string;
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'poster' | 'posterOutline';
+  variant?: 'primary' | 'secondary' | 'hero';
 }
 
 /** Call-to-action rendered as a link (all CTAs on this site navigate somewhere). */

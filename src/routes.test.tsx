@@ -13,7 +13,7 @@ describe('every page renders with exactly one <h1>', () => {
 
   it('unknown URLs show the 404 page', async () => {
     renderRoute('/gibt-es-nicht');
-    expect(await screen.findByRole('heading', { level: 1, name: 'Seite nicht gefunden' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: '404' })).toBeInTheDocument();
   });
 
   it('pages render in English', async () => {

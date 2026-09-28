@@ -1,28 +1,34 @@
 /*
  * Design tokens – the single source of truth for colours, type and spacing.
- * All colour pairs are checked for WCAG 2.2 AA contrast (see docs/ACCESSIBILITY.md).
- * Components must use these variables instead of hard-coded values.
+ * Look & feel: bright colour-block collage (orange/red-orange/pink/blue/purple), brush strokes,
+ * duotone photos, oversized tight headlines and vertical section labels.
+ *
+ * Text colour pairs are checked for WCAG 2.2 AA (4.5:1 body, 3:1 large display text) in both themes.
+ * `--palette-*` colours are decorative (tiles, brush strokes, marquee); text placed on them uses
+ * the matching `--on-*` ink colour.
  */
 :root {
-  /* Typography – system grotesk stack (no external font requests → GDPR-friendly, fast) */
-  --font-sans: 'Helvetica Neue', Helvetica, Arial, 'Nimbus Sans', 'Liberation Sans', system-ui, sans-serif;
-  --font-display: var(--font-sans);
+  /* Typography – self-hosted variable fonts (no requests to third parties) */
+  --font-sans: 'DM Sans Variable', 'DM Sans', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Inter Tight Variable', 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --fs-xs: 0.8125rem;
   --fs-sm: 0.9375rem;
-  --fs-base: 1.0625rem;
-  --fs-md: 1.25rem;
-  --fs-lg: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
-  --fs-xl: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
-  --fs-poster: clamp(3.4rem, 1.2rem + 8.5vw, 9.5rem);
-  --fs-poster-sm: clamp(2.5rem, 1.2rem + 5.5vw, 6.5rem);
+  --fs-base: 1.125rem;
+  --fs-md: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
+  --fs-lg: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
+  --fs-xl: clamp(2.2rem, 1.4rem + 3vw, 4rem);
+  --fs-display: clamp(2.8rem, 1.2rem + 6vw, 6.5rem);
+  --fs-rail: clamp(2.6rem, 1.6rem + 3vw, 4.5rem);
+  --fs-marquee: clamp(1.8rem, 1.2rem + 2.4vw, 3.4rem);
+  --fs-nav: clamp(1rem, 0.85rem + 0.45vw, 1.35rem);
 
-  --lh-tight: 0.88;
+  --lh-tight: 0.92;
   --lh-snug: 1.2;
-  --lh-body: 1.6;
-  --tracking-poster: -0.045em;
+  --lh-body: 1.45;
+  --tracking-display: -0.055em;
 
-  /* Spacing scale */
+  /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -33,65 +39,98 @@
   --space-8: 4.5rem;
   --space-9: 7rem;
 
-  --gutter: clamp(1rem, 0.5rem + 3vw, 3.5rem);
-  --content-max: 76rem;
-  --prose-max: 42rem;
+  /* Vertical rhythm: space around page sections and between content blocks inside them */
+  --section-space: clamp(6rem, 4.25rem + 7.2vw, 10rem); /* full size from 1280px; 1.5× between stacked sections = 15rem */
+  --block-space: clamp(3.5rem, 2rem + 4.5vw, 7.5rem);
+
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3.5rem);
+  --rail-w: clamp(3.5rem, 2rem + 4vw, 7.5rem);
+  --content-max: 96rem;
+  --prose-max: 40rem;
 
   --radius-sm: 6px;
   --radius-md: 12px;
-  --radius-lg: 20px;
-
   --tap-target: 44px;
-  --header-h: 4.25rem;
+  --nav-h: clamp(2.75rem, 2.2rem + 1.2vw, 3.5rem);
 
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --dur: 220ms;
 
-  /* Film-grain texture used on poster surfaces (inline SVG, no request) */
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  /* Decorative palette (tiles, brush strokes, duotone, marquee) */
+  --palette-redorange: #ff4f00;
+  --palette-orange: #ffa600; /* brand orange (logo) */
+  --palette-tangerine: #ff8a00;
+  --palette-yellow: #ffc400;
+  --palette-pink: #ffd1e6;
+  --palette-lightblue: #b7d5ff;
+  --palette-blue: #2233cc;
+  --palette-purple: #6e3590;
+  --palette-crimson: #a30000;
+  --palette-black: #141414;
+  --palette-white: #ffffff;
+
+  /* Ink colours for large text on each palette colour (≥ 3:1) */
+  --on-redorange: #ffffff;
+  --on-orange: #1a1a1a;
+  --on-tangerine: #1a1a1a;
+  --on-yellow: #1a1a1a;
+  --on-pink: #c22e00;
+  --on-lightblue: #1a2bb8;
+  --on-blue: #ffffff;
+  --on-purple: #ffffff;
+  --on-crimson: #ffffff;
+  --on-black: #ffffff;
+  --on-white: #1a1a1a;
+
+  /* Brand surfaces (same in both themes) */
+  --brand-nav: #d93a00;
+  --brand-nav-ink: #ffffff;
+  --hero-left: #ff8a00;
+  --hero-left-ink: #7a2400;
+  --hero-right: #d93a00;
+  --hero-right-ink: #ffd27a;
+  --hero-logo: #ffa600; /* brand orange: logo, "Willkommen!" and the school name */
+  --hero-lead-ink: #141414; /* lead text on the animated welcome panel (4.0:1 on red-orange, 9.4:1 on orange) */
+  --marquee-bg: #ffa600;
+  --team-name: #ff5a1f; /* on dark photo overlay (4.6:1) */
+  --team-subjects: #ffb300;
 }
 
 /* ---------- Light theme (default) ---------- */
 :root,
 :root[data-theme='light'] {
   color-scheme: light;
-  --color-bg: #fbf6f2;
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-2: #f3ebe5;
-  --color-border: #e2d5cd;
-  --color-text: #1d1614;
-  --color-text-muted: #5d4d48;
-  --color-accent: #a3261a;
+  --color-surface-2: #f6f1ec;
+  --color-border: #e6ddd6;
+  --color-text: #111111;
+  --color-text-muted: #5a4f4a;
+  --color-accent: #d93a00; /* red-orange: names, emphasis, buttons (4.6:1) */
   --color-accent-contrast: #ffffff;
-  --color-accent-2: #b4441a;
+  /* orange for rails / "Wer ist": the brand orange #ffa600 is too light on white (1.9:1),
+     so light mode uses a deeper shade (3.9:1, large text); dark mode uses #ffa600 itself. */
+  --color-display: #c96400;
+  --color-link: #a84e00; /* orange links in running text (5.6:1) */
   --color-focus: #1f5fbf;
-
-  --poster-bg: #8f1f16;
-  --poster-headline: #ffa47a;
-  --poster-ink: #fff4ec;
-
-  --shadow-sm: 0 1px 2px rgb(40 10 5 / 0.08);
-  --shadow-md: 0 8px 24px rgb(40 10 5 / 0.1);
+  --shadow-md: 0 10px 30px rgb(40 10 5 / 0.14);
+  --modal-backdrop: rgb(20 10 5 / 0.55);
 }
 
 /* ---------- Dark theme ---------- */
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --color-bg: #161010;
-  --color-surface: #221a19;
-  --color-surface-2: #2c2220;
-  --color-border: #3d302d;
-  --color-text: #f6eeea;
-  --color-text-muted: #c3b3ad;
-  --color-accent: #ff8a66;
+  --color-bg: #121010;
+  --color-surface: #1c1817;
+  --color-surface-2: #26201e;
+  --color-border: #3a302d;
+  --color-text: #f3ece7;
+  --color-text-muted: #bdafa8;
+  --color-accent: #ff6a2e;
   --color-accent-contrast: #1a0d0a;
-  --color-accent-2: #ff9a6a;
+  --color-display: #ffa600;
+  --color-link: #ffb255;
   --color-focus: #8ab4ff;
-
-  --poster-bg: #5c140e;
-  --poster-headline: #ff9a6a;
-  --poster-ink: #fff4ec;
-
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.45);
+  --shadow-md: 0 10px 30px rgb(0 0 0 / 0.5);
+  --modal-backdrop: rgb(0 0 0 / 0.7);
 }

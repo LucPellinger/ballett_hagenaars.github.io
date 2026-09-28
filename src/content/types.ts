@@ -24,7 +24,13 @@ export type {
   PagesContent,
   PricePlan,
   PricesContent,
-  QualityContent,
+  BrushVisual,
+  EventCategory,
+  FaqContent,
+  Keyword,
+  PaletteColor,
+  StoryBlock,
+  StoryPage,
   ScheduleEntry,
   SiteInfo,
   TeamMember,
@@ -35,8 +41,6 @@ export interface NavItem {
   page: PageId;
   path: string;
   label: Localized;
-  /** Show in main header navigation. */
-  header: boolean;
-  /** Show in the footer link list. */
-  footer: boolean;
+  /** Sub-pages shown in a dropdown. */
+  children?: NavItem[];
 }

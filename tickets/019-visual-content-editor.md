@@ -24,7 +24,8 @@ with one click – with checks that keep broken content off the live site.
 - [x] "Veröffentlichen": sync → validate → typecheck/test/build → commit → push → follow GitHub run
 - [x] `content-publish.yml`: preview or live; live merges into prod, deploys, syncs back to main/dev; failures never touch the site
 - [ ] GitHub setup: allow `content-management` in the `github-pages` environment
-- [ ] First real publish from the editor
+- [ ] Release the editor code to `prod` (merge #18/#19/#20 → dev → `promote.sh prod`) – `yarn cms` builds `content-management` from `origin/prod`, which does not contain the editor yet
+- [ ] First real publish from the editor (preview, then live)
 
 ## Notes
 

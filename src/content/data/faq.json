@@ -1,0 +1,75 @@
+{
+  "status": "placeholder",
+  "items": [
+    {
+      "question": {
+        "de": "Kann ich eine Probestunde machen?",
+        "en": "Can I try a class?"
+      },
+      "answer": {
+        "de": [
+          "Ja! Bis zu drei Schnupperstunden sind gratis und unverbindlich. [Melde dich einfach bei uns](/kontakt)."
+        ],
+        "en": [
+          "Yes! Up to three trial classes are free and without obligation. [Just contact us](/kontakt)."
+        ]
+      }
+    },
+    {
+      "question": {
+        "de": "Ab welchem Alter kann mein Kind anfangen?",
+        "en": "From what age can my child start?"
+      },
+      "answer": {
+        "de": [
+          "Im Eltern-Kind-Tanz schon ab 2 Jahren, im Kindertanz ab 4 Jahren, Ballett ab etwa 6 Jahren."
+        ],
+        "en": [
+          "Parent & child dance from age 2, creative dance from age 4, ballet from about age 6."
+        ]
+      }
+    },
+    {
+      "question": {
+        "de": "Gibt es eine Altersgrenze nach oben?",
+        "en": "Is there an upper age limit?"
+      },
+      "answer": {
+        "de": [
+          "Nein – von 2 Jahren bis open end. Wir haben Kurse für Einsteiger:innen und Wiedereinsteiger:innen jeden Alters."
+        ],
+        "en": [
+          "No – from 2 years to open end. We have classes for beginners and returners of all ages."
+        ]
+      }
+    },
+    {
+      "question": {
+        "de": "Was ziehe ich zur ersten Stunde an?",
+        "en": "What should I wear to the first class?"
+      },
+      "answer": {
+        "de": [
+          "Bequeme Sportkleidung und Socken oder Gymnastikschuhe reichen für den Anfang. Alles Weitere besprechen wir in der Stunde."
+        ],
+        "en": [
+          "Comfortable sportswear and socks or soft shoes are fine to start with."
+        ]
+      }
+    },
+    {
+      "question": {
+        "de": "Gibt es Geschwisterrabatt?",
+        "en": "Is there a sibling discount?"
+      },
+      "answer": {
+        "de": [
+          "Ja, für Geschwisterkinder gewähren wir Ermäßigung. Sprich uns gerne an."
+        ],
+        "en": [
+          "Yes, we offer discounts for siblings. Just ask us."
+        ]
+      }
+    }
+  ]
+}

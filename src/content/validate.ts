@@ -65,15 +65,11 @@ export function validateAll(all: AllContent, opts: ValidateOptions = {}): Conten
     });
   }
 
-  // References: schedule → courses / team
+  // References: schedule → courses
   const courseIds = new Set(asList(all.courses).map((c) => c.id));
-  const teamIds = new Set(asList(all.team).map((m) => m.id));
   asList(all.schedule).forEach((e, i) => {
     if (e.courseId && !courseIds.has(e.courseId)) {
       issues.push({ collection: 'schedule', path: [i, 'courseId'], message: `Kurs „${String(e.courseId)}“ gibt es nicht (mehr).` });
-    }
-    if (e.teacherId && !teamIds.has(e.teacherId)) {
-      issues.push({ collection: 'schedule', path: [i, 'teacherId'], message: `Lehrkraft „${String(e.teacherId)}“ gibt es nicht (mehr).` });
     }
   });
 

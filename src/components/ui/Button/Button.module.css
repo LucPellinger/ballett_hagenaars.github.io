@@ -4,12 +4,12 @@
   justify-content: center;
   gap: var(--space-2);
   min-height: var(--tap-target);
-  padding: var(--space-3) var(--space-5);
+  padding: var(--space-2) var(--space-5);
   border: 2px solid transparent;
   border-radius: 999px;
+  font-family: var(--font-sans);
   font-weight: 700;
-  font-size: var(--fs-base);
-  letter-spacing: -0.01em;
+  font-size: var(--fs-sm);
   text-decoration: none;
   transition:
     transform var(--dur) var(--ease),
@@ -18,7 +18,7 @@
 }
 
 .button:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .primary {
@@ -32,14 +32,13 @@
   border-color: currentColor;
 }
 
-/* On poster surfaces */
-.poster {
-  background: var(--poster-ink);
-  color: var(--poster-bg);
+/* Quick links on the animated hero panel: black, visible on both ends of the colour morph */
+.hero {
+  background: var(--palette-black);
+  color: var(--on-black);
 }
 
-.posterOutline {
-  background: transparent;
-  color: var(--poster-ink);
-  border-color: var(--poster-ink);
+.hero:hover {
+  background: var(--palette-white);
+  color: var(--on-white);
 }

@@ -1,16 +1,36 @@
 {
-  "title": {
-    "de": "Qualität",
-    "en": "Quality"
-  },
-  "paragraphs": {
-    "de": [
-      "Die Ballettschule Hagenaars ist Mitglied im Deutschen Berufsverband für Tanzpädagogik e.V.",
-      "Unser Team besteht ausschließlich aus qualifiziertem Personal – diplomierte Tanzpädagog:innen und staatlich geprüfte Bühnentänzer:innen."
-    ],
-    "en": [
-      "Hagenaars Ballet School is a member of the German Professional Association for Dance Teachers (DBfT e.V.).",
-      "Our team consists exclusively of qualified staff – certified dance teachers and state-certified stage dancers."
-    ]
-  }
+  "blocks": [
+    {
+      "paragraphs": {
+        "de": [
+          "Unsere Schule ist qualifiziert und ausgezeichnet vom [Deutschen Berufsverband für Tanzpädagogik e.V. (DBfT)](https://www.dbft.de).",
+          "Unser Team besteht ausschließlich aus qualifiziertem Personal – diplomierte Tanzpädagog:innen und staatlich geprüfte Bühnentänzer:innen."
+        ],
+        "en": [
+          "Our school is certified by the [German Professional Association for Dance Teachers (DBfT)](https://www.dbft.de).",
+          "Our team consists exclusively of qualified staff – certified dance teachers and state-certified stage dancers."
+        ]
+      },
+      "visual": {
+        "brush": "blue",
+        "tint": "redorange"
+      }
+    },
+    {
+      "paragraphs": {
+        "de": [
+          "Unsere Lehrer:innen nehmen regelmässig an Workshops und Fortbildungen teil, wodurch wir zeitgemässe, frische und aktuelle Standards und Unterrichtsformen gewährleisten.",
+          "Ballett unterrichten wir nach der Waganowa-Methode – aufbauend nach Alter und Level."
+        ],
+        "en": [
+          "Our teachers regularly attend workshops and further training, keeping our standards fresh and up to date.",
+          "Ballet is taught following the Vaganova method – structured by age and level."
+        ]
+      },
+      "visual": {
+        "brush": "yellow",
+        "tint": "purple"
+      }
+    }
+  ]
 }

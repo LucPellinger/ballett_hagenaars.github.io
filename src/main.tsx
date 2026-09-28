@@ -2,6 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { registerSW } from 'virtual:pwa-register';
 import { App } from './App';
+import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/inter-tight';
 import './styles/global.css';
 
 // Restore deep links redirected by public 404.html (GitHub Pages has no SPA fallback).

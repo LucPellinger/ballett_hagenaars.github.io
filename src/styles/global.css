@@ -10,7 +10,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-padding-top: calc(var(--header-h) + var(--space-4));
+  scroll-padding-top: calc(var(--nav-h) + var(--space-4));
 }
 
 body {
@@ -41,7 +41,10 @@ h2,
 h3,
 h4 {
   margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-weight: 700;
   line-height: var(--lh-snug);
+  letter-spacing: -0.03em;
   text-wrap: balance;
 }
 
@@ -51,7 +54,7 @@ p {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-link);
   text-underline-offset: 0.18em;
   text-decoration-thickness: 0.08em;
 }
@@ -113,7 +116,7 @@ table {
 
 .prose h2 {
   font-size: var(--fs-lg);
-  margin-top: var(--space-6);
+  margin-top: var(--space-7);
 }
 
 .prose h3 {
@@ -122,7 +125,7 @@ table {
 }
 
 .section {
-  padding-block: var(--space-8);
+  padding-block: var(--section-space);
 }
 
 .section + .section {
@@ -134,4 +137,22 @@ table {
   flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-6);
+}
+
+/* Large tight display type (headlines, tile titles) */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+/* Emphasised words in running text: **text** in content */
+.hl {
+  color: var(--color-link);
+  font-weight: inherit;
+}
+
+html.modal-open {
+  overflow: hidden;
 }

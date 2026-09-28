@@ -104,6 +104,26 @@ export const link = (title: string) =>
 
 /* ───────────── enums ───────────── */
 
+/** Brand palette (see src/styles/tokens.css → --palette-*). Used for tiles, brush shapes, duotone. */
+export const PALETTE = ['redorange', 'orange', 'tangerine', 'yellow', 'pink', 'lightblue', 'blue', 'purple', 'crimson', 'black', 'white'] as const;
+export const PALETTE_LABELS = {
+  redorange: 'Rot-Orange',
+  orange: 'Orange',
+  tangerine: 'Mandarine',
+  yellow: 'Gelb',
+  pink: 'Rosa',
+  lightblue: 'Hellblau',
+  blue: 'Blau',
+  purple: 'Lila',
+  crimson: 'Dunkelrot',
+  black: 'Schwarz',
+  white: 'Weiß',
+} as const;
+export const paletteColor = (title: string, help?: string) =>
+  z.enum(PALETTE).meta({ title, description: help, labels: PALETTE_LABELS });
+
+export const RICH_HELP = 'Links so schreiben: [Linktext](https://adresse.de)';
+
 export const WEEKDAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] as const;
 export const WEEKDAY_LABELS = {
   mon: 'Montag',
@@ -122,11 +142,16 @@ export const audience = z.enum(AUDIENCES).meta({ labels: AUDIENCE_LABELS });
 
 export const PAGE_IDS = [
   'home',
+  'about',
+  'quality',
+  'team',
+  'pointe',
+  'performance',
+  'faq',
+  'news',
   'courses',
   'schedule',
   'prices',
-  'school',
-  'events',
   'gallery',
   'contact',
   'imprint',
@@ -134,15 +159,29 @@ export const PAGE_IDS = [
 ] as const;
 export const PAGE_LABELS = {
   home: 'Startseite',
-  courses: 'Unterricht',
+  about: 'Über uns',
+  quality: 'Qualität',
+  team: 'Team',
+  pointe: 'Spitzentanz',
+  performance: 'Aufführung',
+  faq: 'FAQ',
+  news: 'Aktuelles / Events',
+  courses: 'Kurse',
   schedule: 'Stundenplan',
   prices: 'Preise',
-  school: 'Über uns',
-  events: 'Events',
   gallery: 'Galerie',
   contact: 'Kontakt',
   imprint: 'Impressum',
   privacy: 'Datenschutz',
+} as const;
+
+export const EVENT_CATEGORIES = ['auffuehrung', 'workshop', 'show', 'ferien', 'sonstiges'] as const;
+export const EVENT_CATEGORY_LABELS = {
+  auffuehrung: 'Aufführung',
+  workshop: 'Workshop',
+  show: 'Show',
+  ferien: 'Ferien / geschlossen',
+  sonstiges: 'Sonstiges',
 } as const;
 
 /* ───────────── content types ───────────── */
@@ -198,6 +237,7 @@ export const siteSchema = z
       )
       .meta({ title: 'Soziale Netzwerke', itemTitle: 'Profil' }),
     mapUrl: z.url().meta({ title: 'Karten-Link', description: 'Link zu OpenStreetMap oder Google Maps.', widget: 'url' }),
+    logo: image('Logo', { maxWidth: 600, help: 'Oben rechts im Menü und groß auf der Startseite. Am besten PNG/SVG mit transparentem Hintergrund.' }).optional(),
     foundedYear: z.number().int().min(1900).max(2100).optional().meta({ title: 'Gründungsjahr' }),
     status,
   })
@@ -212,11 +252,11 @@ const pageMeta = z
 
 const pageHeader = z
   .object({
-    eyebrow: localized('Überzeile', { help: 'Kleine Zeile über der Überschrift.' }).optional(),
-    title: localized('Überschrift'),
-    lead: localized('Einleitungstext', { multiline: true }).optional(),
+    eyebrow: localized('Überzeile', { help: 'Kleine Zeile über dem Text (optional).' }).optional(),
+    title: localized('Seitentitel', { help: 'Erscheint groß und senkrecht am linken Rand.' }),
+    lead: localized('Einleitungstext', { multiline: true, help: RICH_HELP }).optional(),
   })
-  .meta({ title: 'Roter Kopfbereich' });
+  .meta({ title: 'Kopfbereich' });
 
 export const pagesSchema = z
   .object(
@@ -226,29 +266,46 @@ export const pagesSchema = z
   )
   .meta({ title: 'Seitentitel & Kopfbereiche' });
 
+/** Image on a painted brush stroke, recoloured as duotone (the "Readymag" look). */
+export const brushImage = (title: string) =>
+  z
+    .object({
+      image: image('Foto', { maxWidth: 1200, help: 'Am besten ein freigestelltes Foto (PNG/WebP mit transparentem Hintergrund).' }).optional(),
+      brush: paletteColor('Farbe des Pinselstrichs'),
+      tint: paletteColor('Einfärbung des Fotos', 'Das Foto wird in dieser Farbe eingefärbt (Duoton).').optional(),
+    })
+    .meta({ title });
+
 export const homeSchema = z
   .object({
     hero: z
       .object({
-        headline: localizedList('Große Überschrift', { help: 'Jede Zeile wird eine eigene Zeile im Plakat. Kurz halten (2–4 Zeilen).' }),
-        meta: localizedList('Kleiner Text unten rechts', { help: 'Eine oder zwei kurze Zeilen.' }),
-        lead: localized('Einleitungstext', { multiline: true }),
-        image: image('Foto (schwarz-weiß, freigestellt)', {
-          maxWidth: 1200,
-          help: 'Am besten ein freigestelltes Tanzfoto (PNG/WebP mit transparentem Hintergrund).',
-        }).optional(),
-        primaryCta: link('Hauptknopf'),
-        secondaryCta: link('Zweiter Knopf').optional(),
+        welcome: localized('Begrüßung (links)', { help: 'z. B. „Willkommen!“' }),
+        title: localized('Name (rechts unter dem Logo)'),
+        lead: localized('Kurzer Einleitungssatz', { multiline: true }),
+        quickLinks: z.array(link('Schnellzugriff')).meta({ title: 'Schnellzugriff-Knöpfe', itemTitle: 'Knopf' }),
       })
-      .meta({ title: 'Plakat (oberster Bereich)' }),
+      .meta({ title: 'Begrüßung (oberster Bereich)' }),
+    keywords: z
+      .array(z.object({ text: localized('Wort'), color: paletteColor('Farbe') }))
+      .min(2)
+      .meta({ title: 'Laufband mit Stichworten', itemTitle: 'Stichwort' }),
     highlights: z
       .array(z.object({ title: localized('Titel'), text: localized('Text', { multiline: true }) }))
       .meta({ title: 'Drei Highlights', itemTitle: 'Highlight' }),
+    philosophy: z
+      .object({
+        label: localized('Senkrechte Überschrift'),
+        paragraphs: localizedList('Text', { help: `Ein Absatz pro Zeile. ${RICH_HELP}` }),
+        emphasis: localized('Hervorgehobener Satz', { help: 'z. B. „Alle sind willkommen!“' }).optional(),
+        visual: brushImage('Bild'),
+      })
+      .meta({ title: 'Philosophie' }),
     sections: z
       .object({
         highlights: z.object({ title: localized('Überschrift (unsichtbar, für Screenreader)') }).meta({ title: 'Highlights' }),
-        courses: z.object({ eyebrow: localized('Überzeile'), title: localized('Überschrift') }).meta({ title: 'Kurse-Bereich' }),
-        events: z.object({ eyebrow: localized('Überzeile'), title: localized('Überschrift') }).meta({ title: 'Events-Bereich' }),
+        courses: z.object({ label: localized('Senkrechte Überschrift'), intro: localized('Einleitung').optional() }).meta({ title: 'Unterricht-Bereich' }),
+        events: z.object({ label: localized('Senkrechte Überschrift'), intro: localized('Einleitung').optional() }).meta({ title: 'Demnächst-Bereich' }),
         cta: z
           .object({ title: localized('Überschrift'), text: localized('Text', { multiline: true }), link: link('Knopf') })
           .meta({ title: 'Aufruf am Ende' }),
@@ -256,6 +313,34 @@ export const homeSchema = z
       .meta({ title: 'Abschnitte' }),
   })
   .meta({ title: 'Startseite' });
+
+/** Text/image story pages: Über uns, Qualität, Spitzentanz, Aufführung. */
+export const storyPageSchema = z
+  .object({
+    blocks: z
+      .array(
+        z.object({
+          heading: localized('Zwischenüberschrift').optional(),
+          paragraphs: localizedList('Text', { help: `Ein Absatz pro Zeile. ${RICH_HELP}` }),
+          bullets: localizedList('Aufzählung', { min: 0, help: 'Optional. Ein Punkt pro Zeile.' }).optional(),
+          after: localizedList('Text nach der Aufzählung', { min: 0 }).optional(),
+          visual: brushImage('Bild'),
+        }),
+      )
+      .min(1)
+      .meta({ title: 'Abschnitte', itemTitle: 'Abschnitt', description: 'Bild und Text wechseln automatisch die Seite.' }),
+    status,
+  })
+  .meta({ title: 'Seite mit Text & Bildern' });
+
+export const faqSchema = z
+  .object({
+    items: z
+      .array(z.object({ question: localized('Frage'), answer: localizedList('Antwort', { help: `Ein Absatz pro Zeile. ${RICH_HELP}` }) }))
+      .meta({ title: 'Fragen & Antworten', itemTitle: 'Frage' }),
+    status,
+  })
+  .meta({ title: 'FAQ' });
 
 export const courseSchema = z
   .object({
@@ -267,7 +352,8 @@ export const courseSchema = z
       .meta({ title: 'Zielgruppe', description: 'Für den Filter im Stundenplan.' }),
     ageGroup: localized('Alter', { help: 'z. B. „ab 6 Jahren“' }),
     summary: localized('Kurzbeschreibung', { help: 'Ein Satz – erscheint auf der Startseite.' }),
-    description: localizedList('Ausführliche Beschreibung', { help: 'Ein Absatz pro Zeile.' }),
+    description: localizedList('Ausführliche Beschreibung', { help: `Ein Absatz pro Zeile. ${RICH_HELP}` }),
+    color: paletteColor('Kachelfarbe', 'Farbe der Kachel auf der Kursseite und im Stundenplan.'),
     image: image('Foto', { maxWidth: 1200 }).optional(),
     status,
   })
@@ -281,7 +367,6 @@ export const scheduleEntrySchema = z
     end: time('Ende'),
     courseId: z.string().min(1, 'Bitte einen Kurs wählen.').meta({ title: 'Kurs', widget: 'ref', ref: 'courses' }),
     level: localized('Stufe', { help: 'Optional, z. B. „Stufe 1“' }).optional(),
-    teacherId: z.string().optional().meta({ title: 'Lehrkraft', widget: 'ref', ref: 'team' }),
     status,
   })
   .refine((e) => e.start < e.end, { message: 'Das Ende muss nach dem Beginn liegen.', path: ['end'] })
@@ -315,19 +400,15 @@ export const teamMemberSchema = z
     id: contentId(),
     name: z.string().trim().min(1, 'Bitte einen Namen eingeben.').meta({ title: 'Name' }),
     role: localized('Rolle / Qualifikation'),
-    bio: localized('Kurzbiografie', { multiline: true }),
+    bio: localized('Kurzbiografie', { multiline: true, help: 'Ein, zwei Sätze.' }),
+    story: localizedList('Ausführliche Vorstellung („Wer ist …?“)', { min: 0, help: `Ein Absatz pro Zeile. ${RICH_HELP}` }).optional(),
     teaches: localizedList('Unterrichtet', { min: 0 }),
-    photo: image('Portrait', { maxWidth: 800 }).optional(),
+    photo: image('Portrait (Farbe)', { maxWidth: 900, help: 'Hochformat. Wird beim Darüberfahren schwarz-weiß.' }).optional(),
+    actionPhoto: image('Tanzfoto (für die Vorstellung)', { maxWidth: 1200 }).optional(),
+    color: paletteColor('Hintergrundfarbe', 'Wenn noch kein Portrait vorhanden ist.'),
     status,
   })
   .meta({ title: 'Teammitglied' });
-
-export const qualitySchema = z
-  .object({
-    title: localized('Überschrift'),
-    paragraphs: localizedList('Text', { help: 'Ein Absatz pro Zeile.' }),
-  })
-  .meta({ title: 'Qualität (Über uns)' });
 
 export const eventSchema = z
   .object({
@@ -336,7 +417,9 @@ export const eventSchema = z
     startDate: isoDate('Datum (Beginn)'),
     endDate: isoDate('Datum (Ende)').optional().meta({ description: 'Nur bei mehrtägigen Events.' }),
     location: z.string().trim().min(1, 'Bitte einen Ort angeben.').meta({ title: 'Ort' }),
-    description: localized('Beschreibung', { multiline: true }),
+    category: z.enum(EVENT_CATEGORIES).meta({ title: 'Art', labels: EVENT_CATEGORY_LABELS }),
+    tags: z.array(z.string().trim().min(1)).optional().meta({ title: 'Stichworte', description: 'Für die Suche, z. B. Ballett, Kinder' }),
+    description: localized('Beschreibung', { multiline: true, help: RICH_HELP }),
     image: image('Bild / Plakat', { maxWidth: 1200 }).optional(),
     link: link('Link (z. B. Anmeldung)').optional(),
     status,
@@ -372,12 +455,17 @@ export type ScheduleEntry = z.infer<typeof scheduleEntrySchema>;
 export type PricesContent = z.infer<typeof pricesSchema>;
 export type PricePlan = PricesContent['plans'][number];
 export type TeamMember = z.infer<typeof teamMemberSchema>;
-export type QualityContent = z.infer<typeof qualitySchema>;
+export type StoryPage = z.infer<typeof storyPageSchema>;
+export type StoryBlock = StoryPage['blocks'][number];
+export type BrushVisual = StoryBlock['visual'];
+export type FaqContent = z.infer<typeof faqSchema>;
+export type PaletteColor = (typeof PALETTE)[number];
+export type EventCategory = (typeof EVENT_CATEGORIES)[number];
 export type EventItem = z.infer<typeof eventSchema>;
 export type GalleryItem = z.infer<typeof galleryItemSchema>;
 export type LegalPage = z.infer<typeof legalPageSchema>;
 export type ImageAsset = NonNullable<Course['image']>;
-export type LinkItem = HomeContent['hero']['primaryCta'];
+export type LinkItem = HomeContent['hero']['quickLinks'][number];
 export type ContentStatus = NonNullable<Course['status']>;
 export type Weekday = (typeof WEEKDAYS)[number];
 export type AudienceId = (typeof AUDIENCES)[number];
@@ -385,3 +473,4 @@ export type PageId = (typeof PAGE_IDS)[number];
 export type PageMeta = PagesContent['home']['meta'];
 export type PageHeaderContent = PagesContent['home']['header'];
 export type HeroContent = HomeContent['hero'];
+export type Keyword = HomeContent['keywords'][number];

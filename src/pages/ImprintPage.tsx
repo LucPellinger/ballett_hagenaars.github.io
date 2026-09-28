@@ -1,15 +1,13 @@
-import { imprint, pages, site, ui } from '@/content';
+import { imprint, site, ui } from '@/content';
 import { useLanguage } from '@/i18n';
-import { PageHeader, PageMeta } from '@/components/ui';
 import { LegalContent } from '@/components/features';
+import { PageShell } from './PageShell';
 
 export function ImprintPage() {
   const { t } = useLanguage();
   return (
-    <>
-      <PageMeta meta={pages.imprint.meta} />
-      <PageHeader content={pages.imprint.header} />
-      <div className="container section prose">
+    <PageShell page="imprint">
+      <div className="prose">
         <h2>{t({ de: 'Angaben gemäß § 5 DDG', en: 'Information pursuant to § 5 DDG' })}</h2>
         <p>
           {site.name}
@@ -28,6 +26,6 @@ export function ImprintPage() {
         </p>
         <LegalContent page={imprint} />
       </div>
-    </>
+    </PageShell>
   );
 }

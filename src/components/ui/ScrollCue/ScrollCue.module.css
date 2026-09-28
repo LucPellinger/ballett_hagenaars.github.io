@@ -1,0 +1,21 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  background: var(--hero-right);
+  padding-block: var(--space-2);
+}
+
+.cue {
+  display: inline-grid;
+  place-items: center;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  color: var(--brand-nav-ink);
+  animation: bob 2.4s var(--ease) infinite;
+}
+
+@keyframes bob {
+  50% {
+    transform: translateY(5px);
+  }
+}

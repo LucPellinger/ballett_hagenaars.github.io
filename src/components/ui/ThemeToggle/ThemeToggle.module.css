@@ -1,15 +1,17 @@
+/* Used inside the orange nav bar */
 .toggle {
   display: inline-grid;
   place-items: center;
-  width: var(--tap-target);
-  height: var(--tap-target);
-  border: 1.5px solid var(--color-border);
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid currentColor;
   border-radius: 50%;
   background: transparent;
-  color: var(--color-text);
+  color: inherit;
   cursor: pointer;
 }
 
 .toggle:hover {
-  background: var(--color-surface-2);
+  background: var(--brand-nav-ink);
+  color: var(--brand-nav);
 }
