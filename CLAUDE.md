@@ -49,7 +49,10 @@ yarn ticket:new "Title" --type feat | yarn ticket:move <id> <status> | yarn boar
   Aufführung) share `StoryPage`. Modals (team profile, class details) are URL-driven (`?person=`, `?kurs=`).
 - Routes: URLs + dropdown structure in `content/navigation.ts` (`mainNav`, `legalNav`, `redirects` for old URLs),
   component mapping in `src/routes.tsx` (lazy-loaded).
-- Theme: `data-theme` on `<html>`, tokens in `src/styles/tokens.css`. Set pre-paint in `index.html`.
+- Theme: `data-theme` on `<html>`, tokens in `src/styles/tokens.css`. Set pre-paint in `index.html`
+  (as are `lang` and the visitor text size `data-text-size`).
+- Font sizes: always `var(--fs-*)` (rem). Visitor text size scales the root; the editor's per-component
+  `textSize` (`data-size`, `textSizeProps`) rescales the tokens inside that component only.
 - Base path is configurable (`BASE_PATH` env) – always use router `<Link>`/`SmartLink` and imported assets,
   never hard-coded absolute URLs to `/assets/...`.
 - GitHub Pages SPA fallback: generated `404.html` → `?redirect=` → restored in `main.tsx`.

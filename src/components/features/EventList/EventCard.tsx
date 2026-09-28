@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { EventItem } from '@/content';
-import { ui } from '@/content';
+import { textSizeProps, ui } from '@/content';
 import { formatDateRange, INTL_LOCALE, parseIsoDate, useLanguage } from '@/i18n';
 import { PlaceholderBadge, RichText, SmartLink } from '@/components/ui';
 import { paletteVars } from '@/styles/palette';
@@ -13,7 +13,7 @@ export function EventCard({ event, headingLevel: H = 'h3' }: { event: EventItem;
   const start = parseIsoDate(event.startDate);
   const month = new Intl.DateTimeFormat(INTL_LOCALE[locale], { month: 'short' }).format(start);
   return (
-    <article className={styles.card} aria-labelledby={`${event.id}-title`} style={paletteVars(CATEGORY_COLOR[event.category]) as CSSProperties}>
+    <article className={styles.card} aria-labelledby={`${event.id}-title`} style={paletteVars(CATEGORY_COLOR[event.category]) as CSSProperties} {...textSizeProps(event.textSize)}>
       <div className={styles.date} aria-hidden="true">
         <span className={`display ${styles.dateDay}`}>{start.getDate()}</span>
         <span className={styles.dateMonth}>

@@ -1,4 +1,4 @@
-import { courses, events, homeHero, homeHighlights, homeKeywords, homePhilosophy, homeSections, pages, ui } from '@/content';
+import { courses, events, homeHero, homeHighlights, homeKeywords, homePhilosophy, homeSections, pages, textSizeProps, ui } from '@/content';
 import { useLanguage } from '@/i18n';
 import { BrushImage, ButtonLink, Marquee, PageMeta, RichParagraphs, ScrollCue, SectionRail } from '@/components/ui';
 import { CourseTiles, EventList, Highlights, HomeHero, splitEvents } from '@/components/features';
@@ -23,7 +23,7 @@ export function HomePage() {
       </section>
 
       <SectionRail label={t(homePhilosophy.label)} id="philosophie">
-        <div className={styles.split}>
+        <div className={styles.split} {...textSizeProps(homePhilosophy.textSize)}>
           <div className={styles.text}>
             <RichParagraphs items={t(homePhilosophy.paragraphs)} />
             {homePhilosophy.emphasis && <p className={styles.emphasis}>{t(homePhilosophy.emphasis)}</p>}
@@ -33,13 +33,13 @@ export function HomePage() {
       </SectionRail>
 
       <SectionRail label={t(homeSections.courses.label)} id="unterricht">
-        {homeSections.courses.intro && <p className={styles.intro}>{t(homeSections.courses.intro)}</p>}
+        {homeSections.courses.intro && <p className={styles.intro} {...textSizeProps(homeSections.courses.textSize)}>{t(homeSections.courses.intro)}</p>}
         <CourseTiles courses={courses} preview />
       </SectionRail>
 
       {upcoming.length > 0 && (
         <SectionRail label={t(homeSections.events.label)} id="demnaechst">
-          {homeSections.events.intro && <p className={styles.intro}>{t(homeSections.events.intro)}</p>}
+          {homeSections.events.intro && <p className={styles.intro} {...textSizeProps(homeSections.events.textSize)}>{t(homeSections.events.intro)}</p>}
           <EventList events={upcoming.slice(0, 3)} />
           <p className={styles.more}>
             <ButtonLink href="/aktuelles" variant="secondary">
@@ -49,7 +49,7 @@ export function HomePage() {
         </SectionRail>
       )}
 
-      <section className={styles.cta} aria-labelledby="cta-title">
+      <section className={styles.cta} aria-labelledby="cta-title" {...textSizeProps(homeSections.cta.textSize)}>
         <h2 id="cta-title" className={`display ${styles.ctaTitle}`}>
           {t(homeSections.cta.title)}
         </h2>

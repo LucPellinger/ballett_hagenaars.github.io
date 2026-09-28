@@ -1,4 +1,4 @@
-import type { FaqContent } from '@/content';
+import { textSizeProps, type FaqContent } from '@/content';
 import { useLanguage } from '@/i18n';
 import { PlaceholderBadge, RichParagraphs } from '@/components/ui';
 import styles from './FaqList.module.css';
@@ -10,7 +10,7 @@ export function FaqList({ faq }: { faq: FaqContent }) {
     <div className={styles.list}>
       <PlaceholderBadge status={faq.status} />
       {faq.items.map((item, i) => (
-        <details key={i} className={styles.item}>
+        <details key={i} className={styles.item} {...textSizeProps(item.textSize)}>
           <summary className={styles.question}>
             <h2 className={styles.qText}>{t(item.question)}</h2>
           </summary>
