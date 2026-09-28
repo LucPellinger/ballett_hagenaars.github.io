@@ -2,7 +2,7 @@
 id: 17
 title: "Preview deployment for review"
 type: ci
-status: review
+status: done
 priority: high
 created: 2026-09-24
 ---

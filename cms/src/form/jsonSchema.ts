@@ -19,6 +19,8 @@ export interface JS {
   labels?: Record<string, string>;
   maxWidth?: number;
   itemTitle?: string;
+  /** Rarely needed setting – shown in the collapsed "Erweiterte Texteinstellungen" section. */
+  advanced?: boolean;
 }
 
 const cache = new WeakMap<z.ZodType, JS>();

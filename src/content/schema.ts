@@ -124,6 +124,28 @@ export const paletteColor = (title: string, help?: string) =>
 
 export const RICH_HELP = 'Links so schreiben: [Linktext](https://adresse.de)';
 
+/**
+ * Per-component text size ("Erweiterte Texteinstellungen"). The editor tucks fields with
+ * `advanced: true` into a collapsed section with a warning. Leave empty = design size (recommended).
+ * The website applies it as `data-size` (see styles/global.css, `textSizeProps` in content/textSize.ts).
+ */
+export const TEXT_SIZES = ['xs', 'sm', 'lg', 'xl'] as const;
+export const TEXT_SIZE_LABELS = {
+  xs: 'Sehr klein (80 %)',
+  sm: 'Klein (90 %)',
+  lg: 'Groß (115 %)',
+  xl: 'Sehr groß (130 %)',
+} as const;
+export const textSize = z
+  .enum(TEXT_SIZES)
+  .optional()
+  .meta({
+    title: 'Schriftgröße',
+    description: 'Gilt nur für diesen Bereich. Beispiel: ein sehr langer Text passt nicht gut.',
+    labels: TEXT_SIZE_LABELS,
+    advanced: true,
+  });
+
 export const WEEKDAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'] as const;
 export const WEEKDAY_LABELS = {
   mon: 'Montag',
@@ -255,6 +277,7 @@ const pageHeader = z
     eyebrow: localized('Überzeile', { help: 'Kleine Zeile über dem Text (optional).' }).optional(),
     title: localized('Seitentitel', { help: 'Erscheint groß und senkrecht am linken Rand.' }),
     lead: localized('Einleitungstext', { multiline: true, help: RICH_HELP }).optional(),
+    textSize,
   })
   .meta({ title: 'Kopfbereich' });
 
@@ -284,6 +307,7 @@ export const homeSchema = z
         title: localized('Name (rechts unter dem Logo)'),
         lead: localized('Kurzer Einleitungssatz', { multiline: true }),
         quickLinks: z.array(link('Schnellzugriff')).meta({ title: 'Schnellzugriff-Knöpfe', itemTitle: 'Knopf' }),
+        textSize,
       })
       .meta({ title: 'Begrüßung (oberster Bereich)' }),
     keywords: z
@@ -291,7 +315,7 @@ export const homeSchema = z
       .min(2)
       .meta({ title: 'Laufband mit Stichworten', itemTitle: 'Stichwort' }),
     highlights: z
-      .array(z.object({ title: localized('Titel'), text: localized('Text', { multiline: true }) }))
+      .array(z.object({ title: localized('Titel'), text: localized('Text', { multiline: true }), textSize }))
       .meta({ title: 'Drei Highlights', itemTitle: 'Highlight' }),
     philosophy: z
       .object({
@@ -299,15 +323,20 @@ export const homeSchema = z
         paragraphs: localizedList('Text', { help: `Ein Absatz pro Zeile. ${RICH_HELP}` }),
         emphasis: localized('Hervorgehobener Satz', { help: 'z. B. „Alle sind willkommen!“' }).optional(),
         visual: brushImage('Bild'),
+        textSize,
       })
       .meta({ title: 'Philosophie' }),
     sections: z
       .object({
         highlights: z.object({ title: localized('Überschrift (unsichtbar, für Screenreader)') }).meta({ title: 'Highlights' }),
-        courses: z.object({ label: localized('Senkrechte Überschrift'), intro: localized('Einleitung').optional() }).meta({ title: 'Unterricht-Bereich' }),
-        events: z.object({ label: localized('Senkrechte Überschrift'), intro: localized('Einleitung').optional() }).meta({ title: 'Demnächst-Bereich' }),
+        courses: z
+          .object({ label: localized('Senkrechte Überschrift'), intro: localized('Einleitung').optional(), textSize })
+          .meta({ title: 'Unterricht-Bereich' }),
+        events: z
+          .object({ label: localized('Senkrechte Überschrift'), intro: localized('Einleitung').optional(), textSize })
+          .meta({ title: 'Demnächst-Bereich' }),
         cta: z
-          .object({ title: localized('Überschrift'), text: localized('Text', { multiline: true }), link: link('Knopf') })
+          .object({ title: localized('Überschrift'), text: localized('Text', { multiline: true }), link: link('Knopf'), textSize })
           .meta({ title: 'Aufruf am Ende' }),
       })
       .meta({ title: 'Abschnitte' }),
@@ -325,6 +354,7 @@ export const storyPageSchema = z
           bullets: localizedList('Aufzählung', { min: 0, help: 'Optional. Ein Punkt pro Zeile.' }).optional(),
           after: localizedList('Text nach der Aufzählung', { min: 0 }).optional(),
           visual: brushImage('Bild'),
+          textSize,
         }),
       )
       .min(1)
@@ -336,7 +366,9 @@ export const storyPageSchema = z
 export const faqSchema = z
   .object({
     items: z
-      .array(z.object({ question: localized('Frage'), answer: localizedList('Antwort', { help: `Ein Absatz pro Zeile. ${RICH_HELP}` }) }))
+      .array(
+        z.object({ question: localized('Frage'), answer: localizedList('Antwort', { help: `Ein Absatz pro Zeile. ${RICH_HELP}` }), textSize }),
+      )
       .meta({ title: 'Fragen & Antworten', itemTitle: 'Frage' }),
     status,
   })
@@ -355,6 +387,7 @@ export const courseSchema = z
     description: localizedList('Ausführliche Beschreibung', { help: `Ein Absatz pro Zeile. ${RICH_HELP}` }),
     color: paletteColor('Kachelfarbe', 'Farbe der Kachel auf der Kursseite und im Stundenplan.'),
     image: image('Foto', { maxWidth: 1200 }).optional(),
+    textSize,
     status,
   })
   .meta({ title: 'Kurs' });
@@ -387,6 +420,7 @@ export const pricesSchema = z
             .meta({ title: 'Preis in €', description: 'Leer lassen = „auf Anfrage“.' }),
           period: localized('Zeitraum', { help: 'z. B. „pro Monat“' }),
           highlight: z.boolean().optional().meta({ title: 'Hervorheben (roter Rahmen)' }),
+          textSize,
           status,
         }),
       )
@@ -406,6 +440,7 @@ export const teamMemberSchema = z
     photo: image('Portrait (Farbe)', { maxWidth: 900, help: 'Hochformat. Wird beim Darüberfahren schwarz-weiß.' }).optional(),
     actionPhoto: image('Tanzfoto (für die Vorstellung)', { maxWidth: 1200 }).optional(),
     color: paletteColor('Hintergrundfarbe', 'Wenn noch kein Portrait vorhanden ist.'),
+    textSize,
     status,
   })
   .meta({ title: 'Teammitglied' });
@@ -422,6 +457,7 @@ export const eventSchema = z
     description: localized('Beschreibung', { multiline: true, help: RICH_HELP }),
     image: image('Bild / Plakat', { maxWidth: 1200 }).optional(),
     link: link('Link (z. B. Anmeldung)').optional(),
+    textSize,
     status,
   })
   .refine((e) => !e.endDate || e.endDate >= e.startDate, { message: 'Das Ende liegt vor dem Beginn.', path: ['endDate'] })
@@ -439,7 +475,7 @@ export const galleryItemSchema = z
 export const legalPageSchema = z
   .object({
     sections: z
-      .array(z.object({ heading: localized('Überschrift'), paragraphs: localizedList('Absätze', { help: 'Ein Absatz pro Zeile.' }) }))
+      .array(z.object({ heading: localized('Überschrift'), paragraphs: localizedList('Absätze', { help: 'Ein Absatz pro Zeile.' }), textSize }))
       .meta({ title: 'Abschnitte', itemTitle: 'Abschnitt' }),
     status,
   })
@@ -460,6 +496,7 @@ export type StoryBlock = StoryPage['blocks'][number];
 export type BrushVisual = StoryBlock['visual'];
 export type FaqContent = z.infer<typeof faqSchema>;
 export type PaletteColor = (typeof PALETTE)[number];
+export type TextSize = (typeof TEXT_SIZES)[number];
 export type EventCategory = (typeof EVENT_CATEGORIES)[number];
 export type EventItem = z.infer<typeof eventSchema>;
 export type GalleryItem = z.infer<typeof galleryItemSchema>;

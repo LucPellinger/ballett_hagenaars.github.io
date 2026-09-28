@@ -12,6 +12,12 @@ export const ui = {
   submenu: { de: 'Untermenü', en: 'Submenu' },
   home: { de: 'Startseite', en: 'Home page' },
   language: { de: 'Sprache', en: 'Language' },
+  textSize: { de: 'Schriftgröße', en: 'Text size' },
+  textSizes: {
+    base: { de: 'Normale Schrift', en: 'Normal text' },
+    lg: { de: 'Große Schrift', en: 'Large text' },
+    xl: { de: 'Sehr große Schrift', en: 'Extra large text' },
+  },
   switchToDark: { de: 'Dunkles Design aktivieren', en: 'Switch to dark mode' },
   switchToLight: { de: 'Helles Design aktivieren', en: 'Switch to light mode' },
   scrollDown: { de: 'Weiter nach unten', en: 'Scroll down' },

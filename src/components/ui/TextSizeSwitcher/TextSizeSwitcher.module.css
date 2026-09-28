@@ -1,0 +1,40 @@
+/* Same pill as the language switcher: white on the nav colour. Letter sizes are fixed in px so
+   the control itself doesn't jump when the page text grows. */
+.switcher {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.option {
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.base {
+  font-size: 13px;
+}
+
+.lg {
+  font-size: 16px;
+}
+
+.xl {
+  font-size: 20px;
+}
+
+.option[aria-pressed='true'] {
+  background: var(--brand-nav-ink);
+  color: var(--brand-nav);
+}

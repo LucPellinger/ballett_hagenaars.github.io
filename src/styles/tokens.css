@@ -12,16 +12,31 @@
   --font-sans: 'DM Sans Variable', 'DM Sans', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
   --font-display: 'Inter Tight Variable', 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  --fs-xs: 0.8125rem;
-  --fs-sm: 0.9375rem;
-  --fs-base: 1.125rem;
-  --fs-md: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
-  --fs-lg: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
-  --fs-xl: clamp(2.2rem, 1.4rem + 3vw, 4rem);
-  --fs-display: clamp(2.8rem, 1.2rem + 6vw, 6.5rem);
-  --fs-rail: clamp(2.6rem, 1.6rem + 3vw, 4.5rem);
-  --fs-marquee: clamp(1.8rem, 1.2rem + 2.4vw, 3.4rem);
-  --fs-nav: clamp(1rem, 0.85rem + 0.45vw, 1.35rem);
+  /* Type scale. The *-0 values are the design sizes; --fs-* are what components use.
+     Everything is in rem, so the visitor's text-size choice (html[data-text-size], see global.css)
+     scales all text. The editor's per-component "Schriftgröße" ([data-size] on a component)
+     re-derives --fs-* from the *-0 values times --ts for that component only. */
+  --fs-xs-0: 0.8125rem;
+  --fs-sm-0: 0.9375rem;
+  --fs-base-0: 1.125rem;
+  --fs-md-0: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
+  --fs-lg-0: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
+  --fs-xl-0: clamp(2.2rem, 1.4rem + 3vw, 4rem);
+  --fs-display-0: clamp(2.8rem, 1.2rem + 6vw, 6.5rem);
+  --fs-rail-0: clamp(2.6rem, 1.6rem + 3vw, 4.5rem);
+  --fs-marquee-0: clamp(1.8rem, 1.2rem + 2.4vw, 3.4rem);
+  --fs-nav-0: clamp(1rem, 0.85rem + 0.45vw, 1.35rem);
+
+  --fs-xs: var(--fs-xs-0);
+  --fs-sm: var(--fs-sm-0);
+  --fs-base: var(--fs-base-0);
+  --fs-md: var(--fs-md-0);
+  --fs-lg: var(--fs-lg-0);
+  --fs-xl: var(--fs-xl-0);
+  --fs-display: var(--fs-display-0);
+  --fs-rail: var(--fs-rail-0);
+  --fs-marquee: var(--fs-marquee-0);
+  --fs-nav: var(--fs-nav-0);
 
   --lh-tight: 0.92;
   --lh-snug: 1.2;

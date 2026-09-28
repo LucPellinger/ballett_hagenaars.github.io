@@ -52,6 +52,7 @@ import type {
 export * from './types';
 export { legalNav, mainNav, navigation, pathFor, redirects } from './navigation';
 export { ui } from './ui';
+export { textSizeProps } from './textSize';
 
 // JSON is typed loosely by TypeScript; the exact shape is guaranteed by the schema tests.
 const siteRaw = siteJson as SiteInfo;

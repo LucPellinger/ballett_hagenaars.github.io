@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router';
 import type { TeamMember } from '@/content';
-import { ui } from '@/content';
+import { textSizeProps, ui } from '@/content';
 import { useLanguage } from '@/i18n';
 import { PlaceholderBadge } from '@/components/ui';
 import { paletteVars } from '@/styles/palette';
@@ -40,7 +40,7 @@ export function TeamGrid({ members }: { members: TeamMember[] }) {
     <>
       <ul className={styles.grid}>
         {members.map((m) => (
-          <li key={m.id} className={styles.cell} style={paletteVars(m.color) as React.CSSProperties}>
+          <li key={m.id} className={styles.cell} style={paletteVars(m.color) as React.CSSProperties} {...textSizeProps(m.textSize)}>
             <button type="button" className={styles.tile} onClick={() => open(m.id)} aria-haspopup="dialog">
               {m.photo?.src ? (
                 <img className={styles.photo} src={m.photo.src} alt="" loading="lazy" width={m.photo.width} height={m.photo.height} />

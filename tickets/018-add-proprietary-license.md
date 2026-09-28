@@ -2,7 +2,7 @@
 id: 18
 title: "Add proprietary license"
 type: chore
-status: review
+status: done
 priority: medium
 created: 2026-09-24
 ---
@@ -16,7 +16,7 @@ Make clear that code, design and content of this public repository must not be r
 - [x] `LICENSE` with all-rights-reserved terms (code: Luc Pellinger; content: Ballettschule Hagenaars)
 - [x] `"license": "UNLICENSED"` in package.json
 - [x] License section in README
-- [ ] GitHub shows no open-source license on the repo page
+- [x] GitHub shows no open-source license on the repo page (license: „Other“)
 
 ## Notes
 
