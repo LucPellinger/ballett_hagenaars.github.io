@@ -15,13 +15,12 @@ import styles from './Layout.module.css';
 export function Layout() {
   const { pathname } = useLocation();
   const mainRef = useRef<HTMLElement>(null);
-  const firstRender = useRef(true);
+  const lastPath = useRef(pathname);
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
+    // Only on real navigations (StrictMode runs effects twice on mount).
+    if (lastPath.current === pathname) return;
+    lastPath.current = pathname;
     window.scrollTo({ top: 0 });
     mainRef.current?.focus({ preventScroll: true });
   }, [pathname]);

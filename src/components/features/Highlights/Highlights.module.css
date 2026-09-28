@@ -8,23 +8,31 @@
 }
 
 .item {
-  border-top: 3px solid var(--color-accent);
   padding-top: var(--space-4);
+  border-top: 4px solid var(--palette-orange);
+}
+
+.item:nth-child(2) {
+  border-color: var(--palette-pink);
+}
+
+.item:nth-child(3) {
+  border-color: var(--palette-blue);
 }
 
 .number {
   display: block;
+  font-family: var(--font-display);
   font-size: var(--fs-xl);
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.05em;
-  color: var(--color-accent-2);
+  letter-spacing: var(--tracking-display);
+  color: var(--color-display);
 }
 
 .title {
   margin: var(--space-3) 0 var(--space-2);
   font-size: var(--fs-md);
-  letter-spacing: -0.02em;
 }
 
 .text {

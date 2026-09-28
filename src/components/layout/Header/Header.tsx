@@ -1,76 +1,138 @@
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
-import { navigation, site, ui } from '@/content';
+import { mainNav, site, ui, type NavItem } from '@/content';
 import { useLanguage } from '@/i18n';
-import { LanguageSwitcher, ThemeToggle } from '@/components/ui';
+import { LanguageSwitcher, Logo, ThemeToggle } from '@/components/ui';
 import styles from './Header.module.css';
 
-export function Header() {
+/** True when the current URL belongs to this item or one of its children. */
+const isInSection = (item: NavItem, pathname: string) =>
+  item.path === '/' ? pathname === '/' : [item, ...(item.children ?? [])].some((c) => pathname === c.path || pathname.startsWith(`${c.path}/`));
+
+function DropdownItem({ item, open, onToggle }: { item: NavItem; open: boolean; onToggle: () => void }) {
   const { t } = useLanguage();
-  const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const menuId = useId();
-  const items = navigation.filter((n) => n.header);
+  const active = isInSection(item, pathname);
+  return (
+    <li className={`${styles.item} ${styles.hasMenu} ${open ? styles.isOpen : ''}`}>
+      <span className={styles.parent}>
+        <Link to={item.path} className={`${styles.link} ${active ? styles.active : ''}`} aria-current={active ? 'true' : undefined}>
+          {t(item.label)}
+        </Link>
+        <button
+          type="button"
+          className={styles.caret}
+          aria-expanded={open}
+          aria-controls={menuId}
+          aria-label={`${t(ui.submenu)}: ${t(item.label)}`}
+          onClick={onToggle}
+        >
+          <svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" focusable="false">
+            <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+      </span>
+      <ul id={menuId} className={styles.submenu}>
+        {item.children!.map((c) => (
+          <li key={c.path}>
+            <NavLink to={c.path} end className={({ isActive }) => `${styles.sublink} ${isActive ? styles.active : ''}`}>
+              {t(c.label)}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </li>
+  );
+}
 
-  // Close the mobile menu after navigating.
+/**
+ * Full-width navigation bar: menu (with dropdowns) on the left,
+ * language + theme switch and the logo (link to home) on the right.
+ */
+export function Header() {
+  const { t } = useLanguage();
+  const { pathname } = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const panelId = useId();
+  const ref = useRef<HTMLElement>(null);
+
+  // Close menus after navigation.
   const [lastPath, setLastPath] = useState(pathname);
   if (pathname !== lastPath) {
     setLastPath(pathname);
-    setOpen(false);
+    setMobileOpen(false);
+    setOpenMenu(null);
   }
 
-  // Close with Escape.
+  // Escape and outside clicks close open menus.
   useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    if (!mobileOpen && !openMenu) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        setOpenMenu(null);
+      }
+    };
+    const onClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpenMenu(null);
+    };
     document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [open]);
+    document.addEventListener('click', onClick);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('click', onClick);
+    };
+  }, [mobileOpen, openMenu]);
 
   return (
-    <header className={styles.header}>
-      <div className={`container ${styles.bar}`}>
-        <Link to="/" className={styles.brand} aria-label={`${site.name} – ${t(ui.home)}`}>
-          <span className={styles.brandSmall}>Ballettschule</span>
-          <span className={styles.brandName}>Hagenaars</span>
-        </Link>
-
+    <header ref={ref} className={styles.header}>
+      <div className={styles.bar}>
         <button
           type="button"
           className={styles.menuButton}
-          aria-expanded={open}
-          aria-controls={menuId}
-          onClick={() => setOpen((o) => !o)}
+          aria-expanded={mobileOpen}
+          aria-controls={panelId}
+          onClick={() => setMobileOpen((o) => !o)}
         >
-          <span className="visually-hidden">{t(open ? ui.closeMenu : ui.openMenu)}</span>
+          <span className="visually-hidden">{t(mobileOpen ? ui.closeMenu : ui.openMenu)}</span>
           <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false">
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+            {mobileOpen ? (
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
             ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
             )}
           </svg>
         </button>
 
-        <div id={menuId} className={`${styles.panel} ${open ? styles.panelOpen : ''}`}>
-          <nav aria-label={t(ui.mainNav)}>
-            <ul className={styles.navList}>
-              {items.map((item) => (
-                <li key={item.page}>
-                  <NavLink
-                    to={item.path}
-                    className={({ isActive }) => `${styles.navLink} ${isActive ? styles.active : ''}`}
-                  >
+        <nav id={panelId} aria-label={t(ui.mainNav)} className={`${styles.nav} ${mobileOpen ? styles.navOpen : ''}`}>
+          <ul className={styles.list}>
+            {mainNav.map((item) =>
+              item.children ? (
+                <DropdownItem
+                  key={item.path}
+                  item={item}
+                  open={openMenu === item.path}
+                  onToggle={() => setOpenMenu((o) => (o === item.path ? null : item.path))}
+                />
+              ) : (
+                <li key={item.path} className={styles.item}>
+                  <NavLink to={item.path} end className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>
                     {t(item.label)}
                   </NavLink>
                 </li>
-              ))}
-            </ul>
-          </nav>
-          <div className={styles.controls}>
-            <LanguageSwitcher />
-            <ThemeToggle />
-          </div>
+              ),
+            )}
+          </ul>
+        </nav>
+
+        <div className={styles.tools}>
+          <LanguageSwitcher />
+          <ThemeToggle />
+          <Link to="/" className={styles.logo} aria-label={`${site.name} – ${t(ui.home)}`}>
+            <Logo decorative />
+          </Link>
         </div>
       </div>
     </header>

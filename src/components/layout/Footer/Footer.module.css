@@ -1,54 +1,88 @@
 .footer {
-  margin-top: var(--space-9);
-  padding-block: var(--space-7) var(--space-5);
-  background: var(--color-surface-2);
-  border-top: 1px solid var(--color-border);
+  background: var(--brand-nav);
+  color: var(--brand-nav-ink);
+  padding: var(--space-8) var(--gutter) var(--space-5);
   font-size: var(--fs-sm);
+}
+
+.footer a {
+  color: inherit;
 }
 
 .grid {
   display: grid;
-  gap: var(--space-6);
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-7);
+  grid-template-columns: minmax(14rem, 1.2fr) minmax(12rem, 1fr) minmax(0, 3fr);
+}
+
+.brand p {
+  margin: 0 0 var(--space-2);
+}
+
+.logo {
+  height: 4.5rem;
+  margin-bottom: var(--space-4);
+  color: var(--hero-right-ink);
 }
 
 .name {
-  margin: 0 0 var(--space-2);
-  font-size: var(--fs-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--color-accent);
-}
-
-.muted {
-  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-display);
+  color: var(--hero-right-ink);
 }
 
 .address {
   font-style: normal;
-  line-height: 1.9;
+  line-height: 2;
 }
 
-.links {
-  list-style: none;
+.nav {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+.nav ul,
+.bottom ul {
   margin: 0;
   padding: 0;
-  columns: 2;
-  column-gap: var(--space-5);
+  list-style: none;
 }
 
-.links li {
-  line-height: 2.2;
+.nav li {
+  line-height: 2.1;
 }
 
-.links a,
-.address a {
-  color: var(--color-text);
+.groupTitle {
+  margin: 0 0 var(--space-2);
+  font-weight: 700;
+  text-transform: lowercase;
+  font-size: var(--fs-md);
 }
 
-.copy {
-  margin: var(--space-6) 0 0;
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-7);
   padding-top: var(--space-4);
-  border-top: 1px solid var(--color-border);
-  color: var(--color-text-muted);
+  border-top: 1px solid rgb(255 255 255 / 0.4);
+}
+
+.bottom p {
+  margin: 0;
+}
+
+.bottom ul {
+  display: flex;
+  gap: var(--space-5);
+}
+
+@media (max-width: 56rem) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

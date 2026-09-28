@@ -1,15 +1,11 @@
-import { gallery, pages } from '@/content';
-import { PageHeader, PageMeta } from '@/components/ui';
+import { gallery } from '@/content';
 import { Gallery } from '@/components/features';
+import { PageShell } from './PageShell';
 
 export function GalleryPage() {
   return (
-    <>
-      <PageMeta meta={pages.gallery.meta} />
-      <PageHeader content={pages.gallery.header} />
-      <div className="container section">
-        <Gallery items={gallery} />
-      </div>
-    </>
+    <PageShell page="gallery">
+      <Gallery items={gallery} />
+    </PageShell>
   );
 }

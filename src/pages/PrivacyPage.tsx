@@ -1,15 +1,13 @@
-import { pages, privacy } from '@/content';
-import { PageHeader, PageMeta } from '@/components/ui';
+import { privacy } from '@/content';
 import { LegalContent } from '@/components/features';
+import { PageShell } from './PageShell';
 
 export function PrivacyPage() {
   return (
-    <>
-      <PageMeta meta={pages.privacy.meta} />
-      <PageHeader content={pages.privacy.header} />
-      <div className="container section prose">
+    <PageShell page="privacy">
+      <div className="prose">
         <LegalContent page={privacy} />
       </div>
-    </>
+    </PageShell>
   );
 }

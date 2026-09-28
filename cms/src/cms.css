@@ -103,9 +103,8 @@ textarea:focus {
   align-items: center;
   gap: 1rem;
   padding: 0.6rem 1.25rem;
-  background: var(--poster-bg);
-  background-image: var(--grain);
-  color: var(--poster-ink);
+  background: var(--brand-nav);
+  color: var(--brand-nav-ink);
 }
 
 .brand {
@@ -125,7 +124,7 @@ textarea:focus {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.045em;
-  color: var(--poster-headline);
+  color: var(--hero-right-ink);
 }
 
 .brand-tag {
@@ -146,14 +145,14 @@ textarea:focus {
 }
 
 .topbar .btn {
-  border-color: var(--poster-ink);
-  color: var(--poster-ink);
+  border-color: var(--brand-nav-ink);
+  color: var(--brand-nav-ink);
   background: transparent;
 }
 
 .topbar .btn--primary {
-  background: var(--poster-ink);
-  color: var(--poster-bg);
+  background: var(--brand-nav-ink);
+  color: var(--brand-nav);
 }
 
 .pill {
@@ -819,8 +818,8 @@ fieldset {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.25rem;
-  background: var(--poster-bg);
-  color: var(--poster-headline);
+  background: var(--brand-nav);
+  color: var(--hero-right-ink);
 }
 
 .dialog-head h2 {

@@ -1,15 +1,11 @@
-import { pages, priceNotes, pricePlans } from '@/content';
-import { PageHeader, PageMeta } from '@/components/ui';
+import { priceNotes, pricePlans } from '@/content';
 import { PriceTable } from '@/components/features';
+import { PageShell } from './PageShell';
 
 export function PricesPage() {
   return (
-    <>
-      <PageMeta meta={pages.prices.meta} />
-      <PageHeader content={pages.prices.header} />
-      <div className="container section">
-        <PriceTable plans={pricePlans} notes={priceNotes} />
-      </div>
-    </>
+    <PageShell page="prices">
+      <PriceTable plans={pricePlans} notes={priceNotes} />
+    </PageShell>
   );
 }

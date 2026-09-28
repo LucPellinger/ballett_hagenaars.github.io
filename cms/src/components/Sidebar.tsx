@@ -11,7 +11,7 @@ export interface SidebarProps {
   onSync: () => void;
 }
 
-const GROUPS = ['Allgemein', 'Unterricht', 'Schule', 'Rechtliches'] as const;
+const GROUPS = ['Allgemein', 'Über uns', 'Angebot', 'Aktuelles & Galerie', 'Rechtliches'] as const;
 
 export function Sidebar({ active, onSelect, unsaved, unpublished, placeholders, status, onSync }: SidebarProps) {
   return (
