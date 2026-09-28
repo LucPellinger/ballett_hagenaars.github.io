@@ -13,6 +13,9 @@ import { existsSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
 const BRANCH = 'content-management';
+// Windows: .cmd shims can only be started through a shell (Node ≥ 20.12); arguments here are fixed.
+const WIN = process.platform === 'win32';
+const YARN = WIN ? 'yarn.cmd' : 'yarn';
 const here = process.argv.includes('--here');
 const root = new URL('..', import.meta.url).pathname;
 process.chdir(root);
@@ -91,7 +94,7 @@ if (!here) {
 
   if (lockHash() !== before || !existsSync('node_modules')) {
     say('Installiere Aktualisierungen …');
-    execFileSync(process.platform === 'win32' ? 'yarn.cmd' : 'yarn', ['install'], { stdio: 'inherit' });
+    execFileSync(YARN, ['install'], { stdio: 'inherit', shell: WIN });
   }
 } else {
   say(c.dim('Entwicklermodus: Zweig wird nicht gewechselt, Veröffentlichen ist deaktiviert.'));
@@ -99,9 +102,5 @@ if (!here) {
 
 say(c.green('Starte Editor … (Fenster offen lassen, zum Beenden Ctrl+C)'));
 const passThrough = process.argv.slice(2).filter((a) => a !== '--here');
-const vite = spawn(
-  process.platform === 'win32' ? 'yarn.cmd' : 'yarn',
-  ['vite', '--mode', 'cms', '--open', '/cms/', ...passThrough],
-  { stdio: 'inherit' },
-);
+const vite = spawn(YARN, ['vite', '--mode', 'cms', '--open', '/cms/', ...passThrough], { stdio: 'inherit', shell: WIN });
 vite.on('exit', (code) => process.exit(code ?? 0));

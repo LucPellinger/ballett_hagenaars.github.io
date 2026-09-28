@@ -42,6 +42,7 @@ New machine? Follow **[ONBOARDING.md](ONBOARDING.md)** step by step.
 
 ```bash
 yarn cms        # or double-click "Inhalte bearbeiten.command" (macOS)
+                # non-developers: one-line installer in installer/ (see docs/CMS_GUIDE.md §1)
 ```
 
 Opens a local editor at `http://localhost:5173/cms/` with forms for every content type, drag & drop for
