@@ -2,7 +2,7 @@
 id: 2
 title: "Create GitHub repo, enable Pages and branch protection"
 type: chore
-status: todo
+status: in-progress
 priority: high
 created: 2026-09-24
 ---
@@ -13,11 +13,11 @@ Publish the repository on GitHub and configure it so the pipeline works.
 
 ## Acceptance criteria
 
-- [ ] Repo created and main/dev/prod pushed
-- [ ] Settings → Pages → Source: GitHub Actions
-- [ ] Default branch: dev
+- [x] Repo created and main/dev/prod pushed
+- [x] Settings → Pages → Source: GitHub Actions
+- [x] Default branch: dev
 - [ ] Branch protection on main + prod: PR required, CI must pass
-- [ ] First successful deploy from prod
+- [ ] First successful deploy from prod (blocked until sample content is replaced – deploy of 2026-09-28 stopped at the placeholder check, as intended)
 
 ## Notes
 
