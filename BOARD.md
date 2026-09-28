@@ -9,7 +9,7 @@
 | 📋 To do | 6 |
 | 🚧 In progress | 1 |
 | 👀 Review | 2 |
-| ✅ Done | 10 |
+| ✅ Done | 11 |
 
 ## 🗂 Backlog
 
@@ -62,4 +62,5 @@
 | [#24](tickets/024-ticket-board-cleanup.md) | chore | Ticket board cleanup after the first release | low | `chore/24-ticket-board-cleanup-after-the-first-rel` |
 | [#25](tickets/025-less-whitespace-above-page-intro.md) | fix | Less whitespace above the page intro | medium | `fix/25-less-whitespace-above-the-page-intro` |
 | [#26](tickets/026-header-fits-large-text.md) | fix | Header overlaps at large text sizes – switch to the mobile menu instead | high | `fix/26-header-overlaps-at-large-text-sizes-swit` |
+| [#28](tickets/028-session-handoff-docs.md) | docs | Session hand-off: docs/STATUS.md with status, next steps and working notes | medium | `docs/28-session-hand-off-docs-status-md-with-sta` |
 

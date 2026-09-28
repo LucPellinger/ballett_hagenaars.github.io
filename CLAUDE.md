@@ -2,6 +2,9 @@
 
 Context for Claude (Claude Code / Cowork) working in this repository.
 
+> **Start every session with [docs/STATUS.md](docs/STATUS.md)** – current state, next steps, how Luc and Claude
+> work together (who pushes, releases, previews) and the decisions log. **Update it before the session ends.**
+
 ## Project
 
 Website of **Ballettschule Hagenaars** (ballet school in Haßloch, Germany; owner Maricel
@@ -83,5 +86,8 @@ yarn ticket:new "Title" --type feat | yarn ticket:move <id> <status> | yarn boar
 - Tickets: `tickets/NNN-slug.md` (front matter `status: backlog|todo|in-progress|review|done`);
   update with `yarn ticket:move`, which regenerates `BOARD.md`. Never edit BOARD.md by hand.
 - Don't push to `main`/`prod` or run `promote.sh` unless explicitly asked.
+- Only Luc's Mac can push; Claude prepares branches/commits and gives Luc the exact commands (see docs/STATUS.md).
+- Release = `bash scripts/promote.sh main` then `bash scripts/promote.sh prod`; while sample content exists show
+  results with `gh workflow run deploy.yml --ref prod -f preview=true`.
 
 See CONTRIBUTING.md for the full workflow and docs/CONTENT_GUIDE.md for content editing.
