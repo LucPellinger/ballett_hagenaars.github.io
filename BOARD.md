@@ -8,7 +8,7 @@
 | 🗂 Backlog | 7 |
 | 📋 To do | 8 |
 | 🚧 In progress | 0 |
-| 👀 Review | 1 |
+| 👀 Review | 2 |
 | ✅ Done | 1 |
 
 ## 🗂 Backlog
@@ -45,6 +45,7 @@ _empty_
 | # | Type | Title | Priority | Branch |
 |---|---|---|---|---|
 | [#17](tickets/017-preview-deployment-for-review.md) | ci | Preview deployment for review | high | `ci/17-preview-deployment-for-review` |
+| [#18](tickets/018-add-proprietary-license.md) | chore | Add proprietary license | medium | `chore/18-add-proprietary-license` |
 
 ## ✅ Done
 
