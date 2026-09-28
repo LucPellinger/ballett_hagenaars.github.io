@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router';
-import { mainNav, site, ui, type NavItem } from '@/content';
+import { mainNav, ui, type NavItem } from '@/content';
 import { useLanguage } from '@/i18n';
 import { LanguageSwitcher, Logo, ThemeToggle } from '@/components/ui';
 import styles from './Header.module.css';
@@ -47,8 +47,8 @@ function DropdownItem({ item, open, onToggle }: { item: NavItem; open: boolean; 
 }
 
 /**
- * Full-width navigation bar: menu (with dropdowns) on the left,
- * language + theme switch and the logo (link to home) on the right.
+ * Full-width navigation bar: logo + menu (with dropdowns) on the left,
+ * language + theme switch on the right.
  */
 export function Header() {
   const { t } = useLanguage();
@@ -105,6 +105,9 @@ export function Header() {
             )}
           </svg>
         </button>
+        <Link to="/" className={styles.mobileLogo} aria-label={t(ui.home)}>
+          <Logo decorative />
+        </Link>
 
         <nav id={panelId} aria-label={t(ui.mainNav)} className={`${styles.nav} ${mobileOpen ? styles.navOpen : ''}`}>
           <ul className={styles.list}>
@@ -118,8 +121,17 @@ export function Header() {
                 />
               ) : (
                 <li key={item.path} className={styles.item}>
-                  <NavLink to={item.path} end className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ''}`}>
-                    {t(item.label)}
+                  <NavLink
+                    to={item.path}
+                    end
+                    className={({ isActive }) => `${styles.link} ${item.page === 'home' ? styles.homeLink : ''} ${isActive ? styles.active : ''}`}
+                  >
+                    {item.page === 'home' && (
+                      <span className={styles.homeLogo}>
+                        <Logo decorative />
+                      </span>
+                    )}
+                    <span>{t(item.label)}</span>
                   </NavLink>
                 </li>
               ),
@@ -130,9 +142,6 @@ export function Header() {
         <div className={styles.tools}>
           <LanguageSwitcher />
           <ThemeToggle />
-          <Link to="/" className={styles.logo} aria-label={`${site.name} – ${t(ui.home)}`}>
-            <Logo decorative />
-          </Link>
         </div>
       </div>
     </header>

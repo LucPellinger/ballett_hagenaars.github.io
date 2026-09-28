@@ -58,7 +58,7 @@ Beim Start holt der Editor automatisch die neueste Version von GitHub.
 - **Fotos auf Pinselstrich** (Über uns, Qualität, Spitzentanz, Aufführung, Philosophie): am schönsten freigestellte Fotos
   (PNG/WebP mit transparentem Hintergrund). Das Foto wird automatisch in der gewählten Farbe eingefärbt.
 - **Team:** Portrait (Farbe, Hochformat) + optional ein Tanzfoto für die Vorstellung „Wer ist …?“.
-- **Logo:** unter „Schuldaten“ → Logo. Erscheint oben rechts im Menü und groß auf der Startseite.
+- **Logo:** unter „Schuldaten“ → Logo. Erscheint oben links im Menü (neben „home“) und groß auf der Startseite.
 
 ### „Beispielinhalt“
 

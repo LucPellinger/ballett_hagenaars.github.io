@@ -122,10 +122,25 @@
   margin-left: auto;
 }
 
-.logo {
-  display: block;
-  height: calc(var(--nav-h) - 10px);
-  padding: 0 var(--space-1);
+/* "home" = logo + word, logo scaled to the menu font size */
+.homeLink {
+  gap: 0.35em;
+}
+
+.homeLogo {
+  display: inline-block;
+  height: 1.35em;
+  color: var(--palette-orange);
+  transition: transform var(--dur) var(--ease);
+}
+
+.homeLink:hover .homeLogo {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.mobileLogo {
+  display: none;
+  height: calc(var(--nav-h) - 14px);
   color: var(--palette-orange);
 }
 
@@ -144,6 +159,10 @@
 @media (max-width: 64rem) {
   .menuButton {
     display: inline-grid;
+  }
+
+  .mobileLogo {
+    display: block;
   }
 
   .nav {

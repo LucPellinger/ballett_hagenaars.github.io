@@ -19,10 +19,45 @@
   color: var(--hero-left-ink);
 }
 
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Breathing colour: dark brown (readable) ↔ the right panel's red-orange (blends in and hands the
+   focus over to the logo). Holds the dark state most of the time. */
 .welcome {
   margin: 0 0 var(--space-4);
   font-size: var(--fs-display);
   color: var(--hero-left-ink);
+  animation: breathe 9s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%,
+  30%,
+  100% {
+    color: var(--hero-left-ink);
+  }
+
+  55%,
+  70% {
+    color: var(--hero-right);
+  }
+}
+
+/* While the visitor interacts, keep it dark and readable */
+.intro:hover .welcome,
+.intro:focus-within .welcome {
+  animation: none;
+  color: var(--hero-left-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome {
+    animation: none;
+  }
 }
 
 .lead {
@@ -40,6 +75,24 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+/* Desktop with a mouse: quick links appear when hovering the welcome block (or tabbing into it).
+   They stay in the DOM and focusable, so keyboard users reach them too. */
+@media (hover: hover) and (pointer: fine) and (min-width: 48.01rem) {
+  .quick {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 250ms var(--ease),
+      transform 250ms var(--ease);
+  }
+
+  .intro:hover .quick,
+  .intro:focus-within .quick {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .right {

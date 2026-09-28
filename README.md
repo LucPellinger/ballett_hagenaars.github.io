@@ -117,7 +117,7 @@ currently published – use it only until the real site goes live (then see tick
 ## Design
 
 Colour-block collage (based on the Readymag draft): full-width red-orange menu bar with dropdowns,
-language/theme switch and the logo top-right; split orange hero with quick links; a scrolling keyword
+language/theme switch and the logo left next to "home"; split orange hero with quick links; a scrolling keyword
 band; big vertical orange section labels; painted brush strokes with duotone photos; colour tiles for
 classes; a portrait wall for the team with "Wer ist …?" profiles. Tokens live in
 [`src/styles/tokens.css`](src/styles/tokens.css) (`--palette-*` + matching `--on-*` ink colours);
