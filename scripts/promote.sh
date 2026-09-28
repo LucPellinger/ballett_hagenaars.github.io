@@ -26,8 +26,9 @@ git switch "$source" && git pull --ff-only origin "$source"
 echo "→ Running checks on $source…"
 yarn install --immutable
 yarn check
-if [ "$target" = "prod" ]; then
-  yarn content:check:strict
+if [ "$target" = "prod" ] && ! yarn content:check:strict >/dev/null; then
+  echo "⚠ Placeholder content remains – the code is promoted, but the deploy workflow will refuse to publish"
+  echo "  until the content is final (edit it with 'yarn cms'). The live site stays unchanged."
 fi
 yarn build
 

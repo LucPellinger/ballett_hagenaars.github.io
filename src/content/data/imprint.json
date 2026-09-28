@@ -1,0 +1,29 @@
+{
+  "sections": [
+    {
+      "heading": {
+        "de": "Berufsrechtliche Angaben",
+        "en": "Professional information"
+      },
+      "paragraphs": {
+        "de": [
+          "Mitglied im Deutschen Berufsverband für Tanzpädagogik e.V."
+        ],
+        "en": [
+          "Member of the German Professional Association for Dance Teachers (DBfT e.V.)"
+        ]
+      }
+    },
+    {
+      "heading": {
+        "de": "Haftung für Inhalte und Links",
+        "en": "Liability for content and links"
+      },
+      "paragraphs": {
+        "de": [
+          "Die Inhalte dieser Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Für Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich."
+        ]
+      }
+    }
+  ]
+}

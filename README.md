@@ -28,6 +28,8 @@ New machine? Follow **[ONBOARDING.md](ONBOARDING.md)** step by step.
 | `yarn preview` | Serve the production build locally |
 | `yarn check` | Typecheck + lint + tests + placeholder report – run before every PR |
 | `yarn test:watch` | Tests in watch mode |
+| `yarn cms` | Visual content editor (switches to `content-management`, see docs/CMS_GUIDE.md) |
+| `yarn cms:here` | Editor on the current branch (developing the editor; publishing disabled) |
 | `yarn content:check` | Lists content still marked as placeholder |
 | `yarn ticket:new "Title" --type feat` | Create a ticket in `tickets/` |
 | `yarn ticket:move 12 in-progress` | Change a ticket's status |
@@ -36,22 +38,33 @@ New machine? Follow **[ONBOARDING.md](ONBOARDING.md)** step by step.
 
 ## Editing content
 
-**All texts, images, links, timetable, prices, team and events live in [`src/content/`](src/content/)** –
-no component code needs to change for a content update. Start at
-[`src/content/index.ts`](src/content/index.ts), which maps "what you want to change" → file.
-Details and examples: **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)**.
+**Visual editor (for non-developers):**
+
+```bash
+yarn cms        # or double-click "Inhalte bearbeiten.command" (macOS)
+```
+
+Opens a local editor at `http://localhost:5173/cms/` with forms for every content type, drag & drop for
+text and images, live validation and a **Veröffentlichen** button that runs checks, commits to the
+`content-management` branch and lets GitHub Actions test + deploy it. If anything fails, the website is
+not touched. Guide (German): **[docs/CMS_GUIDE.md](docs/CMS_GUIDE.md)**.
+
+**Under the hood:** all content is JSON in [`src/content/data/`](src/content/data/), described by typed
+content models (Zod) in [`src/content/schema.ts`](src/content/schema.ts) and validated in CI.
+Developer details: **[docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md)**.
 
 ## Project structure
 
 ```
-├── .github/workflows/     ci.yml (every push/PR) · deploy.yml (prod → GitHub Pages)
+├── .github/workflows/     ci.yml (every push/PR) · deploy.yml (prod → GitHub Pages) · content-publish.yml (editor)
+├── cms/                   visual content editor: server/ (Vite plugin API) · src/ (React UI)
 ├── .githooks/             commit-msg + pre-push convention checks
 ├── docs/                  CONTENT_GUIDE.md
 ├── public/                favicon, PWA icons, robots.txt (copied as-is)
 ├── scripts/               setup.sh · promote.sh · ticket.mjs · check-content.mjs
 ├── tickets/               the ticket board (one .md per ticket) → BOARD.md
 └── src/
-    ├── content/           ★ all website content + types + integrity tests
+    ├── content/           ★ content: data/*.json · schema.ts (models) · collections.ts · validate.ts
     ├── components/
     │   ├── layout/        Layout, Header, Footer, SkipLink
     │   ├── ui/            Hero, PageHeader, SectionHeader, Button, LanguageSwitcher, ThemeToggle, …
@@ -78,6 +91,7 @@ hotfix/20-wrong-phone-number ─────────────────
 - `dev` – integration branch, target of all feature PRs (default branch)
 - `main` – stable release candidate
 - `prod` – what is live; every push deploys to GitHub Pages
+- `content-management` – content edits from the editor; based on `prod`, merged into `prod` on "live" publish
 - Commits: `feat(#12): add gallery lightbox`, `fix: …`, `hotfix: …`, `chore: …`, `docs: …`, `content(#3): …`
 
 Full rules: **[CONTRIBUTING.md](CONTRIBUTING.md)** · Ticket board: **[BOARD.md](BOARD.md)**

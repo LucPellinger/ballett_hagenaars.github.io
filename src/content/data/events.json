@@ -1,0 +1,26 @@
+[
+  {
+    "id": "flamenco-workshop-joaquin-ruiz",
+    "title": {
+      "de": "Flamenco Workshop mit Joaquín Ruiz",
+      "en": "Flamenco workshop with Joaquín Ruiz"
+    },
+    "startDate": "2027-03-01",
+    "endDate": "2027-03-02",
+    "location": "Haßloch",
+    "description": {
+      "de": "Zwei Tage intensiver Flamenco-Unterricht mit Joaquín Ruiz. Für Teilnehmende mit Vorkenntnissen – Anmeldung über das Büro.",
+      "en": "Two days of intensive flamenco classes with Joaquín Ruiz. For dancers with some experience – register via the office."
+    },
+    "image": {
+      "src": "samples/placeholder-1.svg",
+      "alt": {
+        "de": "Abstrakte Beispielgrafik in Rot und Orange",
+        "en": "Abstract sample artwork in red and orange"
+      },
+      "width": 800,
+      "height": 600
+    },
+    "status": "placeholder"
+  }
+]
