@@ -5,27 +5,59 @@ Website – ganz ohne Programmierkenntnisse. Alles läuft im Browser.
 
 ---
 
-## 1. Editor starten
+## 1. Einmalige Einrichtung (ca. 5 Minuten)
 
-**Variante A – Doppelklick (Mac):** Im Projektordner `ballett_hagenaars.github.io` die Datei
-**„Inhalte bearbeiten.command“** doppelklicken.
+Vorher: ein **GitHub-Konto** anlegen (<https://github.com/signup>) und Luc den Benutzernamen schicken –
+er schaltet das Veröffentlichen frei.
 
-**Variante B – Terminal:**
+### Mac
 
-```bash
-cd ~/Documents/private/ballett_hagenaars.github.io
-yarn cms
-```
+1. **Terminal** öffnen: `⌘ + Leertaste` drücken, „Terminal“ tippen, Enter.
+2. Diese Zeile kopieren, im Terminal einfügen (`⌘ + V`) und Enter drücken:
 
-Der Browser öffnet sich automatisch mit dem Editor (sonst: <http://localhost:5173/cms/>).
-Das Terminal-Fenster **offen lassen**, solange Sie arbeiten. Zum Beenden: Fenster schließen
-(oder `Ctrl + C`).
+   ```bash
+   bash -c "$(curl -fsSL https://raw.githubusercontent.com/LucPellinger/ballett_hagenaars.github.io/prod/installer/install-mac.sh)"
+   ```
 
-Beim Start holt der Editor automatisch die neueste Version von GitHub.
+3. Den Anweisungen im Fenster folgen:
+   - Fragt macOS nach den **„Befehlszeilen-Entwicklerwerkzeugen“** → **Installieren** klicken und warten.
+   - Bei **GitHub-Anmeldung**: Enter drücken, im Browser anmelden, den angezeigten Code eingeben,
+     **Authorize** klicken.
+4. Fertig: Im **Dock** erscheint das orange Logo **„Website bearbeiten“**.
+
+### Windows
+
+1. **PowerShell** öffnen: Start-Taste drücken, „PowerShell“ tippen, Enter.
+2. Diese Zeile kopieren, in PowerShell einfügen (Rechtsklick) und Enter drücken:
+
+   ```powershell
+   irm https://raw.githubusercontent.com/LucPellinger/ballett_hagenaars.github.io/prod/installer/install-windows.ps1 | iex
+   ```
+
+3. Bei der **GitHub-Anmeldung**: Enter drücken, im Browser anmelden, Code eingeben, **Authorize** klicken.
+4. Fertig: Auf dem **Desktop** und im Startmenü erscheint **„Website bearbeiten“**
+   (Tipp: Rechtsklick → „An Taskleiste anheften“).
+
+Es wird nichts am System verändert und kein Administrator-Passwort gebraucht. Klappt etwas nicht:
+die Zeile einfach noch einmal ausführen – das repariert die Einrichtung. Sonst ein Foto vom Fenster an Luc.
 
 ---
 
-## 2. Inhalte bearbeiten
+## 2. Editor starten
+
+**Auf „Website bearbeiten“ klicken** (Mac: im Dock · Windows: auf dem Desktop).
+
+Es öffnet sich ein schwarzes Fenster und kurz danach der Editor im Browser
+(sonst: <http://localhost:5173/cms/>). Das schwarze Fenster **offen lassen**, solange Sie arbeiten.
+Zum Beenden: Fenster schließen.
+
+Beim ersten Start fragt der Mac evtl., ob „Website bearbeiten“ das Terminal steuern darf → **OK**.
+
+Beim Start holt der Editor automatisch die neueste Version von GitHub – Updates passieren von selbst.
+
+---
+
+## 3. Inhalte bearbeiten
 
 | Bereich | Was Sie dort finden |
 |---|---|
@@ -81,7 +113,7 @@ Wenn ein Eintrag stimmt: **Haken entfernen**. Solange es Beispielinhalte gibt, k
 
 ---
 
-## 3. Speichern
+## 4. Speichern
 
 Unten erscheint eine Leiste **„Ungespeicherte Änderungen“** → **Speichern** (oder `⌘ + S`).
 
@@ -99,7 +131,7 @@ aber nicht veröffentlichten Änderungen zurücksetzen.
 
 ---
 
-## 4. Veröffentlichen
+## 5. Veröffentlichen
 
 1. Oben **„Veröffentlichen …“** klicken.
 2. Kurz beschreiben, was geändert wurde (z. B. „Stundenplan Herbst 2026“).
@@ -142,14 +174,22 @@ Internetverbindung prüfen. Wenn es bleibt: Luc fragen (Zugang zu GitHub).
 Jemand hat gleichzeitig dieselbe Stelle geändert. Nichts ist verloren – Luc hilft beim Zusammenführen.
 
 **Der Editor zeigt „Entwicklermodus“.**
-Der Editor wurde nicht mit `yarn cms` gestartet. Schließen und neu starten.
+Der Editor wurde nicht über „Website bearbeiten“ gestartet. Schließen und neu starten.
 
 ---
 
 ## Für Luc: Einrichtung & Technik
 
-- **Einmalig auf dem Computer des Bearbeiters:** Node + Yarn (ONBOARDING.md Schritt 1–4), Repository
-  klonen, SSH-Zugang zu GitHub einrichten (Push auf `content-management`).
+- **Einrichtung beim Bearbeiter:** `installer/install-mac.sh` bzw. `installer/install-windows.ps1` (Abschnitt 1).
+  Installiert ohne Adminrechte Node, GitHub CLI (und unter Windows MinGit) nach `~/.ballettschule`
+  bzw. `%LOCALAPPDATA%\Ballettschule`, meldet per `gh auth login --web` an (HTTPS, kein SSH-Schlüssel),
+  klont nach `~/Ballettschule-Website` und legt die App/Verknüpfung an (`installer/start-editor.*`).
+  Die Einzeiler laden das Skript vom Branch `prod` – Änderungen am Installer wirken erst nach einem Release.
+  Test ohne Anmeldung: `BH_SKIP_LOGIN=1 BH_HOME=/tmp/t BH_PROJECT=/tmp/t/site bash installer/install-mac.sh`.
+- **Zugang für den Bearbeiter:** Repository → Settings → Collaborators → GitHub-Namen einladen (Rolle *Write*);
+  er muss die Einladung per E-Mail annehmen. Damit er nur `content-management` beschreiben kann:
+  Settings → Rules → Rulesets → neues Branch-Ruleset für `main`, `dev`, `prod` mit „Restrict updates“,
+  Bypass: Repository-Admin + GitHub Actions.
 - **GitHub (einmalig):** Settings → Environments → `github-pages` → Deployment branches: `content-management`
   hinzufügen. Falls `prod`/`main`/`dev` Branch-Protection haben: GitHub Actions das Pushen erlauben
   (Rulesets → Bypass: „GitHub Actions“ / Repository-Admin), sonst schlägt „Merge into prod“ fehl.
