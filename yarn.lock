@@ -1336,6 +1336,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/dm-sans@npm:^5.2.0":
+  version: 5.3.0
+  resolution: "@fontsource-variable/dm-sans@npm:5.3.0"
+  checksum: 10c0/95c74b19fff2b4b1d669e61d481ede2186e28b92d7e1950748db94b9c3b2598aa38ff852e45ffd9955ea0a51386acdc90a8c4267783d45dd5f05e2430b24ad4e
+  languageName: node
+  linkType: hard
+
+"@fontsource-variable/inter-tight@npm:^5.2.0":
+  version: 5.3.0
+  resolution: "@fontsource-variable/inter-tight@npm:5.3.0"
+  checksum: 10c0/36eb21a67e3ca6a4f8eb1afc0298cbe3066048542951b2455a387912aff445fb473e525626d0c3c14ba8869627b5ae28efe6c24bacb4799dc800c9b0ce6e03e8
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.2":
   version: 0.19.2
   resolution: "@humanfs/core@npm:0.19.2"
@@ -2451,6 +2465,8 @@ __metadata:
   resolution: "ballett-hagenaars@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.0.0"
+    "@fontsource-variable/dm-sans": "npm:^5.2.0"
+    "@fontsource-variable/inter-tight": "npm:^5.2.0"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^7.0.0"
     "@testing-library/react": "npm:^16.0.0"

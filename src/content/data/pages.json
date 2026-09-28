@@ -17,29 +17,159 @@
       }
     }
   },
+  "about": {
+    "meta": {
+      "title": {
+        "de": "Über uns",
+        "en": "About us"
+      },
+      "description": {
+        "de": "Seit 1995 Tanzunterricht in Haßloch – Ballett, Kindertanz, Modern/Jazz, Hip-Hop, Stepptanz, Flamenco und Integratives Tanzen.",
+        "en": "Dance classes in Haßloch since 1995."
+      }
+    },
+    "header": {
+      "title": {
+        "de": "Über uns",
+        "en": "About us"
+      }
+    }
+  },
+  "quality": {
+    "meta": {
+      "title": {
+        "de": "Qualität",
+        "en": "Quality"
+      },
+      "description": {
+        "de": "Qualifiziert und ausgezeichnet vom Deutschen Berufsverband für Tanzpädagogik.",
+        "en": "Certified by the German Professional Association for Dance Teachers."
+      }
+    },
+    "header": {
+      "title": {
+        "de": "Qualität",
+        "en": "Quality"
+      }
+    }
+  },
+  "team": {
+    "meta": {
+      "title": {
+        "de": "Team",
+        "en": "Team"
+      },
+      "description": {
+        "de": "Unsere sechs qualifizierten Lehrkräfte.",
+        "en": "Our six qualified teachers."
+      }
+    },
+    "header": {
+      "title": {
+        "de": "Team",
+        "en": "Team"
+      },
+      "lead": {
+        "de": "Fahre über ein Bild oder klicke darauf, um mehr zu erfahren.",
+        "en": "Hover or click a portrait to learn more."
+      }
+    }
+  },
+  "pointe": {
+    "meta": {
+      "title": {
+        "de": "Spitzentanz",
+        "en": "Pointe work"
+      },
+      "description": {
+        "de": "Spitzentanz an der Ballettschule Hagenaars.",
+        "en": "Pointe work at Hagenaars Ballet School."
+      }
+    },
+    "header": {
+      "title": {
+        "de": "Spitzentanz",
+        "en": "Pointe"
+      }
+    }
+  },
+  "performance": {
+    "meta": {
+      "title": {
+        "de": "Aufführung",
+        "en": "Performance"
+      },
+      "description": {
+        "de": "Alle zwei Jahre: Ballettaufführung im Saalbau Neustadt.",
+        "en": "Every two years: our ballet performance at Saalbau Neustadt."
+      }
+    },
+    "header": {
+      "title": {
+        "de": "Aufführung",
+        "en": "Performance"
+      }
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": {
+        "de": "Häufige Fragen",
+        "en": "FAQ"
+      },
+      "description": {
+        "de": "Antworten auf häufige Fragen zu Kursen, Schnupperstunden und Anmeldung.",
+        "en": "Answers to frequently asked questions."
+      }
+    },
+    "header": {
+      "title": {
+        "de": "FAQ",
+        "en": "FAQ"
+      }
+    }
+  },
+  "news": {
+    "meta": {
+      "title": {
+        "de": "Aktuelles",
+        "en": "News"
+      },
+      "description": {
+        "de": "Workshops, Aufführungen und Termine – aktuell und im Archiv.",
+        "en": "Workshops, performances and dates."
+      }
+    },
+    "header": {
+      "title": {
+        "de": "Aktuelles",
+        "en": "News"
+      },
+      "lead": {
+        "de": "Alle Termine – filtere nach Jahr, Monat, Tag oder Art.",
+        "en": "All dates – filter by year, month, day or type."
+      }
+    }
+  },
   "courses": {
     "meta": {
       "title": {
-        "de": "Unterricht",
+        "de": "Kurse",
         "en": "Classes"
       },
       "description": {
-        "de": "Unser Unterrichtsangebot für Kinder, Jugendliche und Erwachsene.",
+        "de": "Unser Kursangebot für Kinder, Jugendliche und Erwachsene.",
         "en": "Our classes for children, teens and adults."
       }
     },
     "header": {
-      "eyebrow": {
-        "de": "Unterrichtsangebot",
-        "en": "What we teach"
-      },
       "title": {
-        "de": "Tanz für jedes Alter",
-        "en": "Dance for every age"
+        "de": "Kurse",
+        "en": "Classes"
       },
       "lead": {
-        "de": "Vom ersten Kindertanz bis zum Ballett für Erwachsene – finden Sie den passenden Kurs.",
-        "en": "From first steps in creative dance to ballet for adults – find the right class."
+        "de": "Klicke, um mehr zu sehen.",
+        "en": "Click to see more."
       }
     }
   },
@@ -51,21 +181,21 @@
       },
       "description": {
         "de": "Alle Kurse und Zeiten der Ballettschule Hagenaars.",
-        "en": "All classes and times at Hagenaars Ballet School."
+        "en": "All classes and times."
       }
     },
     "header": {
-      "eyebrow": {
-        "de": "Schuljahr 2026/27",
-        "en": "School year 2026/27"
-      },
       "title": {
         "de": "Stundenplan",
         "en": "Timetable"
       },
+      "eyebrow": {
+        "de": "Schuljahr 2026/27",
+        "en": "School year 2026/27"
+      },
       "lead": {
-        "de": "Probieren Sie bis zu drei Schnupperstunden kostenlos und unverbindlich aus.",
-        "en": "Try up to three trial classes – free of charge and without obligation."
+        "de": "Bis zu drei Schnupperstunden kostenlos und unverbindlich.",
+        "en": "Up to three free trial classes."
       }
     }
   },
@@ -77,69 +207,17 @@
       },
       "description": {
         "de": "Unterrichtsgebühren der Ballettschule Hagenaars.",
-        "en": "Class fees at Hagenaars Ballet School."
+        "en": "Class fees."
       }
     },
     "header": {
-      "eyebrow": {
-        "de": "Unterrichtsgebühren",
-        "en": "Tuition"
-      },
       "title": {
         "de": "Preise",
         "en": "Fees"
       },
       "lead": {
-        "de": "Für Geschwisterkinder gewähren wir Ermäßigung – sprechen Sie uns an!",
-        "en": "We offer sibling discounts – just ask us!"
-      }
-    }
-  },
-  "school": {
-    "meta": {
-      "title": {
-        "de": "Über uns",
-        "en": "About us"
-      },
-      "description": {
-        "de": "Team und Qualitätsanspruch der Ballettschule Hagenaars.",
-        "en": "Team and teaching standards of Hagenaars Ballet School."
-      }
-    },
-    "header": {
-      "eyebrow": {
-        "de": "Die Ballettschule",
-        "en": "The school"
-      },
-      "title": {
-        "de": "Unser Team",
-        "en": "Our team"
-      },
-      "lead": {
-        "de": "Unser Team besteht ausschließlich aus qualifiziertem Personal.",
-        "en": "Our team consists exclusively of qualified teachers."
-      }
-    }
-  },
-  "events": {
-    "meta": {
-      "title": {
-        "de": "Events & Workshops",
-        "en": "Events & workshops"
-      },
-      "description": {
-        "de": "Workshops, Aufführungen und Termine.",
-        "en": "Workshops, performances and dates."
-      }
-    },
-    "header": {
-      "eyebrow": {
-        "de": "Workshops & Aufführungen",
-        "en": "Workshops & performances"
-      },
-      "title": {
-        "de": "Events",
-        "en": "Events"
+        "de": "Für Geschwisterkinder gewähren wir Ermäßigung – sprich uns an!",
+        "en": "We offer sibling discounts – just ask!"
       }
     }
   },
@@ -155,10 +233,6 @@
       }
     },
     "header": {
-      "eyebrow": {
-        "de": "Eindrücke",
-        "en": "Impressions"
-      },
       "title": {
         "de": "Galerie",
         "en": "Gallery"
@@ -172,22 +246,18 @@
         "en": "Contact"
       },
       "description": {
-        "de": "So erreichen Sie die Ballettschule Hagenaars in Haßloch.",
-        "en": "How to reach Hagenaars Ballet School in Haßloch."
+        "de": "So erreichst du die Ballettschule Hagenaars in Haßloch.",
+        "en": "How to reach us in Haßloch."
       }
     },
     "header": {
-      "eyebrow": {
-        "de": "Wir freuen uns auf Sie",
-        "en": "We'd love to hear from you"
-      },
       "title": {
         "de": "Kontakt",
         "en": "Contact"
       },
       "lead": {
-        "de": "Fragen zu Kursen oder eine Schnupperstunde vereinbaren? Rufen Sie an oder schreiben Sie uns.",
-        "en": "Questions about classes or want to book a trial? Call us or send an email."
+        "de": "Lust aufs Tanzen? Kontaktiere uns gerne, um gratis und unverbindlich bis zu drei Schnupperstunden zu vereinbaren!",
+        "en": "Want to dance? Contact us to book up to three free trial classes!"
       }
     }
   },
@@ -223,7 +293,7 @@
     "header": {
       "title": {
         "de": "Datenschutz",
-        "en": "Privacy policy"
+        "en": "Privacy"
       }
     }
   }

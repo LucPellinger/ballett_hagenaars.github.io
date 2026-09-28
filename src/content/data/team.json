@@ -12,19 +12,34 @@
     },
     "teaches": {
       "de": [
-        "Kinderballett",
         "Ballett",
-        "Flamenco",
-        "Modern"
+        "Kinderballett",
+        "Modern",
+        "Flamenco"
       ],
       "en": [
-        "Children's ballet",
         "Ballet",
-        "Flamenco",
-        "Modern"
+        "Children's ballet",
+        "Modern",
+        "Flamenco"
       ]
     },
-    "status": "placeholder"
+    "status": "placeholder",
+    "story": {
+      "de": [
+        "Maricel ist die Gründerin und Leiterin der Ballettschule Hagenaars. Sie kommt ursprünglich aus den Niederlanden, wo sie eine Ausbildung zur Tanzpädagogin an der [ArtEZ University of the Arts in Arnhem](https://www.artez.nl) absolviert hat.",
+        "In ihrem Studium hat sie außerdem ihre Liebe zum Flamenco entdeckt, und tanzt und trainiert seit X Jahren, in Deutschland sowie in Spanien.",
+        "Zur ständigen Weiterbildung nimmt Maricel regelmäßig an Kursen und Workshops in Deutschland und international teil, wie z.B. XXXXXXXYYYYY.",
+        "Sie unterrichtet Ballett, Kinderballett, Modern und Flamenco."
+      ],
+      "en": [
+        "Maricel is the founder and director of Ballettschule Hagenaars. She is originally from the Netherlands, where she trained as a dance teacher at [ArtEZ University of the Arts in Arnhem](https://www.artez.nl).",
+        "During her studies she discovered her love of flamenco, which she has been dancing and training for X years in Germany and Spain.",
+        "Maricel regularly attends courses and workshops in Germany and abroad, e.g. XXXXXXXYYYYY.",
+        "She teaches ballet, children’s ballet, modern and flamenco."
+      ]
+    },
+    "color": "yellow"
   },
   {
     "id": "giovanni-de-buono",
@@ -39,19 +54,32 @@
     },
     "teaches": {
       "de": [
-        "Jazz Teens",
         "Ballett",
         "Modern",
-        "Street Jazz"
+        "Jazz"
       ],
       "en": [
-        "Teen jazz",
         "Ballet",
         "Modern",
-        "Street jazz"
+        "Jazz"
       ]
     },
-    "status": "placeholder"
+    "status": "placeholder",
+    "story": {
+      "de": [
+        "Giovanni ist staatlich geprüfter Bühnentänzer, Choreograph, und Pädagoge.",
+        "Seitdem er seine Ausbildung bei **Dance Professionals Mannheim** abgeschlossen hat, ist er als Tänzer und Lehrer tätig, ist Co-founder der Lil Luke Dance Company, und ist bereits seit X Jahren Teil des Teams.",
+        "Außer in der Ballettschule Hagenaars könnt ihr ihn auch oft auf Tanz- und Tanzopernbühnen bis nach X sehen.",
+        "Giovanni unterrichtet bei uns Ballett, Modern, und Jazz."
+      ],
+      "en": [
+        "Giovanni is a state-certified stage dancer, choreographer and teacher.",
+        "Since completing his training at **Dance Professionals Mannheim** he has worked as a dancer and teacher, co-founded the Lil Luke Dance Company and has been part of our team for X years.",
+        "You can also see him on dance and dance-opera stages as far as X.",
+        "Giovanni teaches ballet, modern and jazz."
+      ]
+    },
+    "color": "redorange"
   },
   {
     "id": "pascal-stopp",
@@ -66,15 +94,30 @@
     },
     "teaches": {
       "de": [
-        "Hip-Hop",
-        "Ballett"
+        "Ballett",
+        "HipHop"
       ],
       "en": [
-        "Hip-hop",
-        "Ballet"
+        "Ballet",
+        "Hip-hop"
       ]
     },
-    "status": "placeholder"
+    "status": "placeholder",
+    "story": {
+      "de": [
+        "Pascal ist staatlich geprüfter Bühnentänzer, Choreograph, und Pädagoge, sowie Gründer von **Tänzeragentur Urban Space**.",
+        "Außer als Tanzpädagoge, ist Pascal regelmäßig als Jurymitglied für XX, sowie als Bühnentänzer in ganz Europa unterwegs. Seine letzte Reise hat ihn dabei auf die Seefestspiele Mörbisch geführt.",
+        "Weiterhin hat er einen langjährigen Hintergrund bei den Penguin Tappern als Stepptänzer und -lehrer.",
+        "Pascal unterrichtet bei uns Ballett und Hip Hop."
+      ],
+      "en": [
+        "Pascal is a state-certified stage dancer, choreographer and teacher, and founder of the **Urban Space dancer agency**.",
+        "Besides teaching, he regularly serves as a jury member for XX and performs on stages across Europe – most recently at the Seefestspiele Mörbisch.",
+        "He also has a long background with the Penguin Tappers as a tap dancer and teacher.",
+        "Pascal teaches ballet and hip-hop."
+      ]
+    },
+    "color": "tangerine"
   },
   {
     "id": "agnes-chartrin-wolf",
@@ -89,15 +132,30 @@
     },
     "teaches": {
       "de": [
+        "Fit Gym",
         "Kinderballett",
-        "Fit Gym"
+        "Eltern-Kind-Tanz"
       ],
       "en": [
+        "Fit gym",
         "Children's ballet",
-        "Fit gym"
+        "Parent & child dance"
       ]
     },
-    "status": "placeholder"
+    "status": "placeholder",
+    "story": {
+      "de": [
+        "Agnes ist unsere längste Trainerin, und schon seit X Jahren Teil des Teams bei der Ballettschule Hagenaars.",
+        "Sie hat einen breiten Hintergrund im Aerobic Tanz und ist Aerobic-, Sport-, und Gymnastik-Trainerin. Agnes bringt schon die Kleinsten (ab 2 Jahren) zum Tanzen.",
+        "Bei uns unterrichtet sie Fit Gym, Kinderballett, und Eltern-Kind-Tanz."
+      ],
+      "en": [
+        "Agnes is our longest-serving trainer and has been part of the team for X years.",
+        "She has a broad background in aerobic dance and is an aerobics, sports and gymnastics trainer. Agnes gets even the youngest (from age 2) dancing.",
+        "She teaches Fit Gym, children’s ballet and parent & child dance."
+      ]
+    },
+    "color": "pink"
   },
   {
     "id": "tanja-leiser",
@@ -112,17 +170,28 @@
     },
     "teaches": {
       "de": [
-        "Integrativer Tanz",
-        "Hip-Hop",
-        "Zumba"
+        "Integratives Tanzen"
       ],
       "en": [
-        "Integrative dance",
-        "Hip-hop",
-        "Zumba"
+        "Inclusive dance"
       ]
     },
-    "status": "placeholder"
+    "status": "placeholder",
+    "story": {
+      "de": [
+        "Tanja ist gebürtige Hasslocherin, hat ihr Tanz- und Business-Studium aber in den USA absolviert, sowie ein Masterstudium für Tanz- und Bewegungstherapie in Heidelberg.",
+        "Sie ist Gründerin von **\"Heartbeats – Tanz aus der Reihe\"**, wo sie eine Vielfalt an Kursformaten auf der Basis von Inklusion anbietet.",
+        "Sie ist außerdem Europameisterin 2018 in der HipHop Kategorie \"Freestyle Formation\", und hat noch viele weitere Qualifikationen: Zumba, Tanztherapie und Bewegungspädagogik, HipHop-Instructor, für die sie sich regelmäßig national sowie international weiterbilden lässt.",
+        "Tanja ist bei uns für Integratives Tanzen zuständig."
+      ],
+      "en": [
+        "Tanja was born in Haßloch, completed her dance and business studies in the USA and a master’s degree in dance and movement therapy in Heidelberg.",
+        "She founded **\"Heartbeats – Tanz aus der Reihe\"**, offering a variety of inclusive class formats.",
+        "She is the 2018 European champion in hip-hop \"Freestyle Formation\" and holds many further qualifications: Zumba, dance therapy, movement education and hip-hop instructor.",
+        "Tanja teaches inclusive dance."
+      ]
+    },
+    "color": "orange"
   },
   {
     "id": "reinhold-ritter",
@@ -137,12 +206,25 @@
     },
     "teaches": {
       "de": [
-        "Step"
+        "Stepptanz"
       ],
       "en": [
-        "Tap"
+        "Tap dance"
       ]
     },
-    "status": "placeholder"
+    "status": "placeholder",
+    "story": {
+      "de": [
+        "Reinhold ist Stepp-Dozent, Tänzer, und -Choreograph, und ist seit vielen Jahren bei XXXX tätig.",
+        "In seinem anderen Leben ist er Physio-Therapeut und kennt sich damit bestens mit Anatomie und Rhythmus aus.",
+        "Reinhold unterrichtet bei uns Stepptanz."
+      ],
+      "en": [
+        "Reinhold is a tap teacher, dancer and choreographer and has worked with XXXX for many years.",
+        "In his other life he is a physiotherapist – so he knows anatomy and rhythm inside out.",
+        "Reinhold teaches tap dance."
+      ]
+    },
+    "color": "purple"
   }
 ]

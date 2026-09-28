@@ -1,46 +1,103 @@
 {
   "hero": {
-    "headline": {
-      "de": [
-        "Tanzen",
-        "lernen in",
-        "Haßloch"
-      ],
-      "en": [
-        "Learn to",
-        "dance in",
-        "Haßloch"
-      ]
+    "welcome": {
+      "de": "Willkommen!",
+      "en": "Welcome!"
     },
-    "meta": {
-      "de": [
-        "Ballett · Modern",
-        "Flamenco · Jazz"
-      ],
-      "en": [
-        "Ballet · Modern",
-        "Flamenco · Jazz"
-      ]
+    "title": {
+      "de": "Ballettschule Hagenaars",
+      "en": "Hagenaars Ballet School"
     },
     "lead": {
-      "de": "Kindertanz, Ballett für Kinder und Erwachsene, Modern, Flamenco und Jazz für Teens – mit Freude, Technik und qualifizierten Tanzpädagog:innen.",
-      "en": "Children's dance, ballet for children and adults, modern, flamenco and teen jazz – taught with joy, technique and qualified dance teachers."
+      "de": "Seit 1995 Tanzunterricht in Haßloch – für alle von 2 Jahren bis open end.",
+      "en": "Dance classes in Haßloch since 1995 – for everyone from age 2 to open end."
     },
-    "primaryCta": {
-      "label": {
-        "de": "Kostenlose Schnupperstunde",
-        "en": "Book a free trial class"
+    "quickLinks": [
+      {
+        "label": {
+          "de": "Stundenplan",
+          "en": "Timetable"
+        },
+        "href": "/angebot/stundenplan"
       },
-      "href": "/kontakt"
-    },
-    "secondaryCta": {
-      "label": {
-        "de": "Stundenplan",
-        "en": "Timetable"
+      {
+        "label": {
+          "de": "Kurse",
+          "en": "Classes"
+        },
+        "href": "/angebot/kurse"
       },
-      "href": "/stundenplan"
-    }
+      {
+        "label": {
+          "de": "Preise",
+          "en": "Fees"
+        },
+        "href": "/angebot/preise"
+      },
+      {
+        "label": {
+          "de": "Gratis Schnupperstunde",
+          "en": "Free trial class"
+        },
+        "href": "/kontakt"
+      }
+    ]
   },
+  "keywords": [
+    {
+      "text": {
+        "de": "Schule für",
+        "en": "School for"
+      },
+      "color": "white"
+    },
+    {
+      "text": {
+        "de": "Ballett",
+        "en": "Ballet"
+      },
+      "color": "pink"
+    },
+    {
+      "text": {
+        "de": "Kindertanz",
+        "en": "Children's dance"
+      },
+      "color": "lightblue"
+    },
+    {
+      "text": {
+        "de": "Jazz / Modern Dance"
+      },
+      "color": "blue"
+    },
+    {
+      "text": {
+        "de": "Hip Hop"
+      },
+      "color": "purple"
+    },
+    {
+      "text": {
+        "de": "Flamenco"
+      },
+      "color": "crimson"
+    },
+    {
+      "text": {
+        "de": "Stepptanz",
+        "en": "Tap dance"
+      },
+      "color": "black"
+    },
+    {
+      "text": {
+        "de": "Integratives Tanzen",
+        "en": "Inclusive dance"
+      },
+      "color": "redorange"
+    }
+  ],
   "highlights": [
     {
       "title": {
@@ -73,6 +130,32 @@
       }
     }
   ],
+  "philosophy": {
+    "label": {
+      "de": "Philosophie",
+      "en": "Philosophy"
+    },
+    "paragraphs": {
+      "de": [
+        "Ballettschule Hagenaars steht für Spass am Tanzen, kreative Entfaltung und fundierte Technik.",
+        "Wir führen die Kleinsten spielerisch an den Tanz heran, fördern eigenes Körpergefühl und Ausdruckskraft und begleiten unsere Schüler:innen mit persönlicher Ansprache und Förderung auf ihrem tänzerischen Weg.",
+        "Unser Ziel ist es, einzigartige Tanzerlebnisse und Perspektiven zu bieten, die die Kreativität anregen und Vielfalt fördern."
+      ],
+      "en": [
+        "Ballettschule Hagenaars stands for the joy of dancing, creative development and solid technique.",
+        "We introduce the little ones to dance through play, nurture body awareness and expression, and accompany our students personally on their journey as dancers.",
+        "Our goal is to offer unique dance experiences and perspectives that spark creativity and celebrate diversity."
+      ]
+    },
+    "emphasis": {
+      "de": "Alle sind willkommen!",
+      "en": "Everyone is welcome!"
+    },
+    "visual": {
+      "brush": "orange",
+      "tint": "black"
+    }
+  },
   "sections": {
     "highlights": {
       "title": {
@@ -81,23 +164,19 @@
       }
     },
     "courses": {
-      "eyebrow": {
+      "label": {
         "de": "Unterricht",
         "en": "Classes"
       },
-      "title": {
-        "de": "Unsere Kurse",
-        "en": "Our classes"
+      "intro": {
+        "de": "Unser Kursangebot – klicke auf einen Kurs, um mehr zu sehen.",
+        "en": "Our classes – click a class to learn more."
       }
     },
     "events": {
-      "eyebrow": {
+      "label": {
         "de": "Demnächst",
         "en": "Coming up"
-      },
-      "title": {
-        "de": "Workshops & Events",
-        "en": "Workshops & events"
       }
     },
     "cta": {

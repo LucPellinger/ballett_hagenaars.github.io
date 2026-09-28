@@ -1,0 +1,106 @@
+{
+  "blocks": [
+    {
+      "paragraphs": {
+        "de": [
+          "Seit 1995 bietet die Ballettschule Hagenaars Tanzunterricht in Haßloch. Mit über 30 Jahren Erfahrung und einem engagierten Team aus sechs qualifizierten Lehrkräften bieten wir ein vielseitiges Kursangebot für alle Altersgruppen – von 2 Jahren bis open end."
+        ],
+        "en": [
+          "Since 1995, Ballettschule Hagenaars has been teaching dance in Haßloch. With more than 30 years of experience and a dedicated team of six qualified teachers, we offer a wide range of classes for all ages – from 2 years to open end."
+        ]
+      },
+      "visual": {
+        "brush": "pink",
+        "tint": "redorange"
+      }
+    },
+    {
+      "paragraphs": {
+        "de": [
+          "Unser Unterrichtsangebot umfasst:"
+        ],
+        "en": [
+          "Our classes include:"
+        ]
+      },
+      "bullets": {
+        "de": [
+          "Ballett nach der Waganowa-Methode für alle Level",
+          "Eltern-Kind-Tanz",
+          "Hip-Hop",
+          "Modern/Jazz Dance",
+          "Stepptanz",
+          "Flamenco",
+          "Integratives Tanzen"
+        ],
+        "en": [
+          "Ballet (Vaganova method) for all levels",
+          "Parent & child dance",
+          "Hip-hop",
+          "Modern/jazz dance",
+          "Tap dance",
+          "Flamenco",
+          "Inclusive dance"
+        ]
+      },
+      "after": {
+        "de": [
+          "Bei allen Tanzformen legen wir großen Wert auf das Erlernen einer fundierten Technik, die Förderung der eigenen Kreativität und eines ausgeprägten Körpergefühls."
+        ],
+        "en": [
+          "In every style we focus on solid technique, personal creativity and strong body awareness."
+        ]
+      },
+      "visual": {
+        "brush": "redorange",
+        "tint": "blue"
+      }
+    },
+    {
+      "paragraphs": {
+        "de": [
+          "Alle unserer Schüler:innen haben ein spezielles Talent. Von Ausstrahlungswundern bis zu schüchternen Stars, von Sprungkraftgiganten zu Koordinationsgranaten, alles dazwischen und darüber hinaus. Wir finden es deshalb wichtig, dass alle Tänzer:innen persönlich angesprochen und individuell gefördert werden.",
+          "Hin und wieder vereint ein:e Schüler:in so viele Eigenschaften, dass eine spätere professionelle Laufbahn möglich sein könnte. Wenn auch die Eltern hinter der Idee stehen, stellen wir unser Talent zur Aufnahmeprüfung für die Vorausbildung an der Akademie des Tanzes in Mannheim vor. Schau dir zum Beispiel die Geschichte von Matilda [hier](/aktuelles) an."
+        ],
+        "en": [
+          "Every one of our students has a special talent – from natural performers to shy stars, from jumping giants to coordination wizards and everything in between. That is why every dancer is addressed personally and supported individually.",
+          "Now and then a student combines so many qualities that a professional career might be possible. If the parents support the idea, we prepare them for the entrance audition to the pre-professional programme at the Akademie des Tanzes in Mannheim. Read Matilda’s story [here](/aktuelles)."
+        ]
+      },
+      "visual": {
+        "brush": "lightblue",
+        "tint": "black"
+      }
+    },
+    {
+      "paragraphs": {
+        "de": [
+          "Ein besonderes Highlight: Alle zwei Jahre gibt es die Möglichkeit, Bühnenerfahrung bei einer eindrucksvollen Ballettaufführung im Saalbau Neustadt vor großem Publikum zu sammeln."
+        ],
+        "en": [
+          "A special highlight: every two years our students gain stage experience in an impressive ballet performance at Saalbau Neustadt in front of a large audience."
+        ]
+      },
+      "visual": {
+        "brush": "orange",
+        "tint": "purple"
+      }
+    },
+    {
+      "paragraphs": {
+        "de": [
+          "Unsere Schule ist qualifiziert und ausgezeichnet vom [Deutschen Berufsverband für Tanzpädagogik e.V. (DBfT)](https://www.dbft.de). Unsere Lehrer:innen nehmen regelmässig an Workshops und Fortbildungen teil, wodurch wir zeitgemässe, frische und aktuelle Standards und Unterrichtsformen gewährleisten.",
+          "Lust aufs Tanzen? Kontaktiere uns gerne, um gratis und unverbindlich bis zu drei Schnupperstunden zu vereinbaren!"
+        ],
+        "en": [
+          "Our school is certified by the [German Professional Association for Dance Teachers (DBfT)](https://www.dbft.de). Our teachers regularly attend workshops and further training, keeping our standards and teaching methods fresh and up to date.",
+          "Want to dance? Contact us to arrange up to three free trial classes!"
+        ]
+      },
+      "visual": {
+        "brush": "blue",
+        "tint": "redorange"
+      }
+    }
+  ]
+}

@@ -1,5 +1,126 @@
 [
   {
+    "id": "eltern-kind",
+    "title": {
+      "de": "Eltern – Kind Tanz",
+      "en": "Parent – child dance"
+    },
+    "audience": [
+      "family"
+    ],
+    "ageGroup": {
+      "de": "Kinder ab 2 Jahren mit Begleitung",
+      "en": "children from age 2 with a parent"
+    },
+    "summary": {
+      "de": "Gemeinsam tanzen, lachen und sich bewegen.",
+      "en": "Dance, laugh and move together."
+    },
+    "description": {
+      "de": [
+        "Eltern und Kinder erleben Tanz gemeinsam – mit Liedern, Spielen und ersten Schritten."
+      ],
+      "en": [
+        "Parents and children experience dance together – with songs, games and first steps."
+      ]
+    },
+    "color": "redorange",
+    "status": "placeholder"
+  },
+  {
+    "id": "ballett",
+    "title": {
+      "de": "Ballett",
+      "en": "Ballet"
+    },
+    "audience": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "ageGroup": {
+      "de": "ab 6 Jahren · alle Level",
+      "en": "from age 6 · all levels"
+    },
+    "summary": {
+      "de": "Klassisches Ballett nach der Waganowa-Methode – für alle Level.",
+      "en": "Classical ballet following the Vaganova method – all levels."
+    },
+    "description": {
+      "de": [
+        "Im klassischen Ballett lernen Kinder und Jugendliche Schritt für Schritt die Grundlagen der Technik an der Stange und im Raum.",
+        "Der Unterricht ist nach Alter und Können in Stufen aufgebaut.",
+        "Ballett für Erwachsene verbindet klassische Technik mit einem wohltuenden Ganzkörpertraining."
+      ],
+      "en": [
+        "In classical ballet, children and teens learn the fundamentals of technique at the barre and in the centre, step by step.",
+        "Classes are organised in levels by age and ability.",
+        "Adult ballet combines classical technique with a full-body workout that feels good."
+      ]
+    },
+    "color": "pink",
+    "status": "placeholder"
+  },
+  {
+    "id": "modern-jazz",
+    "title": {
+      "de": "Modern/Jazz Dance"
+    },
+    "audience": [
+      "teens",
+      "adults"
+    ],
+    "ageGroup": {
+      "de": "ab 11 Jahren",
+      "en": "from age 11"
+    },
+    "summary": {
+      "de": "Ausdrucksstark, dynamisch und vielseitig.",
+      "en": "Expressive, dynamic and versatile."
+    },
+    "description": {
+      "de": [
+        "Modern Dance arbeitet mit Schwerkraft, Atmung und Raum – ausdrucksstark und vielseitig.",
+        "Jazz Dance mit Einflüssen aus Street Jazz und Modern – energiegeladen und mit viel Spaß."
+      ],
+      "en": [
+        "Modern dance works with gravity, breath and space – expressive and versatile.",
+        "Jazz dance with influences from street jazz and modern – energetic and lots of fun."
+      ]
+    },
+    "color": "blue",
+    "status": "placeholder"
+  },
+  {
+    "id": "flamenco",
+    "title": {
+      "de": "Flamenco",
+      "en": "Flamenco"
+    },
+    "audience": [
+      "teens",
+      "adults"
+    ],
+    "ageGroup": {
+      "de": "Jugendliche & Erwachsene",
+      "en": "teens & adults"
+    },
+    "summary": {
+      "de": "Rhythmus, Leidenschaft und Zapateado.",
+      "en": "Rhythm, passion and zapateado."
+    },
+    "description": {
+      "de": [
+        "Flamenco verbindet präzise Fußtechnik, Armführung und Palmas mit der Energie andalusischer Musik."
+      ],
+      "en": [
+        "Flamenco combines precise footwork, arm movements and palmas with the energy of Andalusian music."
+      ]
+    },
+    "color": "crimson",
+    "status": "placeholder"
+  },
+  {
     "id": "kindertanz",
     "title": {
       "de": "Kindertanz",
@@ -26,173 +147,95 @@
         "Imaginative movement stories build coordination, body awareness and creativity – the perfect preparation for children’s ballet."
       ]
     },
+    "color": "lightblue",
     "status": "placeholder"
   },
   {
-    "id": "dance-together",
+    "id": "stepptanz",
     "title": {
-      "de": "Dance Together: Mutter & Kind",
-      "en": "Dance Together: parent & child"
+      "de": "Stepptanz",
+      "en": "Tap dance"
     },
     "audience": [
-      "family"
+      "kids",
+      "teens",
+      "adults"
     ],
     "ageGroup": {
-      "de": "Kinder ab 2 Jahren mit Begleitung",
-      "en": "children from age 2 with a parent"
+      "de": "ab 8 Jahren",
+      "en": "from age 8"
     },
     "summary": {
-      "de": "Gemeinsam tanzen, lachen und sich bewegen.",
-      "en": "Dance, laugh and move together."
+      "de": "Rhythmus, den man hört – mit Steppschuhen.",
+      "en": "Rhythm you can hear – in tap shoes."
     },
     "description": {
       "de": [
-        "Eltern und Kinder erleben Tanz gemeinsam – mit Liedern, Spielen und ersten Schritten."
+        "Beim Stepptanz werden die Füße zum Instrument: Schritte, Rhythmen und Choreografien mit viel Spaß an der Musik."
       ],
       "en": [
-        "Parents and children experience dance together – with songs, games and first steps."
+        "In tap dance your feet become the instrument: steps, rhythms and choreographies with lots of musical fun."
       ]
     },
+    "color": "black",
     "status": "placeholder"
   },
   {
-    "id": "ballett-kinder",
+    "id": "hip-hop",
     "title": {
-      "de": "Ballett für Kinder & Jugendliche",
-      "en": "Ballet for children & teens"
+      "de": "Hip Hop"
     },
     "audience": [
       "kids",
       "teens"
     ],
     "ageGroup": {
-      "de": "ab 6 Jahren",
-      "en": "from age 6"
+      "de": "ab 8 Jahren",
+      "en": "from age 8"
     },
     "summary": {
-      "de": "Klassische Technik, Haltung und Ausdruck – aufbauend nach Stufen.",
-      "en": "Classical technique, posture and expression – progressing by level."
+      "de": "Grooves, Moves und Choreos zu aktueller Musik.",
+      "en": "Grooves, moves and choreos to current music."
     },
     "description": {
       "de": [
-        "Im klassischen Ballett lernen Kinder und Jugendliche Schritt für Schritt die Grundlagen der Technik an der Stange und im Raum.",
-        "Der Unterricht ist nach Alter und Können in Stufen aufgebaut."
+        "Hip-Hop verbindet Grooves, Footwork und Choreografien zu aktueller Musik – energiegeladen und mit viel Freestyle."
       ],
       "en": [
-        "In classical ballet, children and teens learn the fundamentals of technique at the barre and in the centre, step by step.",
-        "Classes are organised in levels by age and ability."
+        "Hip-hop combines grooves, footwork and choreography to current music – energetic, with lots of freestyle."
       ]
     },
+    "color": "purple",
     "status": "placeholder"
   },
   {
-    "id": "ballett-erwachsene",
+    "id": "integratives-tanzen",
     "title": {
-      "de": "Ballett für Erwachsene",
-      "en": "Ballet for adults"
+      "de": "Integratives Tanzen",
+      "en": "Inclusive dance"
     },
     "audience": [
-      "adults"
-    ],
-    "ageGroup": {
-      "de": "Einsteiger & Wiedereinsteiger",
-      "en": "beginners & returners"
-    },
-    "summary": {
-      "de": "Eleganz, Kraft und Beweglichkeit – nie zu spät zum Anfangen.",
-      "en": "Elegance, strength and flexibility – it is never too late to start."
-    },
-    "description": {
-      "de": [
-        "Ballett für Erwachsene verbindet klassische Technik mit einem wohltuenden Ganzkörpertraining."
-      ],
-      "en": [
-        "Adult ballet combines classical technique with a full-body workout that feels good."
-      ]
-    },
-    "status": "placeholder"
-  },
-  {
-    "id": "modern",
-    "title": {
-      "de": "Modern Dance",
-      "en": "Modern dance"
-    },
-    "audience": [
+      "kids",
       "teens",
       "adults"
     ],
     "ageGroup": {
-      "de": "ab 12 Jahren",
-      "en": "from age 12"
+      "de": "für alle",
+      "en": "for everyone"
     },
     "summary": {
-      "de": "Freier Ausdruck, Bodenarbeit und Improvisation.",
-      "en": "Free expression, floor work and improvisation."
+      "de": "Tanzen ohne Barrieren – alle sind willkommen.",
+      "en": "Dance without barriers – everyone is welcome."
     },
     "description": {
       "de": [
-        "Modern Dance arbeitet mit Schwerkraft, Atmung und Raum – ausdrucksstark und vielseitig."
+        "Beim integrativen Tanzen tanzen Menschen mit und ohne Beeinträchtigung gemeinsam. Im Mittelpunkt stehen Freude an Bewegung, Ausdruck und Gemeinschaft."
       ],
       "en": [
-        "Modern dance works with gravity, breath and space – expressive and versatile."
+        "In inclusive dance, people with and without disabilities dance together – focusing on joy of movement, expression and community."
       ]
     },
-    "status": "placeholder"
-  },
-  {
-    "id": "flamenco",
-    "title": {
-      "de": "Flamenco",
-      "en": "Flamenco"
-    },
-    "audience": [
-      "adults",
-      "teens"
-    ],
-    "ageGroup": {
-      "de": "Jugendliche & Erwachsene",
-      "en": "teens & adults"
-    },
-    "summary": {
-      "de": "Rhythmus, Leidenschaft und Zapateado.",
-      "en": "Rhythm, passion and zapateado."
-    },
-    "description": {
-      "de": [
-        "Flamenco verbindet präzise Fußtechnik, Armführung und Palmas mit der Energie andalusischer Musik."
-      ],
-      "en": [
-        "Flamenco combines precise footwork, arm movements and palmas with the energy of Andalusian music."
-      ]
-    },
-    "status": "placeholder"
-  },
-  {
-    "id": "jazz-teens",
-    "title": {
-      "de": "Jazz für Teens",
-      "en": "Jazz for teens"
-    },
-    "audience": [
-      "teens"
-    ],
-    "ageGroup": {
-      "de": "ab 11 Jahren",
-      "en": "from age 11"
-    },
-    "summary": {
-      "de": "Dynamische Choreografien zu aktueller Musik.",
-      "en": "Dynamic choreographies to current music."
-    },
-    "description": {
-      "de": [
-        "Jazz Dance mit Einflüssen aus Street Jazz und Modern – energiegeladen und mit viel Spaß."
-      ],
-      "en": [
-        "Jazz dance with influences from street jazz and modern – energetic and lots of fun."
-      ]
-    },
+    "color": "orange",
     "status": "placeholder"
   }
 ]

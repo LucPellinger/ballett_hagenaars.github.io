@@ -21,6 +21,83 @@
       "width": 800,
       "height": 600
     },
+    "status": "placeholder",
+    "category": "workshop",
+    "tags": [
+      "Flamenco"
+    ]
+  },
+  {
+    "id": "ballettauffuehrung-saalbau-neustadt-2026",
+    "title": {
+      "de": "Ballettaufführung im Saalbau Neustadt",
+      "en": "Ballet performance at Saalbau Neustadt"
+    },
+    "startDate": "2026-06-27",
+    "location": "Saalbau Neustadt",
+    "category": "auffuehrung",
+    "tags": [
+      "Ballett",
+      "Bühne"
+    ],
+    "description": {
+      "de": "Unsere große Aufführung mit allen Kursen – alle zwei Jahre ein besonderes Highlight.",
+      "en": "Our big show with all classes – a highlight every two years."
+    },
+    "status": "placeholder"
+  },
+  {
+    "id": "workshop-paloma-gomez-2026",
+    "title": {
+      "de": "Workshop mit Paloma Gómez",
+      "en": "Workshop with Paloma Gómez"
+    },
+    "startDate": "2026-02-14",
+    "endDate": "2026-02-15",
+    "location": "Haßloch",
+    "category": "workshop",
+    "tags": [
+      "Flamenco"
+    ],
+    "description": {
+      "de": "Flamenco-Workshop mit Paloma Gómez.",
+      "en": "Flamenco workshop with Paloma Gómez."
+    },
+    "status": "placeholder"
+  },
+  {
+    "id": "herbstferien-2026",
+    "title": {
+      "de": "Herbstferien – kein Unterricht",
+      "en": "Autumn holidays – no classes"
+    },
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-23",
+    "location": "Haßloch",
+    "category": "ferien",
+    "description": {
+      "de": "In den Herbstferien findet kein Unterricht statt.",
+      "en": "No classes during the autumn holidays."
+    },
+    "status": "placeholder"
+  },
+  {
+    "id": "ballettauffuehrung-2028",
+    "title": {
+      "de": "Ballettaufführung 2028",
+      "en": "Ballet performance 2028"
+    },
+    "startDate": "2028-06-24",
+    "location": "Saalbau Neustadt",
+    "category": "auffuehrung",
+    "tags": [
+      "Ballett",
+      "Bühne"
+    ],
+    "description": {
+      "de": "Die nächste große Aufführung – Proben starten im Herbst 2027.",
+      "en": "Our next big show – rehearsals start in autumn 2027."
+    },
     "status": "placeholder"
   }
 ]

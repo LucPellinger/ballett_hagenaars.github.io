@@ -1,0 +1,35 @@
+{
+  "status": "placeholder",
+  "blocks": [
+    {
+      "paragraphs": {
+        "de": [
+          "Spitzentanz ist für viele Ballettschüler:innen ein großer Traum. Bei uns beginnt die Arbeit auf Spitze erst, wenn Kraft, Technik und Alter es erlauben – immer in Absprache mit der Lehrkraft.",
+          "Der Unterricht bereitet Füße, Fußgelenke und Rumpf gezielt vor, damit der Schritt auf die Spitze sicher und mit Freude gelingt."
+        ],
+        "en": [
+          "Dancing on pointe is a big dream for many ballet students. We start pointe work only when strength, technique and age allow – always in agreement with the teacher.",
+          "Classes prepare feet, ankles and core so that the step onto pointe is safe and joyful."
+        ]
+      },
+      "visual": {
+        "brush": "blue",
+        "tint": "redorange"
+      }
+    },
+    {
+      "paragraphs": {
+        "de": [
+          "Voraussetzungen, Kurszeiten und Tipps zum ersten Paar Spitzenschuhe besprechen wir gern persönlich."
+        ],
+        "en": [
+          "We are happy to discuss requirements, class times and tips for your first pair of pointe shoes in person."
+        ]
+      },
+      "visual": {
+        "brush": "pink",
+        "tint": "crimson"
+      }
+    }
+  ]
+}
